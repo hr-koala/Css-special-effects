@@ -1,0 +1,5346 @@
+body {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #cee7d4 0%, #f5f4c9 100%);
+    overflow: hidden;
+}
+
+input {
+    position: absolute;
+    left: -9999px;
+}
+
+.hidden-label, .world-grid .world-item .size-1, .world-grid .world-item .size-2, .world-grid .world-item .size-3, .world-grid .world-item .size-4, .world-grid .world-item .color-1, .world-grid .world-item .color-2, .world-grid .world-item .color-3, .world-grid .world-item .color-4, .world-grid .world-item .color-5, .world-grid .world-item .color-6, .world-grid .world-item .color-7, .world-grid .world-item .color-8 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    transform: translateZ(-0.5rem);
+    width: 2.5rem;
+    height: 2.5rem;
+    left: 0.25rem;
+    top: 0.25rem;
+    pointer-events: none;
+}
+
+.clickable-label, #size-tool-up:checked ~ #l1i1s0:checked ~ .world-grid .world-item[for="l1i1s0"] .size-1, #size-tool-up:checked ~ #l1i1s1:checked ~ .world-grid .world-item[for="l1i1s0"] .size-2, #size-tool-up:checked ~ #l1i1s2:checked ~ .world-grid .world-item[for="l1i1s0"] .size-3, #size-tool-up:checked ~ #l1i1s3:checked ~ .world-grid .world-item[for="l1i1s0"] .size-4, #size-tool-up:checked ~ #l1i1s4:checked ~ .world-grid .world-item[for="l1i1s0"] .size-5, #size-tool-up:checked ~ #l1i2s0:checked ~ .world-grid .world-item[for="l1i2s0"] .size-1, #size-tool-up:checked ~ #l1i2s1:checked ~ .world-grid .world-item[for="l1i2s0"] .size-2, #size-tool-up:checked ~ #l1i2s2:checked ~ .world-grid .world-item[for="l1i2s0"] .size-3, #size-tool-up:checked ~ #l1i2s3:checked ~ .world-grid .world-item[for="l1i2s0"] .size-4, #size-tool-up:checked ~ #l1i2s4:checked ~ .world-grid .world-item[for="l1i2s0"] .size-5, #size-tool-up:checked ~ #l1i3s0:checked ~ .world-grid .world-item[for="l1i3s0"] .size-1, #size-tool-up:checked ~ #l1i3s1:checked ~ .world-grid .world-item[for="l1i3s0"] .size-2, #size-tool-up:checked ~ #l1i3s2:checked ~ .world-grid .world-item[for="l1i3s0"] .size-3, #size-tool-up:checked ~ #l1i3s3:checked ~ .world-grid .world-item[for="l1i3s0"] .size-4, #size-tool-up:checked ~ #l1i3s4:checked ~ .world-grid .world-item[for="l1i3s0"] .size-5, #size-tool-up:checked ~ #l1i4s0:checked ~ .world-grid .world-item[for="l1i4s0"] .size-1, #size-tool-up:checked ~ #l1i4s1:checked ~ .world-grid .world-item[for="l1i4s0"] .size-2, #size-tool-up:checked ~ #l1i4s2:checked ~ .world-grid .world-item[for="l1i4s0"] .size-3, #size-tool-up:checked ~ #l1i4s3:checked ~ .world-grid .world-item[for="l1i4s0"] .size-4, #size-tool-up:checked ~ #l1i4s4:checked ~ .world-grid .world-item[for="l1i4s0"] .size-5, #size-tool-up:checked ~ #l1i5s0:checked ~ .world-grid .world-item[for="l1i5s0"] .size-1, #size-tool-up:checked ~ #l1i5s1:checked ~ .world-grid .world-item[for="l1i5s0"] .size-2, #size-tool-up:checked ~ #l1i5s2:checked ~ .world-grid .world-item[for="l1i5s0"] .size-3, #size-tool-up:checked ~ #l1i5s3:checked ~ .world-grid .world-item[for="l1i5s0"] .size-4, #size-tool-up:checked ~ #l1i5s4:checked ~ .world-grid .world-item[for="l1i5s0"] .size-5, #size-tool-up:checked ~ #l2i1s0:checked ~ .world-grid .world-item[for="l2i1s0"] .size-1, #size-tool-up:checked ~ #l2i1s1:checked ~ .world-grid .world-item[for="l2i1s0"] .size-2, #size-tool-up:checked ~ #l2i1s2:checked ~ .world-grid .world-item[for="l2i1s0"] .size-3, #size-tool-up:checked ~ #l2i1s3:checked ~ .world-grid .world-item[for="l2i1s0"] .size-4, #size-tool-up:checked ~ #l2i1s4:checked ~ .world-grid .world-item[for="l2i1s0"] .size-5, #size-tool-up:checked ~ #l2i2s0:checked ~ .world-grid .world-item[for="l2i2s0"] .size-1, #size-tool-up:checked ~ #l2i2s1:checked ~ .world-grid .world-item[for="l2i2s0"] .size-2, #size-tool-up:checked ~ #l2i2s2:checked ~ .world-grid .world-item[for="l2i2s0"] .size-3, #size-tool-up:checked ~ #l2i2s3:checked ~ .world-grid .world-item[for="l2i2s0"] .size-4, #size-tool-up:checked ~ #l2i2s4:checked ~ .world-grid .world-item[for="l2i2s0"] .size-5, #size-tool-up:checked ~ #l2i3s0:checked ~ .world-grid .world-item[for="l2i3s0"] .size-1, #size-tool-up:checked ~ #l2i3s1:checked ~ .world-grid .world-item[for="l2i3s0"] .size-2, #size-tool-up:checked ~ #l2i3s2:checked ~ .world-grid .world-item[for="l2i3s0"] .size-3, #size-tool-up:checked ~ #l2i3s3:checked ~ .world-grid .world-item[for="l2i3s0"] .size-4, #size-tool-up:checked ~ #l2i3s4:checked ~ .world-grid .world-item[for="l2i3s0"] .size-5, #size-tool-up:checked ~ #l2i4s0:checked ~ .world-grid .world-item[for="l2i4s0"] .size-1, #size-tool-up:checked ~ #l2i4s1:checked ~ .world-grid .world-item[for="l2i4s0"] .size-2, #size-tool-up:checked ~ #l2i4s2:checked ~ .world-grid .world-item[for="l2i4s0"] .size-3, #size-tool-up:checked ~ #l2i4s3:checked ~ .world-grid .world-item[for="l2i4s0"] .size-4, #size-tool-up:checked ~ #l2i4s4:checked ~ .world-grid .world-item[for="l2i4s0"] .size-5, #size-tool-up:checked ~ #l2i5s0:checked ~ .world-grid .world-item[for="l2i5s0"] .size-1, #size-tool-up:checked ~ #l2i5s1:checked ~ .world-grid .world-item[for="l2i5s0"] .size-2, #size-tool-up:checked ~ #l2i5s2:checked ~ .world-grid .world-item[for="l2i5s0"] .size-3, #size-tool-up:checked ~ #l2i5s3:checked ~ .world-grid .world-item[for="l2i5s0"] .size-4, #size-tool-up:checked ~ #l2i5s4:checked ~ .world-grid .world-item[for="l2i5s0"] .size-5, #size-tool-up:checked ~ #l3i1s0:checked ~ .world-grid .world-item[for="l3i1s0"] .size-1, #size-tool-up:checked ~ #l3i1s1:checked ~ .world-grid .world-item[for="l3i1s0"] .size-2, #size-tool-up:checked ~ #l3i1s2:checked ~ .world-grid .world-item[for="l3i1s0"] .size-3, #size-tool-up:checked ~ #l3i1s3:checked ~ .world-grid .world-item[for="l3i1s0"] .size-4, #size-tool-up:checked ~ #l3i1s4:checked ~ .world-grid .world-item[for="l3i1s0"] .size-5, #size-tool-up:checked ~ #l3i2s0:checked ~ .world-grid .world-item[for="l3i2s0"] .size-1, #size-tool-up:checked ~ #l3i2s1:checked ~ .world-grid .world-item[for="l3i2s0"] .size-2, #size-tool-up:checked ~ #l3i2s2:checked ~ .world-grid .world-item[for="l3i2s0"] .size-3, #size-tool-up:checked ~ #l3i2s3:checked ~ .world-grid .world-item[for="l3i2s0"] .size-4, #size-tool-up:checked ~ #l3i2s4:checked ~ .world-grid .world-item[for="l3i2s0"] .size-5, #size-tool-up:checked ~ #l3i3s0:checked ~ .world-grid .world-item[for="l3i3s0"] .size-1, #size-tool-up:checked ~ #l3i3s1:checked ~ .world-grid .world-item[for="l3i3s0"] .size-2, #size-tool-up:checked ~ #l3i3s2:checked ~ .world-grid .world-item[for="l3i3s0"] .size-3, #size-tool-up:checked ~ #l3i3s3:checked ~ .world-grid .world-item[for="l3i3s0"] .size-4, #size-tool-up:checked ~ #l3i3s4:checked ~ .world-grid .world-item[for="l3i3s0"] .size-5, #size-tool-up:checked ~ #l3i4s0:checked ~ .world-grid .world-item[for="l3i4s0"] .size-1, #size-tool-up:checked ~ #l3i4s1:checked ~ .world-grid .world-item[for="l3i4s0"] .size-2, #size-tool-up:checked ~ #l3i4s2:checked ~ .world-grid .world-item[for="l3i4s0"] .size-3, #size-tool-up:checked ~ #l3i4s3:checked ~ .world-grid .world-item[for="l3i4s0"] .size-4, #size-tool-up:checked ~ #l3i4s4:checked ~ .world-grid .world-item[for="l3i4s0"] .size-5, #size-tool-up:checked ~ #l3i5s0:checked ~ .world-grid .world-item[for="l3i5s0"] .size-1, #size-tool-up:checked ~ #l3i5s1:checked ~ .world-grid .world-item[for="l3i5s0"] .size-2, #size-tool-up:checked ~ #l3i5s2:checked ~ .world-grid .world-item[for="l3i5s0"] .size-3, #size-tool-up:checked ~ #l3i5s3:checked ~ .world-grid .world-item[for="l3i5s0"] .size-4, #size-tool-up:checked ~ #l3i5s4:checked ~ .world-grid .world-item[for="l3i5s0"] .size-5, #size-tool-up:checked ~ #l4i1s0:checked ~ .world-grid .world-item[for="l4i1s0"] .size-1, #size-tool-up:checked ~ #l4i1s1:checked ~ .world-grid .world-item[for="l4i1s0"] .size-2, #size-tool-up:checked ~ #l4i1s2:checked ~ .world-grid .world-item[for="l4i1s0"] .size-3, #size-tool-up:checked ~ #l4i1s3:checked ~ .world-grid .world-item[for="l4i1s0"] .size-4, #size-tool-up:checked ~ #l4i1s4:checked ~ .world-grid .world-item[for="l4i1s0"] .size-5, #size-tool-up:checked ~ #l4i2s0:checked ~ .world-grid .world-item[for="l4i2s0"] .size-1, #size-tool-up:checked ~ #l4i2s1:checked ~ .world-grid .world-item[for="l4i2s0"] .size-2, #size-tool-up:checked ~ #l4i2s2:checked ~ .world-grid .world-item[for="l4i2s0"] .size-3, #size-tool-up:checked ~ #l4i2s3:checked ~ .world-grid .world-item[for="l4i2s0"] .size-4, #size-tool-up:checked ~ #l4i2s4:checked ~ .world-grid .world-item[for="l4i2s0"] .size-5, #size-tool-up:checked ~ #l4i3s0:checked ~ .world-grid .world-item[for="l4i3s0"] .size-1, #size-tool-up:checked ~ #l4i3s1:checked ~ .world-grid .world-item[for="l4i3s0"] .size-2, #size-tool-up:checked ~ #l4i3s2:checked ~ .world-grid .world-item[for="l4i3s0"] .size-3, #size-tool-up:checked ~ #l4i3s3:checked ~ .world-grid .world-item[for="l4i3s0"] .size-4, #size-tool-up:checked ~ #l4i3s4:checked ~ .world-grid .world-item[for="l4i3s0"] .size-5, #size-tool-up:checked ~ #l4i4s0:checked ~ .world-grid .world-item[for="l4i4s0"] .size-1, #size-tool-up:checked ~ #l4i4s1:checked ~ .world-grid .world-item[for="l4i4s0"] .size-2, #size-tool-up:checked ~ #l4i4s2:checked ~ .world-grid .world-item[for="l4i4s0"] .size-3, #size-tool-up:checked ~ #l4i4s3:checked ~ .world-grid .world-item[for="l4i4s0"] .size-4, #size-tool-up:checked ~ #l4i4s4:checked ~ .world-grid .world-item[for="l4i4s0"] .size-5, #size-tool-up:checked ~ #l4i5s0:checked ~ .world-grid .world-item[for="l4i5s0"] .size-1, #size-tool-up:checked ~ #l4i5s1:checked ~ .world-grid .world-item[for="l4i5s0"] .size-2, #size-tool-up:checked ~ #l4i5s2:checked ~ .world-grid .world-item[for="l4i5s0"] .size-3, #size-tool-up:checked ~ #l4i5s3:checked ~ .world-grid .world-item[for="l4i5s0"] .size-4, #size-tool-up:checked ~ #l4i5s4:checked ~ .world-grid .world-item[for="l4i5s0"] .size-5, #size-tool-up:checked ~ #l5i1s0:checked ~ .world-grid .world-item[for="l5i1s0"] .size-1, #size-tool-up:checked ~ #l5i1s1:checked ~ .world-grid .world-item[for="l5i1s0"] .size-2, #size-tool-up:checked ~ #l5i1s2:checked ~ .world-grid .world-item[for="l5i1s0"] .size-3, #size-tool-up:checked ~ #l5i1s3:checked ~ .world-grid .world-item[for="l5i1s0"] .size-4, #size-tool-up:checked ~ #l5i1s4:checked ~ .world-grid .world-item[for="l5i1s0"] .size-5, #size-tool-up:checked ~ #l5i2s0:checked ~ .world-grid .world-item[for="l5i2s0"] .size-1, #size-tool-up:checked ~ #l5i2s1:checked ~ .world-grid .world-item[for="l5i2s0"] .size-2, #size-tool-up:checked ~ #l5i2s2:checked ~ .world-grid .world-item[for="l5i2s0"] .size-3, #size-tool-up:checked ~ #l5i2s3:checked ~ .world-grid .world-item[for="l5i2s0"] .size-4, #size-tool-up:checked ~ #l5i2s4:checked ~ .world-grid .world-item[for="l5i2s0"] .size-5, #size-tool-up:checked ~ #l5i3s0:checked ~ .world-grid .world-item[for="l5i3s0"] .size-1, #size-tool-up:checked ~ #l5i3s1:checked ~ .world-grid .world-item[for="l5i3s0"] .size-2, #size-tool-up:checked ~ #l5i3s2:checked ~ .world-grid .world-item[for="l5i3s0"] .size-3, #size-tool-up:checked ~ #l5i3s3:checked ~ .world-grid .world-item[for="l5i3s0"] .size-4, #size-tool-up:checked ~ #l5i3s4:checked ~ .world-grid .world-item[for="l5i3s0"] .size-5, #size-tool-up:checked ~ #l5i4s0:checked ~ .world-grid .world-item[for="l5i4s0"] .size-1, #size-tool-up:checked ~ #l5i4s1:checked ~ .world-grid .world-item[for="l5i4s0"] .size-2, #size-tool-up:checked ~ #l5i4s2:checked ~ .world-grid .world-item[for="l5i4s0"] .size-3, #size-tool-up:checked ~ #l5i4s3:checked ~ .world-grid .world-item[for="l5i4s0"] .size-4, #size-tool-up:checked ~ #l5i4s4:checked ~ .world-grid .world-item[for="l5i4s0"] .size-5, #size-tool-up:checked ~ #l5i5s0:checked ~ .world-grid .world-item[for="l5i5s0"] .size-1, #size-tool-up:checked ~ #l5i5s1:checked ~ .world-grid .world-item[for="l5i5s0"] .size-2, #size-tool-up:checked ~ #l5i5s2:checked ~ .world-grid .world-item[for="l5i5s0"] .size-3, #size-tool-up:checked ~ #l5i5s3:checked ~ .world-grid .world-item[for="l5i5s0"] .size-4, #size-tool-up:checked ~ #l5i5s4:checked ~ .world-grid .world-item[for="l5i5s0"] .size-5 {
+    z-index: 2;
+    transform: translateZ(0.1rem);
+    width: 3.1rem;
+    height: 3.1rem;
+    left: -0.05rem;
+    top: -0.05rem;
+    pointer-events: inherit;
+}
+
+.clickable-label-down, #size-tool-down:checked ~ #l1i1s0:checked ~ .world-grid .world-item[for="l1i1s0"] .size--1, #size-tool-down:checked ~ #l1i1s1:checked ~ .world-grid .world-item[for="l1i1s0"] .size-0, #size-tool-down:checked ~ #l1i1s2:checked ~ .world-grid .world-item[for="l1i1s0"] .size-1, #size-tool-down:checked ~ #l1i1s3:checked ~ .world-grid .world-item[for="l1i1s0"] .size-2, #size-tool-down:checked ~ #l1i1s4:checked ~ .world-grid .world-item[for="l1i1s0"] .size-3, #size-tool-down:checked ~ #l1i2s0:checked ~ .world-grid .world-item[for="l1i2s0"] .size--1, #size-tool-down:checked ~ #l1i2s1:checked ~ .world-grid .world-item[for="l1i2s0"] .size-0, #size-tool-down:checked ~ #l1i2s2:checked ~ .world-grid .world-item[for="l1i2s0"] .size-1, #size-tool-down:checked ~ #l1i2s3:checked ~ .world-grid .world-item[for="l1i2s0"] .size-2, #size-tool-down:checked ~ #l1i2s4:checked ~ .world-grid .world-item[for="l1i2s0"] .size-3, #size-tool-down:checked ~ #l1i3s0:checked ~ .world-grid .world-item[for="l1i3s0"] .size--1, #size-tool-down:checked ~ #l1i3s1:checked ~ .world-grid .world-item[for="l1i3s0"] .size-0, #size-tool-down:checked ~ #l1i3s2:checked ~ .world-grid .world-item[for="l1i3s0"] .size-1, #size-tool-down:checked ~ #l1i3s3:checked ~ .world-grid .world-item[for="l1i3s0"] .size-2, #size-tool-down:checked ~ #l1i3s4:checked ~ .world-grid .world-item[for="l1i3s0"] .size-3, #size-tool-down:checked ~ #l1i4s0:checked ~ .world-grid .world-item[for="l1i4s0"] .size--1, #size-tool-down:checked ~ #l1i4s1:checked ~ .world-grid .world-item[for="l1i4s0"] .size-0, #size-tool-down:checked ~ #l1i4s2:checked ~ .world-grid .world-item[for="l1i4s0"] .size-1, #size-tool-down:checked ~ #l1i4s3:checked ~ .world-grid .world-item[for="l1i4s0"] .size-2, #size-tool-down:checked ~ #l1i4s4:checked ~ .world-grid .world-item[for="l1i4s0"] .size-3, #size-tool-down:checked ~ #l1i5s0:checked ~ .world-grid .world-item[for="l1i5s0"] .size--1, #size-tool-down:checked ~ #l1i5s1:checked ~ .world-grid .world-item[for="l1i5s0"] .size-0, #size-tool-down:checked ~ #l1i5s2:checked ~ .world-grid .world-item[for="l1i5s0"] .size-1, #size-tool-down:checked ~ #l1i5s3:checked ~ .world-grid .world-item[for="l1i5s0"] .size-2, #size-tool-down:checked ~ #l1i5s4:checked ~ .world-grid .world-item[for="l1i5s0"] .size-3, #size-tool-down:checked ~ #l2i1s0:checked ~ .world-grid .world-item[for="l2i1s0"] .size--1, #size-tool-down:checked ~ #l2i1s1:checked ~ .world-grid .world-item[for="l2i1s0"] .size-0, #size-tool-down:checked ~ #l2i1s2:checked ~ .world-grid .world-item[for="l2i1s0"] .size-1, #size-tool-down:checked ~ #l2i1s3:checked ~ .world-grid .world-item[for="l2i1s0"] .size-2, #size-tool-down:checked ~ #l2i1s4:checked ~ .world-grid .world-item[for="l2i1s0"] .size-3, #size-tool-down:checked ~ #l2i2s0:checked ~ .world-grid .world-item[for="l2i2s0"] .size--1, #size-tool-down:checked ~ #l2i2s1:checked ~ .world-grid .world-item[for="l2i2s0"] .size-0, #size-tool-down:checked ~ #l2i2s2:checked ~ .world-grid .world-item[for="l2i2s0"] .size-1, #size-tool-down:checked ~ #l2i2s3:checked ~ .world-grid .world-item[for="l2i2s0"] .size-2, #size-tool-down:checked ~ #l2i2s4:checked ~ .world-grid .world-item[for="l2i2s0"] .size-3, #size-tool-down:checked ~ #l2i3s0:checked ~ .world-grid .world-item[for="l2i3s0"] .size--1, #size-tool-down:checked ~ #l2i3s1:checked ~ .world-grid .world-item[for="l2i3s0"] .size-0, #size-tool-down:checked ~ #l2i3s2:checked ~ .world-grid .world-item[for="l2i3s0"] .size-1, #size-tool-down:checked ~ #l2i3s3:checked ~ .world-grid .world-item[for="l2i3s0"] .size-2, #size-tool-down:checked ~ #l2i3s4:checked ~ .world-grid .world-item[for="l2i3s0"] .size-3, #size-tool-down:checked ~ #l2i4s0:checked ~ .world-grid .world-item[for="l2i4s0"] .size--1, #size-tool-down:checked ~ #l2i4s1:checked ~ .world-grid .world-item[for="l2i4s0"] .size-0, #size-tool-down:checked ~ #l2i4s2:checked ~ .world-grid .world-item[for="l2i4s0"] .size-1, #size-tool-down:checked ~ #l2i4s3:checked ~ .world-grid .world-item[for="l2i4s0"] .size-2, #size-tool-down:checked ~ #l2i4s4:checked ~ .world-grid .world-item[for="l2i4s0"] .size-3, #size-tool-down:checked ~ #l2i5s0:checked ~ .world-grid .world-item[for="l2i5s0"] .size--1, #size-tool-down:checked ~ #l2i5s1:checked ~ .world-grid .world-item[for="l2i5s0"] .size-0, #size-tool-down:checked ~ #l2i5s2:checked ~ .world-grid .world-item[for="l2i5s0"] .size-1, #size-tool-down:checked ~ #l2i5s3:checked ~ .world-grid .world-item[for="l2i5s0"] .size-2, #size-tool-down:checked ~ #l2i5s4:checked ~ .world-grid .world-item[for="l2i5s0"] .size-3, #size-tool-down:checked ~ #l3i1s0:checked ~ .world-grid .world-item[for="l3i1s0"] .size--1, #size-tool-down:checked ~ #l3i1s1:checked ~ .world-grid .world-item[for="l3i1s0"] .size-0, #size-tool-down:checked ~ #l3i1s2:checked ~ .world-grid .world-item[for="l3i1s0"] .size-1, #size-tool-down:checked ~ #l3i1s3:checked ~ .world-grid .world-item[for="l3i1s0"] .size-2, #size-tool-down:checked ~ #l3i1s4:checked ~ .world-grid .world-item[for="l3i1s0"] .size-3, #size-tool-down:checked ~ #l3i2s0:checked ~ .world-grid .world-item[for="l3i2s0"] .size--1, #size-tool-down:checked ~ #l3i2s1:checked ~ .world-grid .world-item[for="l3i2s0"] .size-0, #size-tool-down:checked ~ #l3i2s2:checked ~ .world-grid .world-item[for="l3i2s0"] .size-1, #size-tool-down:checked ~ #l3i2s3:checked ~ .world-grid .world-item[for="l3i2s0"] .size-2, #size-tool-down:checked ~ #l3i2s4:checked ~ .world-grid .world-item[for="l3i2s0"] .size-3, #size-tool-down:checked ~ #l3i3s0:checked ~ .world-grid .world-item[for="l3i3s0"] .size--1, #size-tool-down:checked ~ #l3i3s1:checked ~ .world-grid .world-item[for="l3i3s0"] .size-0, #size-tool-down:checked ~ #l3i3s2:checked ~ .world-grid .world-item[for="l3i3s0"] .size-1, #size-tool-down:checked ~ #l3i3s3:checked ~ .world-grid .world-item[for="l3i3s0"] .size-2, #size-tool-down:checked ~ #l3i3s4:checked ~ .world-grid .world-item[for="l3i3s0"] .size-3, #size-tool-down:checked ~ #l3i4s0:checked ~ .world-grid .world-item[for="l3i4s0"] .size--1, #size-tool-down:checked ~ #l3i4s1:checked ~ .world-grid .world-item[for="l3i4s0"] .size-0, #size-tool-down:checked ~ #l3i4s2:checked ~ .world-grid .world-item[for="l3i4s0"] .size-1, #size-tool-down:checked ~ #l3i4s3:checked ~ .world-grid .world-item[for="l3i4s0"] .size-2, #size-tool-down:checked ~ #l3i4s4:checked ~ .world-grid .world-item[for="l3i4s0"] .size-3, #size-tool-down:checked ~ #l3i5s0:checked ~ .world-grid .world-item[for="l3i5s0"] .size--1, #size-tool-down:checked ~ #l3i5s1:checked ~ .world-grid .world-item[for="l3i5s0"] .size-0, #size-tool-down:checked ~ #l3i5s2:checked ~ .world-grid .world-item[for="l3i5s0"] .size-1, #size-tool-down:checked ~ #l3i5s3:checked ~ .world-grid .world-item[for="l3i5s0"] .size-2, #size-tool-down:checked ~ #l3i5s4:checked ~ .world-grid .world-item[for="l3i5s0"] .size-3, #size-tool-down:checked ~ #l4i1s0:checked ~ .world-grid .world-item[for="l4i1s0"] .size--1, #size-tool-down:checked ~ #l4i1s1:checked ~ .world-grid .world-item[for="l4i1s0"] .size-0, #size-tool-down:checked ~ #l4i1s2:checked ~ .world-grid .world-item[for="l4i1s0"] .size-1, #size-tool-down:checked ~ #l4i1s3:checked ~ .world-grid .world-item[for="l4i1s0"] .size-2, #size-tool-down:checked ~ #l4i1s4:checked ~ .world-grid .world-item[for="l4i1s0"] .size-3, #size-tool-down:checked ~ #l4i2s0:checked ~ .world-grid .world-item[for="l4i2s0"] .size--1, #size-tool-down:checked ~ #l4i2s1:checked ~ .world-grid .world-item[for="l4i2s0"] .size-0, #size-tool-down:checked ~ #l4i2s2:checked ~ .world-grid .world-item[for="l4i2s0"] .size-1, #size-tool-down:checked ~ #l4i2s3:checked ~ .world-grid .world-item[for="l4i2s0"] .size-2, #size-tool-down:checked ~ #l4i2s4:checked ~ .world-grid .world-item[for="l4i2s0"] .size-3, #size-tool-down:checked ~ #l4i3s0:checked ~ .world-grid .world-item[for="l4i3s0"] .size--1, #size-tool-down:checked ~ #l4i3s1:checked ~ .world-grid .world-item[for="l4i3s0"] .size-0, #size-tool-down:checked ~ #l4i3s2:checked ~ .world-grid .world-item[for="l4i3s0"] .size-1, #size-tool-down:checked ~ #l4i3s3:checked ~ .world-grid .world-item[for="l4i3s0"] .size-2, #size-tool-down:checked ~ #l4i3s4:checked ~ .world-grid .world-item[for="l4i3s0"] .size-3, #size-tool-down:checked ~ #l4i4s0:checked ~ .world-grid .world-item[for="l4i4s0"] .size--1, #size-tool-down:checked ~ #l4i4s1:checked ~ .world-grid .world-item[for="l4i4s0"] .size-0, #size-tool-down:checked ~ #l4i4s2:checked ~ .world-grid .world-item[for="l4i4s0"] .size-1, #size-tool-down:checked ~ #l4i4s3:checked ~ .world-grid .world-item[for="l4i4s0"] .size-2, #size-tool-down:checked ~ #l4i4s4:checked ~ .world-grid .world-item[for="l4i4s0"] .size-3, #size-tool-down:checked ~ #l4i5s0:checked ~ .world-grid .world-item[for="l4i5s0"] .size--1, #size-tool-down:checked ~ #l4i5s1:checked ~ .world-grid .world-item[for="l4i5s0"] .size-0, #size-tool-down:checked ~ #l4i5s2:checked ~ .world-grid .world-item[for="l4i5s0"] .size-1, #size-tool-down:checked ~ #l4i5s3:checked ~ .world-grid .world-item[for="l4i5s0"] .size-2, #size-tool-down:checked ~ #l4i5s4:checked ~ .world-grid .world-item[for="l4i5s0"] .size-3, #size-tool-down:checked ~ #l5i1s0:checked ~ .world-grid .world-item[for="l5i1s0"] .size--1, #size-tool-down:checked ~ #l5i1s1:checked ~ .world-grid .world-item[for="l5i1s0"] .size-0, #size-tool-down:checked ~ #l5i1s2:checked ~ .world-grid .world-item[for="l5i1s0"] .size-1, #size-tool-down:checked ~ #l5i1s3:checked ~ .world-grid .world-item[for="l5i1s0"] .size-2, #size-tool-down:checked ~ #l5i1s4:checked ~ .world-grid .world-item[for="l5i1s0"] .size-3, #size-tool-down:checked ~ #l5i2s0:checked ~ .world-grid .world-item[for="l5i2s0"] .size--1, #size-tool-down:checked ~ #l5i2s1:checked ~ .world-grid .world-item[for="l5i2s0"] .size-0, #size-tool-down:checked ~ #l5i2s2:checked ~ .world-grid .world-item[for="l5i2s0"] .size-1, #size-tool-down:checked ~ #l5i2s3:checked ~ .world-grid .world-item[for="l5i2s0"] .size-2, #size-tool-down:checked ~ #l5i2s4:checked ~ .world-grid .world-item[for="l5i2s0"] .size-3, #size-tool-down:checked ~ #l5i3s0:checked ~ .world-grid .world-item[for="l5i3s0"] .size--1, #size-tool-down:checked ~ #l5i3s1:checked ~ .world-grid .world-item[for="l5i3s0"] .size-0, #size-tool-down:checked ~ #l5i3s2:checked ~ .world-grid .world-item[for="l5i3s0"] .size-1, #size-tool-down:checked ~ #l5i3s3:checked ~ .world-grid .world-item[for="l5i3s0"] .size-2, #size-tool-down:checked ~ #l5i3s4:checked ~ .world-grid .world-item[for="l5i3s0"] .size-3, #size-tool-down:checked ~ #l5i4s0:checked ~ .world-grid .world-item[for="l5i4s0"] .size--1, #size-tool-down:checked ~ #l5i4s1:checked ~ .world-grid .world-item[for="l5i4s0"] .size-0, #size-tool-down:checked ~ #l5i4s2:checked ~ .world-grid .world-item[for="l5i4s0"] .size-1, #size-tool-down:checked ~ #l5i4s3:checked ~ .world-grid .world-item[for="l5i4s0"] .size-2, #size-tool-down:checked ~ #l5i4s4:checked ~ .world-grid .world-item[for="l5i4s0"] .size-3, #size-tool-down:checked ~ #l5i5s0:checked ~ .world-grid .world-item[for="l5i5s0"] .size--1, #size-tool-down:checked ~ #l5i5s1:checked ~ .world-grid .world-item[for="l5i5s0"] .size-0, #size-tool-down:checked ~ #l5i5s2:checked ~ .world-grid .world-item[for="l5i5s0"] .size-1, #size-tool-down:checked ~ #l5i5s3:checked ~ .world-grid .world-item[for="l5i5s0"] .size-2, #size-tool-down:checked ~ #l5i5s4:checked ~ .world-grid .world-item[for="l5i5s0"] .size-3,
+.clickable-label-color,
+#c1-tool:checked ~ .world-grid .world-line .world-item .color-1,
+#c2-tool:checked ~ .world-grid .world-line .world-item .color-2,
+#c3-tool:checked ~ .world-grid .world-line .world-item .color-3,
+#c4-tool:checked ~ .world-grid .world-line .world-item .color-4,
+#c5-tool:checked ~ .world-grid .world-line .world-item .color-5,
+#c6-tool:checked ~ .world-grid .world-line .world-item .color-6,
+#c7-tool:checked ~ .world-grid .world-line .world-item .color-7,
+#c8-tool:checked ~ .world-grid .world-line .world-item .color-8 {
+    z-index: 3;
+    transform: translateZ(0.2rem);
+    width: 3.2rem;
+    height: 3.2rem;
+    left: -0.1rem;
+    top: -0.1rem;
+    pointer-events: inherit;
+}
+
+.turn-grid.turn-left:before, .turn-grid.turn-right:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    margin-top: -1.5rem;
+    margin-left: -1.5rem;
+    height: 3rem;
+    width: 3rem;
+    border-left: 1rem solid #fff;
+    border-top: 1rem solid #fff;
+    left: 50%;
+    transform: rotate(-45deg);
+}
+.turn-grid.turn-left:hover:before, .turn-grid.turn-right:hover:after {
+    border-color: #000;
+}
+
+.turn-grid {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 15rem;
+}
+.turn-grid.turn-left {
+    left: 0;
+}
+.turn-grid.turn-left:hover ~ .world-grid {
+    transform: translateY(-50%) translateX(-50%) rotateX(65deg) rotateZ(0deg);
+}
+.turn-grid.turn-right {
+    right: 0;
+}
+.turn-grid.turn-right:after {
+    transform: rotate(135deg);
+}
+.turn-grid.turn-right:hover ~ .world-grid {
+    transform: translateY(-50%) translateX(-50%) rotateX(65deg) rotateZ(90deg);
+}
+
+.toolbar {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    height: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem;
+    background: #272525;
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    transform-style: flat;
+}
+.toolbar .tool {
+    display: inline-block;
+    transition: 200ms ease all;
+    height: 2rem;
+    width: 2rem;
+    margin: 0 0.25rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.toolbar .tool:first-child + .tool {
+    margin-right: 3rem;
+}
+.toolbar .tool.color-tool {
+    border-radius: 0;
+    margin: 0 0.5rem;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 200ms ease all;
+    cursor: pointer;
+    z-index: 1;
+    transform: translateY(-50%) translateX(-50%) rotateX(65deg) rotateZ(45deg);
+}
+.toolbar .tool.color-tool:before {
+    content: '';
+    position: absolute;
+    background: #6D4C41;
+    left: 100%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transform-origin: 0%;
+    transform: rotateY(90deg);
+    transition: 200ms ease all;
+}
+.toolbar .tool.color-tool:after {
+    content: '';
+    position: absolute;
+    background: #795548;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    transform: rotateX(90deg);
+    transform-origin: 0 100%;
+    transition: 200ms ease all;
+}
+.toolbar .tool[for*="size-tool"] {
+    position: relative;
+}
+.toolbar .tool[for*="size-tool"]:before {
+    content: '';
+    position: absolute;
+    left: 0.75rem;
+    bottom: 0.25rem;
+    width: 0.5rem;
+    height: 1rem;
+    background: #fff;
+}
+.toolbar .tool[for*="size-tool"]:after {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 0.25rem;
+    border-bottom: 0.75rem solid #fff;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+}
+.toolbar .tool[for*="size-tool"][for*="size-tool-down"]:before {
+    top: 0.25rem;
+    bottom: inherit;
+}
+.toolbar .tool[for*="size-tool"][for*="size-tool-down"]:after {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: inherit;
+    bottom: 0.25rem;
+    border-bottom: none;
+    border-top: 0.75rem solid #fff;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+}
+.toolbar .tool.c1-tool {
+    background: #8D6E63;
+    opacity: 1;
+}
+.toolbar .tool.c1-tool:before {
+    background: #6D4C41;
+}
+.toolbar .tool.c1-tool:after {
+    background: #795548;
+}
+.toolbar .tool.c2-tool {
+    background: #66BB6A;
+    opacity: 1;
+}
+.toolbar .tool.c2-tool:before {
+    background: #43A047;
+}
+.toolbar .tool.c2-tool:after {
+    background: #4CAF50;
+}
+.toolbar .tool.c3-tool {
+    background: #66BB6A;
+    opacity: 1;
+}
+.toolbar .tool.c3-tool:before {
+    background: #6D4C41;
+}
+.toolbar .tool.c3-tool:after {
+    background: #795548;
+}
+.toolbar .tool.c4-tool {
+    background: #78909C;
+    opacity: 1;
+}
+.toolbar .tool.c4-tool:before {
+    background: #546E7A;
+}
+.toolbar .tool.c4-tool:after {
+    background: #607D8B;
+}
+.toolbar .tool.c5-tool {
+    background: #43A047;
+    opacity: 1;
+}
+.toolbar .tool.c5-tool:before {
+    background: #546E7A;
+}
+.toolbar .tool.c5-tool:after {
+    background: #607D8B;
+}
+.toolbar .tool.c6-tool {
+    background: #FAFAFA;
+    opacity: 1;
+}
+.toolbar .tool.c6-tool:before {
+    background: #EEEEEE;
+}
+.toolbar .tool.c6-tool:after {
+    background: #F5F5F5;
+}
+.toolbar .tool.c7-tool {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+.toolbar .tool.c7-tool:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+.toolbar .tool.c7-tool:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+
+.world-grid {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%) rotateX(65deg) rotateZ(45deg);
+    font-size: 0;
+    transform-style: preserve-3d;
+    transition: 1000ms ease all;
+    white-space: nowrap;
+}
+.world-grid:after {
+    content: '';
+    position: absolute;
+    background: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateZ(-3rem);
+    box-shadow: 0 0 4rem 3rem rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.25);
+}
+.world-grid .world-line {
+    transform-style: preserve-3d;
+}
+.world-grid .world-item {
+    width: 3rem;
+    height: 3rem;
+    background: #8D6E63;
+    display: inline-block;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 200ms ease all;
+    cursor: pointer;
+    z-index: 1;
+}
+.world-grid .world-item:before {
+    content: '';
+    position: absolute;
+    background: #6D4C41;
+    left: 100%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transform-origin: 0%;
+    transform: rotateY(90deg);
+    transition: 200ms ease all;
+}
+.world-grid .world-item:after {
+    content: '';
+    position: absolute;
+    background: #795548;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    transform: rotateX(90deg);
+    transform-origin: 0 100%;
+    transition: 200ms ease all;
+}
+.world-grid .world-item:hover, .world-grid .world-item:hover:after, .world-grid .world-item:hover:before {
+    box-shadow: inset 0 0 0 3rem rgba(0, 0, 0, 0.25);
+}
+
+.selected-tool, #size-tool-up:checked ~ .toolbar .tool[for=size-tool-up], #size-tool-down:checked ~ .toolbar .tool[for=size-tool-down], #c1-tool:checked ~ .toolbar .c1-tool, #c2-tool:checked ~ .toolbar .c2-tool, #c3-tool:checked ~ .toolbar .c3-tool, #c4-tool:checked ~ .toolbar .c4-tool, #c5-tool:checked ~ .toolbar .c5-tool, #c6-tool:checked ~ .toolbar .c6-tool, #c7-tool:checked ~ .toolbar .c7-tool, #c8-tool:checked ~ .toolbar .c8-tool {
+    box-shadow: 0 0 0 1px #fff;
+}
+.selected-tool.color-tool:before, #size-tool-up:checked ~ .toolbar .color-tool.tool[for=size-tool-up]:before, #size-tool-down:checked ~ .toolbar .color-tool.tool[for=size-tool-down]:before, #c1-tool:checked ~ .toolbar .color-tool.c1-tool:before, #c2-tool:checked ~ .toolbar .color-tool.c2-tool:before, #c3-tool:checked ~ .toolbar .color-tool.c3-tool:before, #c4-tool:checked ~ .toolbar .color-tool.c4-tool:before, #c5-tool:checked ~ .toolbar .color-tool.c5-tool:before, #c6-tool:checked ~ .toolbar .color-tool.c6-tool:before, #c7-tool:checked ~ .toolbar .color-tool.c7-tool:before, #c8-tool:checked ~ .toolbar .color-tool.c8-tool:before {
+    box-shadow: 0 0 0 1px #fff;
+}
+.selected-tool.color-tool:after, #size-tool-up:checked ~ .toolbar .color-tool.tool[for=size-tool-up]:after, #size-tool-down:checked ~ .toolbar .color-tool.tool[for=size-tool-down]:after, #c1-tool:checked ~ .toolbar .color-tool.c1-tool:after, #c2-tool:checked ~ .toolbar .color-tool.c2-tool:after, #c3-tool:checked ~ .toolbar .color-tool.c3-tool:after, #c4-tool:checked ~ .toolbar .color-tool.c4-tool:after, #c5-tool:checked ~ .toolbar .color-tool.c5-tool:after, #c6-tool:checked ~ .toolbar .color-tool.c6-tool:after, #c7-tool:checked ~ .toolbar .color-tool.c7-tool:after, #c8-tool:checked ~ .toolbar .color-tool.c8-tool:after {
+    box-shadow: 0 0 0 1px #fff;
+}
+
+#c1-tool:checked ~ .world-grid .world-line .world-item .color-1:before {
+    width: 500%;
+}
+#c1-tool:checked ~ .world-grid .world-line .world-item .color-1:after {
+    height: 500%;
+}
+
+#c1-tool:checked ~ .toolbar .c1-tool {
+    box-shadow: -1px -1px 0 1px #fff;
+}
+
+#c2-tool:checked ~ .world-grid .world-line .world-item .color-2:before {
+    width: 500%;
+}
+#c2-tool:checked ~ .world-grid .world-line .world-item .color-2:after {
+    height: 500%;
+}
+
+#c2-tool:checked ~ .toolbar .c2-tool {
+    box-shadow: -1px -1px 0 1px #fff;
+}
+
+#c3-tool:checked ~ .world-grid .world-line .world-item .color-3:before {
+    width: 500%;
+}
+#c3-tool:checked ~ .world-grid .world-line .world-item .color-3:after {
+    height: 500%;
+}
+
+#c3-tool:checked ~ .toolbar .c3-tool {
+    box-shadow: -1px -1px 0 1px #fff;
+}
+
+#c4-tool:checked ~ .world-grid .world-line .world-item .color-4:before {
+    width: 500%;
+}
+#c4-tool:checked ~ .world-grid .world-line .world-item .color-4:after {
+    height: 500%;
+}
+
+#c4-tool:checked ~ .toolbar .c4-tool {
+    box-shadow: -1px -1px 0 1px #fff;
+}
+
+#c5-tool:checked ~ .world-grid .world-line .world-item .color-5:before {
+    width: 500%;
+}
+#c5-tool:checked ~ .world-grid .world-line .world-item .color-5:after {
+    height: 500%;
+}
+
+#c5-tool:checked ~ .toolbar .c5-tool {
+    box-shadow: -1px -1px 0 1px #fff;
+}
+
+#c6-tool:checked ~ .world-grid .world-line .world-item .color-6:before {
+    width: 500%;
+}
+#c6-tool:checked ~ .world-grid .world-line .world-item .color-6:after {
+    height: 500%;
+}
+
+#c6-tool:checked ~ .toolbar .c6-tool {
+    box-shadow: -1px -1px 0 1px #fff;
+}
+
+#c7-tool:checked ~ .world-grid .world-line .world-item .color-7:before {
+    width: 500%;
+}
+#c7-tool:checked ~ .world-grid .world-line .world-item .color-7:after {
+    height: 500%;
+}
+
+#c7-tool:checked ~ .toolbar .c7-tool {
+    box-shadow: -1px -1px 0 1px #fff;
+}
+
+#c8-tool:checked ~ .world-grid .world-line .world-item .color-8:before {
+    width: 500%;
+}
+#c8-tool:checked ~ .world-grid .world-line .world-item .color-8:after {
+    height: 500%;
+}
+
+#c8-tool:checked ~ .toolbar .c8-tool {
+    box-shadow: -1px -1px 0 1px #fff;
+}
+
+#l1i1c1:checked ~ .world-grid .world-item[for="l1i1s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l1i1c1:checked ~ .world-grid .world-item[for="l1i1s0"]:after {
+    background: #795548;
+}
+#l1i1c1:checked ~ .world-grid .world-item[for="l1i1s0"]:before {
+    background: #6D4C41;
+}
+
+#l1i1c2:checked ~ .world-grid .world-item[for="l1i1s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l1i1c2:checked ~ .world-grid .world-item[for="l1i1s0"]:after {
+    background: #4CAF50;
+}
+#l1i1c2:checked ~ .world-grid .world-item[for="l1i1s0"]:before {
+    background: #43A047;
+}
+
+#l1i1c3:checked ~ .world-grid .world-item[for="l1i1s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l1i1c3:checked ~ .world-grid .world-item[for="l1i1s0"]:after {
+    background: #795548;
+}
+#l1i1c3:checked ~ .world-grid .world-item[for="l1i1s0"]:before {
+    background: #6D4C41;
+}
+
+#l1i1c4:checked ~ .world-grid .world-item[for="l1i1s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l1i1c4:checked ~ .world-grid .world-item[for="l1i1s0"]:after {
+    background: #607D8B;
+}
+#l1i1c4:checked ~ .world-grid .world-item[for="l1i1s0"]:before {
+    background: #546E7A;
+}
+
+#l1i1c5:checked ~ .world-grid .world-item[for="l1i1s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l1i1c5:checked ~ .world-grid .world-item[for="l1i1s0"]:after {
+    background: #607D8B;
+}
+#l1i1c5:checked ~ .world-grid .world-item[for="l1i1s0"]:before {
+    background: #546E7A;
+}
+
+#l1i1c6:checked ~ .world-grid .world-item[for="l1i1s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l1i1c6:checked ~ .world-grid .world-item[for="l1i1s0"]:after {
+    background: #F5F5F5;
+}
+#l1i1c6:checked ~ .world-grid .world-item[for="l1i1s0"]:before {
+    background: #EEEEEE;
+}
+
+#l1i1c7:checked ~ .world-grid .world-item[for="l1i1s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l1i1c7:checked ~ .world-grid .world-item[for="l1i1s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l1i1c7:checked ~ .world-grid .world-item[for="l1i1s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l1i1s0:checked ~ .world-grid .world-item[for="l1i1s0"] {
+    transform: translateZ(0rem);
+}
+#l1i1s0:checked ~ .world-grid .world-item[for="l1i1s0"]:before {
+    width: 100%;
+}
+#l1i1s0:checked ~ .world-grid .world-item[for="l1i1s0"]:after {
+    height: 100%;
+}
+
+#l1i1s1:checked ~ .world-grid .world-item[for="l1i1s0"] {
+    transform: translateZ(3rem);
+}
+#l1i1s1:checked ~ .world-grid .world-item[for="l1i1s0"]:before {
+    width: 200%;
+}
+#l1i1s1:checked ~ .world-grid .world-item[for="l1i1s0"]:after {
+    height: 200%;
+}
+
+#l1i1s2:checked ~ .world-grid .world-item[for="l1i1s0"] {
+    transform: translateZ(6rem);
+}
+#l1i1s2:checked ~ .world-grid .world-item[for="l1i1s0"]:before {
+    width: 300%;
+}
+#l1i1s2:checked ~ .world-grid .world-item[for="l1i1s0"]:after {
+    height: 300%;
+}
+
+#l1i1s3:checked ~ .world-grid .world-item[for="l1i1s0"] {
+    transform: translateZ(9rem);
+}
+#l1i1s3:checked ~ .world-grid .world-item[for="l1i1s0"]:before {
+    width: 400%;
+}
+#l1i1s3:checked ~ .world-grid .world-item[for="l1i1s0"]:after {
+    height: 400%;
+}
+
+#l1i1s4:checked ~ .world-grid .world-item[for="l1i1s0"] {
+    transform: translateZ(12rem);
+}
+#l1i1s4:checked ~ .world-grid .world-item[for="l1i1s0"]:before {
+    width: 500%;
+}
+#l1i1s4:checked ~ .world-grid .world-item[for="l1i1s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l1i1s0:checked ~ .world-grid .world-item[for="l1i1s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l1i1s0:checked ~ .world-grid .world-item[for="l1i1s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l1i1s1:checked ~ .world-grid .world-item[for="l1i1s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l1i1s1:checked ~ .world-grid .world-item[for="l1i1s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l1i1s2:checked ~ .world-grid .world-item[for="l1i1s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l1i1s2:checked ~ .world-grid .world-item[for="l1i1s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l1i1s3:checked ~ .world-grid .world-item[for="l1i1s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l1i1s3:checked ~ .world-grid .world-item[for="l1i1s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l1i1s4:checked ~ .world-grid .world-item[for="l1i1s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l1i1s4:checked ~ .world-grid .world-item[for="l1i1s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l1i1s0:checked ~ .world-grid .world-item[for="l1i1s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l1i1s0:checked ~ .world-grid .world-item[for="l1i1s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l1i1s1:checked ~ .world-grid .world-item[for="l1i1s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l1i1s1:checked ~ .world-grid .world-item[for="l1i1s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l1i1s2:checked ~ .world-grid .world-item[for="l1i1s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l1i1s2:checked ~ .world-grid .world-item[for="l1i1s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l1i1s3:checked ~ .world-grid .world-item[for="l1i1s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l1i1s3:checked ~ .world-grid .world-item[for="l1i1s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l1i1s4:checked ~ .world-grid .world-item[for="l1i1s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l1i1s4:checked ~ .world-grid .world-item[for="l1i1s0"] .size-3:after {
+    height: 500%;
+}
+
+#l1i2c1:checked ~ .world-grid .world-item[for="l1i2s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l1i2c1:checked ~ .world-grid .world-item[for="l1i2s0"]:after {
+    background: #795548;
+}
+#l1i2c1:checked ~ .world-grid .world-item[for="l1i2s0"]:before {
+    background: #6D4C41;
+}
+
+#l1i2c2:checked ~ .world-grid .world-item[for="l1i2s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l1i2c2:checked ~ .world-grid .world-item[for="l1i2s0"]:after {
+    background: #4CAF50;
+}
+#l1i2c2:checked ~ .world-grid .world-item[for="l1i2s0"]:before {
+    background: #43A047;
+}
+
+#l1i2c3:checked ~ .world-grid .world-item[for="l1i2s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l1i2c3:checked ~ .world-grid .world-item[for="l1i2s0"]:after {
+    background: #795548;
+}
+#l1i2c3:checked ~ .world-grid .world-item[for="l1i2s0"]:before {
+    background: #6D4C41;
+}
+
+#l1i2c4:checked ~ .world-grid .world-item[for="l1i2s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l1i2c4:checked ~ .world-grid .world-item[for="l1i2s0"]:after {
+    background: #607D8B;
+}
+#l1i2c4:checked ~ .world-grid .world-item[for="l1i2s0"]:before {
+    background: #546E7A;
+}
+
+#l1i2c5:checked ~ .world-grid .world-item[for="l1i2s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l1i2c5:checked ~ .world-grid .world-item[for="l1i2s0"]:after {
+    background: #607D8B;
+}
+#l1i2c5:checked ~ .world-grid .world-item[for="l1i2s0"]:before {
+    background: #546E7A;
+}
+
+#l1i2c6:checked ~ .world-grid .world-item[for="l1i2s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l1i2c6:checked ~ .world-grid .world-item[for="l1i2s0"]:after {
+    background: #F5F5F5;
+}
+#l1i2c6:checked ~ .world-grid .world-item[for="l1i2s0"]:before {
+    background: #EEEEEE;
+}
+
+#l1i2c7:checked ~ .world-grid .world-item[for="l1i2s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l1i2c7:checked ~ .world-grid .world-item[for="l1i2s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l1i2c7:checked ~ .world-grid .world-item[for="l1i2s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l1i2s0:checked ~ .world-grid .world-item[for="l1i2s0"] {
+    transform: translateZ(0rem);
+}
+#l1i2s0:checked ~ .world-grid .world-item[for="l1i2s0"]:before {
+    width: 100%;
+}
+#l1i2s0:checked ~ .world-grid .world-item[for="l1i2s0"]:after {
+    height: 100%;
+}
+
+#l1i2s1:checked ~ .world-grid .world-item[for="l1i2s0"] {
+    transform: translateZ(3rem);
+}
+#l1i2s1:checked ~ .world-grid .world-item[for="l1i2s0"]:before {
+    width: 200%;
+}
+#l1i2s1:checked ~ .world-grid .world-item[for="l1i2s0"]:after {
+    height: 200%;
+}
+
+#l1i2s2:checked ~ .world-grid .world-item[for="l1i2s0"] {
+    transform: translateZ(6rem);
+}
+#l1i2s2:checked ~ .world-grid .world-item[for="l1i2s0"]:before {
+    width: 300%;
+}
+#l1i2s2:checked ~ .world-grid .world-item[for="l1i2s0"]:after {
+    height: 300%;
+}
+
+#l1i2s3:checked ~ .world-grid .world-item[for="l1i2s0"] {
+    transform: translateZ(9rem);
+}
+#l1i2s3:checked ~ .world-grid .world-item[for="l1i2s0"]:before {
+    width: 400%;
+}
+#l1i2s3:checked ~ .world-grid .world-item[for="l1i2s0"]:after {
+    height: 400%;
+}
+
+#l1i2s4:checked ~ .world-grid .world-item[for="l1i2s0"] {
+    transform: translateZ(12rem);
+}
+#l1i2s4:checked ~ .world-grid .world-item[for="l1i2s0"]:before {
+    width: 500%;
+}
+#l1i2s4:checked ~ .world-grid .world-item[for="l1i2s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l1i2s0:checked ~ .world-grid .world-item[for="l1i2s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l1i2s0:checked ~ .world-grid .world-item[for="l1i2s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l1i2s1:checked ~ .world-grid .world-item[for="l1i2s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l1i2s1:checked ~ .world-grid .world-item[for="l1i2s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l1i2s2:checked ~ .world-grid .world-item[for="l1i2s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l1i2s2:checked ~ .world-grid .world-item[for="l1i2s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l1i2s3:checked ~ .world-grid .world-item[for="l1i2s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l1i2s3:checked ~ .world-grid .world-item[for="l1i2s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l1i2s4:checked ~ .world-grid .world-item[for="l1i2s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l1i2s4:checked ~ .world-grid .world-item[for="l1i2s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l1i2s0:checked ~ .world-grid .world-item[for="l1i2s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l1i2s0:checked ~ .world-grid .world-item[for="l1i2s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l1i2s1:checked ~ .world-grid .world-item[for="l1i2s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l1i2s1:checked ~ .world-grid .world-item[for="l1i2s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l1i2s2:checked ~ .world-grid .world-item[for="l1i2s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l1i2s2:checked ~ .world-grid .world-item[for="l1i2s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l1i2s3:checked ~ .world-grid .world-item[for="l1i2s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l1i2s3:checked ~ .world-grid .world-item[for="l1i2s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l1i2s4:checked ~ .world-grid .world-item[for="l1i2s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l1i2s4:checked ~ .world-grid .world-item[for="l1i2s0"] .size-3:after {
+    height: 500%;
+}
+
+#l1i3c1:checked ~ .world-grid .world-item[for="l1i3s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l1i3c1:checked ~ .world-grid .world-item[for="l1i3s0"]:after {
+    background: #795548;
+}
+#l1i3c1:checked ~ .world-grid .world-item[for="l1i3s0"]:before {
+    background: #6D4C41;
+}
+
+#l1i3c2:checked ~ .world-grid .world-item[for="l1i3s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l1i3c2:checked ~ .world-grid .world-item[for="l1i3s0"]:after {
+    background: #4CAF50;
+}
+#l1i3c2:checked ~ .world-grid .world-item[for="l1i3s0"]:before {
+    background: #43A047;
+}
+
+#l1i3c3:checked ~ .world-grid .world-item[for="l1i3s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l1i3c3:checked ~ .world-grid .world-item[for="l1i3s0"]:after {
+    background: #795548;
+}
+#l1i3c3:checked ~ .world-grid .world-item[for="l1i3s0"]:before {
+    background: #6D4C41;
+}
+
+#l1i3c4:checked ~ .world-grid .world-item[for="l1i3s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l1i3c4:checked ~ .world-grid .world-item[for="l1i3s0"]:after {
+    background: #607D8B;
+}
+#l1i3c4:checked ~ .world-grid .world-item[for="l1i3s0"]:before {
+    background: #546E7A;
+}
+
+#l1i3c5:checked ~ .world-grid .world-item[for="l1i3s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l1i3c5:checked ~ .world-grid .world-item[for="l1i3s0"]:after {
+    background: #607D8B;
+}
+#l1i3c5:checked ~ .world-grid .world-item[for="l1i3s0"]:before {
+    background: #546E7A;
+}
+
+#l1i3c6:checked ~ .world-grid .world-item[for="l1i3s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l1i3c6:checked ~ .world-grid .world-item[for="l1i3s0"]:after {
+    background: #F5F5F5;
+}
+#l1i3c6:checked ~ .world-grid .world-item[for="l1i3s0"]:before {
+    background: #EEEEEE;
+}
+
+#l1i3c7:checked ~ .world-grid .world-item[for="l1i3s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l1i3c7:checked ~ .world-grid .world-item[for="l1i3s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l1i3c7:checked ~ .world-grid .world-item[for="l1i3s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l1i3s0:checked ~ .world-grid .world-item[for="l1i3s0"] {
+    transform: translateZ(0rem);
+}
+#l1i3s0:checked ~ .world-grid .world-item[for="l1i3s0"]:before {
+    width: 100%;
+}
+#l1i3s0:checked ~ .world-grid .world-item[for="l1i3s0"]:after {
+    height: 100%;
+}
+
+#l1i3s1:checked ~ .world-grid .world-item[for="l1i3s0"] {
+    transform: translateZ(3rem);
+}
+#l1i3s1:checked ~ .world-grid .world-item[for="l1i3s0"]:before {
+    width: 200%;
+}
+#l1i3s1:checked ~ .world-grid .world-item[for="l1i3s0"]:after {
+    height: 200%;
+}
+
+#l1i3s2:checked ~ .world-grid .world-item[for="l1i3s0"] {
+    transform: translateZ(6rem);
+}
+#l1i3s2:checked ~ .world-grid .world-item[for="l1i3s0"]:before {
+    width: 300%;
+}
+#l1i3s2:checked ~ .world-grid .world-item[for="l1i3s0"]:after {
+    height: 300%;
+}
+
+#l1i3s3:checked ~ .world-grid .world-item[for="l1i3s0"] {
+    transform: translateZ(9rem);
+}
+#l1i3s3:checked ~ .world-grid .world-item[for="l1i3s0"]:before {
+    width: 400%;
+}
+#l1i3s3:checked ~ .world-grid .world-item[for="l1i3s0"]:after {
+    height: 400%;
+}
+
+#l1i3s4:checked ~ .world-grid .world-item[for="l1i3s0"] {
+    transform: translateZ(12rem);
+}
+#l1i3s4:checked ~ .world-grid .world-item[for="l1i3s0"]:before {
+    width: 500%;
+}
+#l1i3s4:checked ~ .world-grid .world-item[for="l1i3s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l1i3s0:checked ~ .world-grid .world-item[for="l1i3s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l1i3s0:checked ~ .world-grid .world-item[for="l1i3s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l1i3s1:checked ~ .world-grid .world-item[for="l1i3s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l1i3s1:checked ~ .world-grid .world-item[for="l1i3s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l1i3s2:checked ~ .world-grid .world-item[for="l1i3s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l1i3s2:checked ~ .world-grid .world-item[for="l1i3s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l1i3s3:checked ~ .world-grid .world-item[for="l1i3s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l1i3s3:checked ~ .world-grid .world-item[for="l1i3s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l1i3s4:checked ~ .world-grid .world-item[for="l1i3s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l1i3s4:checked ~ .world-grid .world-item[for="l1i3s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l1i3s0:checked ~ .world-grid .world-item[for="l1i3s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l1i3s0:checked ~ .world-grid .world-item[for="l1i3s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l1i3s1:checked ~ .world-grid .world-item[for="l1i3s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l1i3s1:checked ~ .world-grid .world-item[for="l1i3s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l1i3s2:checked ~ .world-grid .world-item[for="l1i3s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l1i3s2:checked ~ .world-grid .world-item[for="l1i3s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l1i3s3:checked ~ .world-grid .world-item[for="l1i3s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l1i3s3:checked ~ .world-grid .world-item[for="l1i3s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l1i3s4:checked ~ .world-grid .world-item[for="l1i3s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l1i3s4:checked ~ .world-grid .world-item[for="l1i3s0"] .size-3:after {
+    height: 500%;
+}
+
+#l1i4c1:checked ~ .world-grid .world-item[for="l1i4s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l1i4c1:checked ~ .world-grid .world-item[for="l1i4s0"]:after {
+    background: #795548;
+}
+#l1i4c1:checked ~ .world-grid .world-item[for="l1i4s0"]:before {
+    background: #6D4C41;
+}
+
+#l1i4c2:checked ~ .world-grid .world-item[for="l1i4s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l1i4c2:checked ~ .world-grid .world-item[for="l1i4s0"]:after {
+    background: #4CAF50;
+}
+#l1i4c2:checked ~ .world-grid .world-item[for="l1i4s0"]:before {
+    background: #43A047;
+}
+
+#l1i4c3:checked ~ .world-grid .world-item[for="l1i4s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l1i4c3:checked ~ .world-grid .world-item[for="l1i4s0"]:after {
+    background: #795548;
+}
+#l1i4c3:checked ~ .world-grid .world-item[for="l1i4s0"]:before {
+    background: #6D4C41;
+}
+
+#l1i4c4:checked ~ .world-grid .world-item[for="l1i4s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l1i4c4:checked ~ .world-grid .world-item[for="l1i4s0"]:after {
+    background: #607D8B;
+}
+#l1i4c4:checked ~ .world-grid .world-item[for="l1i4s0"]:before {
+    background: #546E7A;
+}
+
+#l1i4c5:checked ~ .world-grid .world-item[for="l1i4s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l1i4c5:checked ~ .world-grid .world-item[for="l1i4s0"]:after {
+    background: #607D8B;
+}
+#l1i4c5:checked ~ .world-grid .world-item[for="l1i4s0"]:before {
+    background: #546E7A;
+}
+
+#l1i4c6:checked ~ .world-grid .world-item[for="l1i4s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l1i4c6:checked ~ .world-grid .world-item[for="l1i4s0"]:after {
+    background: #F5F5F5;
+}
+#l1i4c6:checked ~ .world-grid .world-item[for="l1i4s0"]:before {
+    background: #EEEEEE;
+}
+
+#l1i4c7:checked ~ .world-grid .world-item[for="l1i4s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l1i4c7:checked ~ .world-grid .world-item[for="l1i4s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l1i4c7:checked ~ .world-grid .world-item[for="l1i4s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l1i4s0:checked ~ .world-grid .world-item[for="l1i4s0"] {
+    transform: translateZ(0rem);
+}
+#l1i4s0:checked ~ .world-grid .world-item[for="l1i4s0"]:before {
+    width: 100%;
+}
+#l1i4s0:checked ~ .world-grid .world-item[for="l1i4s0"]:after {
+    height: 100%;
+}
+
+#l1i4s1:checked ~ .world-grid .world-item[for="l1i4s0"] {
+    transform: translateZ(3rem);
+}
+#l1i4s1:checked ~ .world-grid .world-item[for="l1i4s0"]:before {
+    width: 200%;
+}
+#l1i4s1:checked ~ .world-grid .world-item[for="l1i4s0"]:after {
+    height: 200%;
+}
+
+#l1i4s2:checked ~ .world-grid .world-item[for="l1i4s0"] {
+    transform: translateZ(6rem);
+}
+#l1i4s2:checked ~ .world-grid .world-item[for="l1i4s0"]:before {
+    width: 300%;
+}
+#l1i4s2:checked ~ .world-grid .world-item[for="l1i4s0"]:after {
+    height: 300%;
+}
+
+#l1i4s3:checked ~ .world-grid .world-item[for="l1i4s0"] {
+    transform: translateZ(9rem);
+}
+#l1i4s3:checked ~ .world-grid .world-item[for="l1i4s0"]:before {
+    width: 400%;
+}
+#l1i4s3:checked ~ .world-grid .world-item[for="l1i4s0"]:after {
+    height: 400%;
+}
+
+#l1i4s4:checked ~ .world-grid .world-item[for="l1i4s0"] {
+    transform: translateZ(12rem);
+}
+#l1i4s4:checked ~ .world-grid .world-item[for="l1i4s0"]:before {
+    width: 500%;
+}
+#l1i4s4:checked ~ .world-grid .world-item[for="l1i4s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l1i4s0:checked ~ .world-grid .world-item[for="l1i4s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l1i4s0:checked ~ .world-grid .world-item[for="l1i4s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l1i4s1:checked ~ .world-grid .world-item[for="l1i4s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l1i4s1:checked ~ .world-grid .world-item[for="l1i4s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l1i4s2:checked ~ .world-grid .world-item[for="l1i4s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l1i4s2:checked ~ .world-grid .world-item[for="l1i4s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l1i4s3:checked ~ .world-grid .world-item[for="l1i4s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l1i4s3:checked ~ .world-grid .world-item[for="l1i4s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l1i4s4:checked ~ .world-grid .world-item[for="l1i4s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l1i4s4:checked ~ .world-grid .world-item[for="l1i4s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l1i4s0:checked ~ .world-grid .world-item[for="l1i4s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l1i4s0:checked ~ .world-grid .world-item[for="l1i4s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l1i4s1:checked ~ .world-grid .world-item[for="l1i4s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l1i4s1:checked ~ .world-grid .world-item[for="l1i4s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l1i4s2:checked ~ .world-grid .world-item[for="l1i4s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l1i4s2:checked ~ .world-grid .world-item[for="l1i4s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l1i4s3:checked ~ .world-grid .world-item[for="l1i4s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l1i4s3:checked ~ .world-grid .world-item[for="l1i4s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l1i4s4:checked ~ .world-grid .world-item[for="l1i4s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l1i4s4:checked ~ .world-grid .world-item[for="l1i4s0"] .size-3:after {
+    height: 500%;
+}
+
+#l1i5c1:checked ~ .world-grid .world-item[for="l1i5s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l1i5c1:checked ~ .world-grid .world-item[for="l1i5s0"]:after {
+    background: #795548;
+}
+#l1i5c1:checked ~ .world-grid .world-item[for="l1i5s0"]:before {
+    background: #6D4C41;
+}
+
+#l1i5c2:checked ~ .world-grid .world-item[for="l1i5s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l1i5c2:checked ~ .world-grid .world-item[for="l1i5s0"]:after {
+    background: #4CAF50;
+}
+#l1i5c2:checked ~ .world-grid .world-item[for="l1i5s0"]:before {
+    background: #43A047;
+}
+
+#l1i5c3:checked ~ .world-grid .world-item[for="l1i5s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l1i5c3:checked ~ .world-grid .world-item[for="l1i5s0"]:after {
+    background: #795548;
+}
+#l1i5c3:checked ~ .world-grid .world-item[for="l1i5s0"]:before {
+    background: #6D4C41;
+}
+
+#l1i5c4:checked ~ .world-grid .world-item[for="l1i5s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l1i5c4:checked ~ .world-grid .world-item[for="l1i5s0"]:after {
+    background: #607D8B;
+}
+#l1i5c4:checked ~ .world-grid .world-item[for="l1i5s0"]:before {
+    background: #546E7A;
+}
+
+#l1i5c5:checked ~ .world-grid .world-item[for="l1i5s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l1i5c5:checked ~ .world-grid .world-item[for="l1i5s0"]:after {
+    background: #607D8B;
+}
+#l1i5c5:checked ~ .world-grid .world-item[for="l1i5s0"]:before {
+    background: #546E7A;
+}
+
+#l1i5c6:checked ~ .world-grid .world-item[for="l1i5s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l1i5c6:checked ~ .world-grid .world-item[for="l1i5s0"]:after {
+    background: #F5F5F5;
+}
+#l1i5c6:checked ~ .world-grid .world-item[for="l1i5s0"]:before {
+    background: #EEEEEE;
+}
+
+#l1i5c7:checked ~ .world-grid .world-item[for="l1i5s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l1i5c7:checked ~ .world-grid .world-item[for="l1i5s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l1i5c7:checked ~ .world-grid .world-item[for="l1i5s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l1i5s0:checked ~ .world-grid .world-item[for="l1i5s0"] {
+    transform: translateZ(0rem);
+}
+#l1i5s0:checked ~ .world-grid .world-item[for="l1i5s0"]:before {
+    width: 100%;
+}
+#l1i5s0:checked ~ .world-grid .world-item[for="l1i5s0"]:after {
+    height: 100%;
+}
+
+#l1i5s1:checked ~ .world-grid .world-item[for="l1i5s0"] {
+    transform: translateZ(3rem);
+}
+#l1i5s1:checked ~ .world-grid .world-item[for="l1i5s0"]:before {
+    width: 200%;
+}
+#l1i5s1:checked ~ .world-grid .world-item[for="l1i5s0"]:after {
+    height: 200%;
+}
+
+#l1i5s2:checked ~ .world-grid .world-item[for="l1i5s0"] {
+    transform: translateZ(6rem);
+}
+#l1i5s2:checked ~ .world-grid .world-item[for="l1i5s0"]:before {
+    width: 300%;
+}
+#l1i5s2:checked ~ .world-grid .world-item[for="l1i5s0"]:after {
+    height: 300%;
+}
+
+#l1i5s3:checked ~ .world-grid .world-item[for="l1i5s0"] {
+    transform: translateZ(9rem);
+}
+#l1i5s3:checked ~ .world-grid .world-item[for="l1i5s0"]:before {
+    width: 400%;
+}
+#l1i5s3:checked ~ .world-grid .world-item[for="l1i5s0"]:after {
+    height: 400%;
+}
+
+#l1i5s4:checked ~ .world-grid .world-item[for="l1i5s0"] {
+    transform: translateZ(12rem);
+}
+#l1i5s4:checked ~ .world-grid .world-item[for="l1i5s0"]:before {
+    width: 500%;
+}
+#l1i5s4:checked ~ .world-grid .world-item[for="l1i5s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l1i5s0:checked ~ .world-grid .world-item[for="l1i5s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l1i5s0:checked ~ .world-grid .world-item[for="l1i5s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l1i5s1:checked ~ .world-grid .world-item[for="l1i5s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l1i5s1:checked ~ .world-grid .world-item[for="l1i5s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l1i5s2:checked ~ .world-grid .world-item[for="l1i5s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l1i5s2:checked ~ .world-grid .world-item[for="l1i5s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l1i5s3:checked ~ .world-grid .world-item[for="l1i5s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l1i5s3:checked ~ .world-grid .world-item[for="l1i5s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l1i5s4:checked ~ .world-grid .world-item[for="l1i5s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l1i5s4:checked ~ .world-grid .world-item[for="l1i5s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l1i5s0:checked ~ .world-grid .world-item[for="l1i5s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l1i5s0:checked ~ .world-grid .world-item[for="l1i5s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l1i5s1:checked ~ .world-grid .world-item[for="l1i5s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l1i5s1:checked ~ .world-grid .world-item[for="l1i5s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l1i5s2:checked ~ .world-grid .world-item[for="l1i5s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l1i5s2:checked ~ .world-grid .world-item[for="l1i5s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l1i5s3:checked ~ .world-grid .world-item[for="l1i5s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l1i5s3:checked ~ .world-grid .world-item[for="l1i5s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l1i5s4:checked ~ .world-grid .world-item[for="l1i5s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l1i5s4:checked ~ .world-grid .world-item[for="l1i5s0"] .size-3:after {
+    height: 500%;
+}
+
+#l2i1c1:checked ~ .world-grid .world-item[for="l2i1s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l2i1c1:checked ~ .world-grid .world-item[for="l2i1s0"]:after {
+    background: #795548;
+}
+#l2i1c1:checked ~ .world-grid .world-item[for="l2i1s0"]:before {
+    background: #6D4C41;
+}
+
+#l2i1c2:checked ~ .world-grid .world-item[for="l2i1s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l2i1c2:checked ~ .world-grid .world-item[for="l2i1s0"]:after {
+    background: #4CAF50;
+}
+#l2i1c2:checked ~ .world-grid .world-item[for="l2i1s0"]:before {
+    background: #43A047;
+}
+
+#l2i1c3:checked ~ .world-grid .world-item[for="l2i1s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l2i1c3:checked ~ .world-grid .world-item[for="l2i1s0"]:after {
+    background: #795548;
+}
+#l2i1c3:checked ~ .world-grid .world-item[for="l2i1s0"]:before {
+    background: #6D4C41;
+}
+
+#l2i1c4:checked ~ .world-grid .world-item[for="l2i1s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l2i1c4:checked ~ .world-grid .world-item[for="l2i1s0"]:after {
+    background: #607D8B;
+}
+#l2i1c4:checked ~ .world-grid .world-item[for="l2i1s0"]:before {
+    background: #546E7A;
+}
+
+#l2i1c5:checked ~ .world-grid .world-item[for="l2i1s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l2i1c5:checked ~ .world-grid .world-item[for="l2i1s0"]:after {
+    background: #607D8B;
+}
+#l2i1c5:checked ~ .world-grid .world-item[for="l2i1s0"]:before {
+    background: #546E7A;
+}
+
+#l2i1c6:checked ~ .world-grid .world-item[for="l2i1s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l2i1c6:checked ~ .world-grid .world-item[for="l2i1s0"]:after {
+    background: #F5F5F5;
+}
+#l2i1c6:checked ~ .world-grid .world-item[for="l2i1s0"]:before {
+    background: #EEEEEE;
+}
+
+#l2i1c7:checked ~ .world-grid .world-item[for="l2i1s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l2i1c7:checked ~ .world-grid .world-item[for="l2i1s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l2i1c7:checked ~ .world-grid .world-item[for="l2i1s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l2i1s0:checked ~ .world-grid .world-item[for="l2i1s0"] {
+    transform: translateZ(0rem);
+}
+#l2i1s0:checked ~ .world-grid .world-item[for="l2i1s0"]:before {
+    width: 100%;
+}
+#l2i1s0:checked ~ .world-grid .world-item[for="l2i1s0"]:after {
+    height: 100%;
+}
+
+#l2i1s1:checked ~ .world-grid .world-item[for="l2i1s0"] {
+    transform: translateZ(3rem);
+}
+#l2i1s1:checked ~ .world-grid .world-item[for="l2i1s0"]:before {
+    width: 200%;
+}
+#l2i1s1:checked ~ .world-grid .world-item[for="l2i1s0"]:after {
+    height: 200%;
+}
+
+#l2i1s2:checked ~ .world-grid .world-item[for="l2i1s0"] {
+    transform: translateZ(6rem);
+}
+#l2i1s2:checked ~ .world-grid .world-item[for="l2i1s0"]:before {
+    width: 300%;
+}
+#l2i1s2:checked ~ .world-grid .world-item[for="l2i1s0"]:after {
+    height: 300%;
+}
+
+#l2i1s3:checked ~ .world-grid .world-item[for="l2i1s0"] {
+    transform: translateZ(9rem);
+}
+#l2i1s3:checked ~ .world-grid .world-item[for="l2i1s0"]:before {
+    width: 400%;
+}
+#l2i1s3:checked ~ .world-grid .world-item[for="l2i1s0"]:after {
+    height: 400%;
+}
+
+#l2i1s4:checked ~ .world-grid .world-item[for="l2i1s0"] {
+    transform: translateZ(12rem);
+}
+#l2i1s4:checked ~ .world-grid .world-item[for="l2i1s0"]:before {
+    width: 500%;
+}
+#l2i1s4:checked ~ .world-grid .world-item[for="l2i1s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l2i1s0:checked ~ .world-grid .world-item[for="l2i1s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l2i1s0:checked ~ .world-grid .world-item[for="l2i1s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l2i1s1:checked ~ .world-grid .world-item[for="l2i1s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l2i1s1:checked ~ .world-grid .world-item[for="l2i1s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l2i1s2:checked ~ .world-grid .world-item[for="l2i1s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l2i1s2:checked ~ .world-grid .world-item[for="l2i1s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l2i1s3:checked ~ .world-grid .world-item[for="l2i1s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l2i1s3:checked ~ .world-grid .world-item[for="l2i1s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l2i1s4:checked ~ .world-grid .world-item[for="l2i1s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l2i1s4:checked ~ .world-grid .world-item[for="l2i1s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l2i1s0:checked ~ .world-grid .world-item[for="l2i1s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l2i1s0:checked ~ .world-grid .world-item[for="l2i1s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l2i1s1:checked ~ .world-grid .world-item[for="l2i1s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l2i1s1:checked ~ .world-grid .world-item[for="l2i1s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l2i1s2:checked ~ .world-grid .world-item[for="l2i1s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l2i1s2:checked ~ .world-grid .world-item[for="l2i1s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l2i1s3:checked ~ .world-grid .world-item[for="l2i1s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l2i1s3:checked ~ .world-grid .world-item[for="l2i1s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l2i1s4:checked ~ .world-grid .world-item[for="l2i1s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l2i1s4:checked ~ .world-grid .world-item[for="l2i1s0"] .size-3:after {
+    height: 500%;
+}
+
+#l2i2c1:checked ~ .world-grid .world-item[for="l2i2s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l2i2c1:checked ~ .world-grid .world-item[for="l2i2s0"]:after {
+    background: #795548;
+}
+#l2i2c1:checked ~ .world-grid .world-item[for="l2i2s0"]:before {
+    background: #6D4C41;
+}
+
+#l2i2c2:checked ~ .world-grid .world-item[for="l2i2s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l2i2c2:checked ~ .world-grid .world-item[for="l2i2s0"]:after {
+    background: #4CAF50;
+}
+#l2i2c2:checked ~ .world-grid .world-item[for="l2i2s0"]:before {
+    background: #43A047;
+}
+
+#l2i2c3:checked ~ .world-grid .world-item[for="l2i2s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l2i2c3:checked ~ .world-grid .world-item[for="l2i2s0"]:after {
+    background: #795548;
+}
+#l2i2c3:checked ~ .world-grid .world-item[for="l2i2s0"]:before {
+    background: #6D4C41;
+}
+
+#l2i2c4:checked ~ .world-grid .world-item[for="l2i2s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l2i2c4:checked ~ .world-grid .world-item[for="l2i2s0"]:after {
+    background: #607D8B;
+}
+#l2i2c4:checked ~ .world-grid .world-item[for="l2i2s0"]:before {
+    background: #546E7A;
+}
+
+#l2i2c5:checked ~ .world-grid .world-item[for="l2i2s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l2i2c5:checked ~ .world-grid .world-item[for="l2i2s0"]:after {
+    background: #607D8B;
+}
+#l2i2c5:checked ~ .world-grid .world-item[for="l2i2s0"]:before {
+    background: #546E7A;
+}
+
+#l2i2c6:checked ~ .world-grid .world-item[for="l2i2s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l2i2c6:checked ~ .world-grid .world-item[for="l2i2s0"]:after {
+    background: #F5F5F5;
+}
+#l2i2c6:checked ~ .world-grid .world-item[for="l2i2s0"]:before {
+    background: #EEEEEE;
+}
+
+#l2i2c7:checked ~ .world-grid .world-item[for="l2i2s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l2i2c7:checked ~ .world-grid .world-item[for="l2i2s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l2i2c7:checked ~ .world-grid .world-item[for="l2i2s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l2i2s0:checked ~ .world-grid .world-item[for="l2i2s0"] {
+    transform: translateZ(0rem);
+}
+#l2i2s0:checked ~ .world-grid .world-item[for="l2i2s0"]:before {
+    width: 100%;
+}
+#l2i2s0:checked ~ .world-grid .world-item[for="l2i2s0"]:after {
+    height: 100%;
+}
+
+#l2i2s1:checked ~ .world-grid .world-item[for="l2i2s0"] {
+    transform: translateZ(3rem);
+}
+#l2i2s1:checked ~ .world-grid .world-item[for="l2i2s0"]:before {
+    width: 200%;
+}
+#l2i2s1:checked ~ .world-grid .world-item[for="l2i2s0"]:after {
+    height: 200%;
+}
+
+#l2i2s2:checked ~ .world-grid .world-item[for="l2i2s0"] {
+    transform: translateZ(6rem);
+}
+#l2i2s2:checked ~ .world-grid .world-item[for="l2i2s0"]:before {
+    width: 300%;
+}
+#l2i2s2:checked ~ .world-grid .world-item[for="l2i2s0"]:after {
+    height: 300%;
+}
+
+#l2i2s3:checked ~ .world-grid .world-item[for="l2i2s0"] {
+    transform: translateZ(9rem);
+}
+#l2i2s3:checked ~ .world-grid .world-item[for="l2i2s0"]:before {
+    width: 400%;
+}
+#l2i2s3:checked ~ .world-grid .world-item[for="l2i2s0"]:after {
+    height: 400%;
+}
+
+#l2i2s4:checked ~ .world-grid .world-item[for="l2i2s0"] {
+    transform: translateZ(12rem);
+}
+#l2i2s4:checked ~ .world-grid .world-item[for="l2i2s0"]:before {
+    width: 500%;
+}
+#l2i2s4:checked ~ .world-grid .world-item[for="l2i2s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l2i2s0:checked ~ .world-grid .world-item[for="l2i2s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l2i2s0:checked ~ .world-grid .world-item[for="l2i2s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l2i2s1:checked ~ .world-grid .world-item[for="l2i2s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l2i2s1:checked ~ .world-grid .world-item[for="l2i2s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l2i2s2:checked ~ .world-grid .world-item[for="l2i2s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l2i2s2:checked ~ .world-grid .world-item[for="l2i2s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l2i2s3:checked ~ .world-grid .world-item[for="l2i2s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l2i2s3:checked ~ .world-grid .world-item[for="l2i2s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l2i2s4:checked ~ .world-grid .world-item[for="l2i2s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l2i2s4:checked ~ .world-grid .world-item[for="l2i2s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l2i2s0:checked ~ .world-grid .world-item[for="l2i2s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l2i2s0:checked ~ .world-grid .world-item[for="l2i2s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l2i2s1:checked ~ .world-grid .world-item[for="l2i2s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l2i2s1:checked ~ .world-grid .world-item[for="l2i2s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l2i2s2:checked ~ .world-grid .world-item[for="l2i2s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l2i2s2:checked ~ .world-grid .world-item[for="l2i2s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l2i2s3:checked ~ .world-grid .world-item[for="l2i2s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l2i2s3:checked ~ .world-grid .world-item[for="l2i2s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l2i2s4:checked ~ .world-grid .world-item[for="l2i2s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l2i2s4:checked ~ .world-grid .world-item[for="l2i2s0"] .size-3:after {
+    height: 500%;
+}
+
+#l2i3c1:checked ~ .world-grid .world-item[for="l2i3s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l2i3c1:checked ~ .world-grid .world-item[for="l2i3s0"]:after {
+    background: #795548;
+}
+#l2i3c1:checked ~ .world-grid .world-item[for="l2i3s0"]:before {
+    background: #6D4C41;
+}
+
+#l2i3c2:checked ~ .world-grid .world-item[for="l2i3s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l2i3c2:checked ~ .world-grid .world-item[for="l2i3s0"]:after {
+    background: #4CAF50;
+}
+#l2i3c2:checked ~ .world-grid .world-item[for="l2i3s0"]:before {
+    background: #43A047;
+}
+
+#l2i3c3:checked ~ .world-grid .world-item[for="l2i3s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l2i3c3:checked ~ .world-grid .world-item[for="l2i3s0"]:after {
+    background: #795548;
+}
+#l2i3c3:checked ~ .world-grid .world-item[for="l2i3s0"]:before {
+    background: #6D4C41;
+}
+
+#l2i3c4:checked ~ .world-grid .world-item[for="l2i3s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l2i3c4:checked ~ .world-grid .world-item[for="l2i3s0"]:after {
+    background: #607D8B;
+}
+#l2i3c4:checked ~ .world-grid .world-item[for="l2i3s0"]:before {
+    background: #546E7A;
+}
+
+#l2i3c5:checked ~ .world-grid .world-item[for="l2i3s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l2i3c5:checked ~ .world-grid .world-item[for="l2i3s0"]:after {
+    background: #607D8B;
+}
+#l2i3c5:checked ~ .world-grid .world-item[for="l2i3s0"]:before {
+    background: #546E7A;
+}
+
+#l2i3c6:checked ~ .world-grid .world-item[for="l2i3s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l2i3c6:checked ~ .world-grid .world-item[for="l2i3s0"]:after {
+    background: #F5F5F5;
+}
+#l2i3c6:checked ~ .world-grid .world-item[for="l2i3s0"]:before {
+    background: #EEEEEE;
+}
+
+#l2i3c7:checked ~ .world-grid .world-item[for="l2i3s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l2i3c7:checked ~ .world-grid .world-item[for="l2i3s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l2i3c7:checked ~ .world-grid .world-item[for="l2i3s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l2i3s0:checked ~ .world-grid .world-item[for="l2i3s0"] {
+    transform: translateZ(0rem);
+}
+#l2i3s0:checked ~ .world-grid .world-item[for="l2i3s0"]:before {
+    width: 100%;
+}
+#l2i3s0:checked ~ .world-grid .world-item[for="l2i3s0"]:after {
+    height: 100%;
+}
+
+#l2i3s1:checked ~ .world-grid .world-item[for="l2i3s0"] {
+    transform: translateZ(3rem);
+}
+#l2i3s1:checked ~ .world-grid .world-item[for="l2i3s0"]:before {
+    width: 200%;
+}
+#l2i3s1:checked ~ .world-grid .world-item[for="l2i3s0"]:after {
+    height: 200%;
+}
+
+#l2i3s2:checked ~ .world-grid .world-item[for="l2i3s0"] {
+    transform: translateZ(6rem);
+}
+#l2i3s2:checked ~ .world-grid .world-item[for="l2i3s0"]:before {
+    width: 300%;
+}
+#l2i3s2:checked ~ .world-grid .world-item[for="l2i3s0"]:after {
+    height: 300%;
+}
+
+#l2i3s3:checked ~ .world-grid .world-item[for="l2i3s0"] {
+    transform: translateZ(9rem);
+}
+#l2i3s3:checked ~ .world-grid .world-item[for="l2i3s0"]:before {
+    width: 400%;
+}
+#l2i3s3:checked ~ .world-grid .world-item[for="l2i3s0"]:after {
+    height: 400%;
+}
+
+#l2i3s4:checked ~ .world-grid .world-item[for="l2i3s0"] {
+    transform: translateZ(12rem);
+}
+#l2i3s4:checked ~ .world-grid .world-item[for="l2i3s0"]:before {
+    width: 500%;
+}
+#l2i3s4:checked ~ .world-grid .world-item[for="l2i3s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l2i3s0:checked ~ .world-grid .world-item[for="l2i3s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l2i3s0:checked ~ .world-grid .world-item[for="l2i3s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l2i3s1:checked ~ .world-grid .world-item[for="l2i3s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l2i3s1:checked ~ .world-grid .world-item[for="l2i3s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l2i3s2:checked ~ .world-grid .world-item[for="l2i3s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l2i3s2:checked ~ .world-grid .world-item[for="l2i3s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l2i3s3:checked ~ .world-grid .world-item[for="l2i3s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l2i3s3:checked ~ .world-grid .world-item[for="l2i3s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l2i3s4:checked ~ .world-grid .world-item[for="l2i3s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l2i3s4:checked ~ .world-grid .world-item[for="l2i3s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l2i3s0:checked ~ .world-grid .world-item[for="l2i3s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l2i3s0:checked ~ .world-grid .world-item[for="l2i3s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l2i3s1:checked ~ .world-grid .world-item[for="l2i3s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l2i3s1:checked ~ .world-grid .world-item[for="l2i3s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l2i3s2:checked ~ .world-grid .world-item[for="l2i3s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l2i3s2:checked ~ .world-grid .world-item[for="l2i3s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l2i3s3:checked ~ .world-grid .world-item[for="l2i3s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l2i3s3:checked ~ .world-grid .world-item[for="l2i3s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l2i3s4:checked ~ .world-grid .world-item[for="l2i3s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l2i3s4:checked ~ .world-grid .world-item[for="l2i3s0"] .size-3:after {
+    height: 500%;
+}
+
+#l2i4c1:checked ~ .world-grid .world-item[for="l2i4s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l2i4c1:checked ~ .world-grid .world-item[for="l2i4s0"]:after {
+    background: #795548;
+}
+#l2i4c1:checked ~ .world-grid .world-item[for="l2i4s0"]:before {
+    background: #6D4C41;
+}
+
+#l2i4c2:checked ~ .world-grid .world-item[for="l2i4s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l2i4c2:checked ~ .world-grid .world-item[for="l2i4s0"]:after {
+    background: #4CAF50;
+}
+#l2i4c2:checked ~ .world-grid .world-item[for="l2i4s0"]:before {
+    background: #43A047;
+}
+
+#l2i4c3:checked ~ .world-grid .world-item[for="l2i4s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l2i4c3:checked ~ .world-grid .world-item[for="l2i4s0"]:after {
+    background: #795548;
+}
+#l2i4c3:checked ~ .world-grid .world-item[for="l2i4s0"]:before {
+    background: #6D4C41;
+}
+
+#l2i4c4:checked ~ .world-grid .world-item[for="l2i4s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l2i4c4:checked ~ .world-grid .world-item[for="l2i4s0"]:after {
+    background: #607D8B;
+}
+#l2i4c4:checked ~ .world-grid .world-item[for="l2i4s0"]:before {
+    background: #546E7A;
+}
+
+#l2i4c5:checked ~ .world-grid .world-item[for="l2i4s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l2i4c5:checked ~ .world-grid .world-item[for="l2i4s0"]:after {
+    background: #607D8B;
+}
+#l2i4c5:checked ~ .world-grid .world-item[for="l2i4s0"]:before {
+    background: #546E7A;
+}
+
+#l2i4c6:checked ~ .world-grid .world-item[for="l2i4s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l2i4c6:checked ~ .world-grid .world-item[for="l2i4s0"]:after {
+    background: #F5F5F5;
+}
+#l2i4c6:checked ~ .world-grid .world-item[for="l2i4s0"]:before {
+    background: #EEEEEE;
+}
+
+#l2i4c7:checked ~ .world-grid .world-item[for="l2i4s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l2i4c7:checked ~ .world-grid .world-item[for="l2i4s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l2i4c7:checked ~ .world-grid .world-item[for="l2i4s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l2i4s0:checked ~ .world-grid .world-item[for="l2i4s0"] {
+    transform: translateZ(0rem);
+}
+#l2i4s0:checked ~ .world-grid .world-item[for="l2i4s0"]:before {
+    width: 100%;
+}
+#l2i4s0:checked ~ .world-grid .world-item[for="l2i4s0"]:after {
+    height: 100%;
+}
+
+#l2i4s1:checked ~ .world-grid .world-item[for="l2i4s0"] {
+    transform: translateZ(3rem);
+}
+#l2i4s1:checked ~ .world-grid .world-item[for="l2i4s0"]:before {
+    width: 200%;
+}
+#l2i4s1:checked ~ .world-grid .world-item[for="l2i4s0"]:after {
+    height: 200%;
+}
+
+#l2i4s2:checked ~ .world-grid .world-item[for="l2i4s0"] {
+    transform: translateZ(6rem);
+}
+#l2i4s2:checked ~ .world-grid .world-item[for="l2i4s0"]:before {
+    width: 300%;
+}
+#l2i4s2:checked ~ .world-grid .world-item[for="l2i4s0"]:after {
+    height: 300%;
+}
+
+#l2i4s3:checked ~ .world-grid .world-item[for="l2i4s0"] {
+    transform: translateZ(9rem);
+}
+#l2i4s3:checked ~ .world-grid .world-item[for="l2i4s0"]:before {
+    width: 400%;
+}
+#l2i4s3:checked ~ .world-grid .world-item[for="l2i4s0"]:after {
+    height: 400%;
+}
+
+#l2i4s4:checked ~ .world-grid .world-item[for="l2i4s0"] {
+    transform: translateZ(12rem);
+}
+#l2i4s4:checked ~ .world-grid .world-item[for="l2i4s0"]:before {
+    width: 500%;
+}
+#l2i4s4:checked ~ .world-grid .world-item[for="l2i4s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l2i4s0:checked ~ .world-grid .world-item[for="l2i4s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l2i4s0:checked ~ .world-grid .world-item[for="l2i4s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l2i4s1:checked ~ .world-grid .world-item[for="l2i4s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l2i4s1:checked ~ .world-grid .world-item[for="l2i4s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l2i4s2:checked ~ .world-grid .world-item[for="l2i4s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l2i4s2:checked ~ .world-grid .world-item[for="l2i4s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l2i4s3:checked ~ .world-grid .world-item[for="l2i4s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l2i4s3:checked ~ .world-grid .world-item[for="l2i4s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l2i4s4:checked ~ .world-grid .world-item[for="l2i4s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l2i4s4:checked ~ .world-grid .world-item[for="l2i4s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l2i4s0:checked ~ .world-grid .world-item[for="l2i4s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l2i4s0:checked ~ .world-grid .world-item[for="l2i4s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l2i4s1:checked ~ .world-grid .world-item[for="l2i4s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l2i4s1:checked ~ .world-grid .world-item[for="l2i4s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l2i4s2:checked ~ .world-grid .world-item[for="l2i4s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l2i4s2:checked ~ .world-grid .world-item[for="l2i4s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l2i4s3:checked ~ .world-grid .world-item[for="l2i4s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l2i4s3:checked ~ .world-grid .world-item[for="l2i4s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l2i4s4:checked ~ .world-grid .world-item[for="l2i4s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l2i4s4:checked ~ .world-grid .world-item[for="l2i4s0"] .size-3:after {
+    height: 500%;
+}
+
+#l2i5c1:checked ~ .world-grid .world-item[for="l2i5s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l2i5c1:checked ~ .world-grid .world-item[for="l2i5s0"]:after {
+    background: #795548;
+}
+#l2i5c1:checked ~ .world-grid .world-item[for="l2i5s0"]:before {
+    background: #6D4C41;
+}
+
+#l2i5c2:checked ~ .world-grid .world-item[for="l2i5s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l2i5c2:checked ~ .world-grid .world-item[for="l2i5s0"]:after {
+    background: #4CAF50;
+}
+#l2i5c2:checked ~ .world-grid .world-item[for="l2i5s0"]:before {
+    background: #43A047;
+}
+
+#l2i5c3:checked ~ .world-grid .world-item[for="l2i5s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l2i5c3:checked ~ .world-grid .world-item[for="l2i5s0"]:after {
+    background: #795548;
+}
+#l2i5c3:checked ~ .world-grid .world-item[for="l2i5s0"]:before {
+    background: #6D4C41;
+}
+
+#l2i5c4:checked ~ .world-grid .world-item[for="l2i5s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l2i5c4:checked ~ .world-grid .world-item[for="l2i5s0"]:after {
+    background: #607D8B;
+}
+#l2i5c4:checked ~ .world-grid .world-item[for="l2i5s0"]:before {
+    background: #546E7A;
+}
+
+#l2i5c5:checked ~ .world-grid .world-item[for="l2i5s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l2i5c5:checked ~ .world-grid .world-item[for="l2i5s0"]:after {
+    background: #607D8B;
+}
+#l2i5c5:checked ~ .world-grid .world-item[for="l2i5s0"]:before {
+    background: #546E7A;
+}
+
+#l2i5c6:checked ~ .world-grid .world-item[for="l2i5s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l2i5c6:checked ~ .world-grid .world-item[for="l2i5s0"]:after {
+    background: #F5F5F5;
+}
+#l2i5c6:checked ~ .world-grid .world-item[for="l2i5s0"]:before {
+    background: #EEEEEE;
+}
+
+#l2i5c7:checked ~ .world-grid .world-item[for="l2i5s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l2i5c7:checked ~ .world-grid .world-item[for="l2i5s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l2i5c7:checked ~ .world-grid .world-item[for="l2i5s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l2i5s0:checked ~ .world-grid .world-item[for="l2i5s0"] {
+    transform: translateZ(0rem);
+}
+#l2i5s0:checked ~ .world-grid .world-item[for="l2i5s0"]:before {
+    width: 100%;
+}
+#l2i5s0:checked ~ .world-grid .world-item[for="l2i5s0"]:after {
+    height: 100%;
+}
+
+#l2i5s1:checked ~ .world-grid .world-item[for="l2i5s0"] {
+    transform: translateZ(3rem);
+}
+#l2i5s1:checked ~ .world-grid .world-item[for="l2i5s0"]:before {
+    width: 200%;
+}
+#l2i5s1:checked ~ .world-grid .world-item[for="l2i5s0"]:after {
+    height: 200%;
+}
+
+#l2i5s2:checked ~ .world-grid .world-item[for="l2i5s0"] {
+    transform: translateZ(6rem);
+}
+#l2i5s2:checked ~ .world-grid .world-item[for="l2i5s0"]:before {
+    width: 300%;
+}
+#l2i5s2:checked ~ .world-grid .world-item[for="l2i5s0"]:after {
+    height: 300%;
+}
+
+#l2i5s3:checked ~ .world-grid .world-item[for="l2i5s0"] {
+    transform: translateZ(9rem);
+}
+#l2i5s3:checked ~ .world-grid .world-item[for="l2i5s0"]:before {
+    width: 400%;
+}
+#l2i5s3:checked ~ .world-grid .world-item[for="l2i5s0"]:after {
+    height: 400%;
+}
+
+#l2i5s4:checked ~ .world-grid .world-item[for="l2i5s0"] {
+    transform: translateZ(12rem);
+}
+#l2i5s4:checked ~ .world-grid .world-item[for="l2i5s0"]:before {
+    width: 500%;
+}
+#l2i5s4:checked ~ .world-grid .world-item[for="l2i5s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l2i5s0:checked ~ .world-grid .world-item[for="l2i5s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l2i5s0:checked ~ .world-grid .world-item[for="l2i5s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l2i5s1:checked ~ .world-grid .world-item[for="l2i5s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l2i5s1:checked ~ .world-grid .world-item[for="l2i5s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l2i5s2:checked ~ .world-grid .world-item[for="l2i5s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l2i5s2:checked ~ .world-grid .world-item[for="l2i5s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l2i5s3:checked ~ .world-grid .world-item[for="l2i5s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l2i5s3:checked ~ .world-grid .world-item[for="l2i5s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l2i5s4:checked ~ .world-grid .world-item[for="l2i5s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l2i5s4:checked ~ .world-grid .world-item[for="l2i5s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l2i5s0:checked ~ .world-grid .world-item[for="l2i5s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l2i5s0:checked ~ .world-grid .world-item[for="l2i5s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l2i5s1:checked ~ .world-grid .world-item[for="l2i5s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l2i5s1:checked ~ .world-grid .world-item[for="l2i5s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l2i5s2:checked ~ .world-grid .world-item[for="l2i5s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l2i5s2:checked ~ .world-grid .world-item[for="l2i5s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l2i5s3:checked ~ .world-grid .world-item[for="l2i5s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l2i5s3:checked ~ .world-grid .world-item[for="l2i5s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l2i5s4:checked ~ .world-grid .world-item[for="l2i5s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l2i5s4:checked ~ .world-grid .world-item[for="l2i5s0"] .size-3:after {
+    height: 500%;
+}
+
+#l3i1c1:checked ~ .world-grid .world-item[for="l3i1s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l3i1c1:checked ~ .world-grid .world-item[for="l3i1s0"]:after {
+    background: #795548;
+}
+#l3i1c1:checked ~ .world-grid .world-item[for="l3i1s0"]:before {
+    background: #6D4C41;
+}
+
+#l3i1c2:checked ~ .world-grid .world-item[for="l3i1s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l3i1c2:checked ~ .world-grid .world-item[for="l3i1s0"]:after {
+    background: #4CAF50;
+}
+#l3i1c2:checked ~ .world-grid .world-item[for="l3i1s0"]:before {
+    background: #43A047;
+}
+
+#l3i1c3:checked ~ .world-grid .world-item[for="l3i1s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l3i1c3:checked ~ .world-grid .world-item[for="l3i1s0"]:after {
+    background: #795548;
+}
+#l3i1c3:checked ~ .world-grid .world-item[for="l3i1s0"]:before {
+    background: #6D4C41;
+}
+
+#l3i1c4:checked ~ .world-grid .world-item[for="l3i1s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l3i1c4:checked ~ .world-grid .world-item[for="l3i1s0"]:after {
+    background: #607D8B;
+}
+#l3i1c4:checked ~ .world-grid .world-item[for="l3i1s0"]:before {
+    background: #546E7A;
+}
+
+#l3i1c5:checked ~ .world-grid .world-item[for="l3i1s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l3i1c5:checked ~ .world-grid .world-item[for="l3i1s0"]:after {
+    background: #607D8B;
+}
+#l3i1c5:checked ~ .world-grid .world-item[for="l3i1s0"]:before {
+    background: #546E7A;
+}
+
+#l3i1c6:checked ~ .world-grid .world-item[for="l3i1s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l3i1c6:checked ~ .world-grid .world-item[for="l3i1s0"]:after {
+    background: #F5F5F5;
+}
+#l3i1c6:checked ~ .world-grid .world-item[for="l3i1s0"]:before {
+    background: #EEEEEE;
+}
+
+#l3i1c7:checked ~ .world-grid .world-item[for="l3i1s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l3i1c7:checked ~ .world-grid .world-item[for="l3i1s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l3i1c7:checked ~ .world-grid .world-item[for="l3i1s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l3i1s0:checked ~ .world-grid .world-item[for="l3i1s0"] {
+    transform: translateZ(0rem);
+}
+#l3i1s0:checked ~ .world-grid .world-item[for="l3i1s0"]:before {
+    width: 100%;
+}
+#l3i1s0:checked ~ .world-grid .world-item[for="l3i1s0"]:after {
+    height: 100%;
+}
+
+#l3i1s1:checked ~ .world-grid .world-item[for="l3i1s0"] {
+    transform: translateZ(3rem);
+}
+#l3i1s1:checked ~ .world-grid .world-item[for="l3i1s0"]:before {
+    width: 200%;
+}
+#l3i1s1:checked ~ .world-grid .world-item[for="l3i1s0"]:after {
+    height: 200%;
+}
+
+#l3i1s2:checked ~ .world-grid .world-item[for="l3i1s0"] {
+    transform: translateZ(6rem);
+}
+#l3i1s2:checked ~ .world-grid .world-item[for="l3i1s0"]:before {
+    width: 300%;
+}
+#l3i1s2:checked ~ .world-grid .world-item[for="l3i1s0"]:after {
+    height: 300%;
+}
+
+#l3i1s3:checked ~ .world-grid .world-item[for="l3i1s0"] {
+    transform: translateZ(9rem);
+}
+#l3i1s3:checked ~ .world-grid .world-item[for="l3i1s0"]:before {
+    width: 400%;
+}
+#l3i1s3:checked ~ .world-grid .world-item[for="l3i1s0"]:after {
+    height: 400%;
+}
+
+#l3i1s4:checked ~ .world-grid .world-item[for="l3i1s0"] {
+    transform: translateZ(12rem);
+}
+#l3i1s4:checked ~ .world-grid .world-item[for="l3i1s0"]:before {
+    width: 500%;
+}
+#l3i1s4:checked ~ .world-grid .world-item[for="l3i1s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l3i1s0:checked ~ .world-grid .world-item[for="l3i1s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l3i1s0:checked ~ .world-grid .world-item[for="l3i1s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l3i1s1:checked ~ .world-grid .world-item[for="l3i1s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l3i1s1:checked ~ .world-grid .world-item[for="l3i1s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l3i1s2:checked ~ .world-grid .world-item[for="l3i1s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l3i1s2:checked ~ .world-grid .world-item[for="l3i1s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l3i1s3:checked ~ .world-grid .world-item[for="l3i1s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l3i1s3:checked ~ .world-grid .world-item[for="l3i1s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l3i1s4:checked ~ .world-grid .world-item[for="l3i1s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l3i1s4:checked ~ .world-grid .world-item[for="l3i1s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l3i1s0:checked ~ .world-grid .world-item[for="l3i1s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l3i1s0:checked ~ .world-grid .world-item[for="l3i1s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l3i1s1:checked ~ .world-grid .world-item[for="l3i1s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l3i1s1:checked ~ .world-grid .world-item[for="l3i1s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l3i1s2:checked ~ .world-grid .world-item[for="l3i1s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l3i1s2:checked ~ .world-grid .world-item[for="l3i1s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l3i1s3:checked ~ .world-grid .world-item[for="l3i1s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l3i1s3:checked ~ .world-grid .world-item[for="l3i1s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l3i1s4:checked ~ .world-grid .world-item[for="l3i1s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l3i1s4:checked ~ .world-grid .world-item[for="l3i1s0"] .size-3:after {
+    height: 500%;
+}
+
+#l3i2c1:checked ~ .world-grid .world-item[for="l3i2s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l3i2c1:checked ~ .world-grid .world-item[for="l3i2s0"]:after {
+    background: #795548;
+}
+#l3i2c1:checked ~ .world-grid .world-item[for="l3i2s0"]:before {
+    background: #6D4C41;
+}
+
+#l3i2c2:checked ~ .world-grid .world-item[for="l3i2s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l3i2c2:checked ~ .world-grid .world-item[for="l3i2s0"]:after {
+    background: #4CAF50;
+}
+#l3i2c2:checked ~ .world-grid .world-item[for="l3i2s0"]:before {
+    background: #43A047;
+}
+
+#l3i2c3:checked ~ .world-grid .world-item[for="l3i2s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l3i2c3:checked ~ .world-grid .world-item[for="l3i2s0"]:after {
+    background: #795548;
+}
+#l3i2c3:checked ~ .world-grid .world-item[for="l3i2s0"]:before {
+    background: #6D4C41;
+}
+
+#l3i2c4:checked ~ .world-grid .world-item[for="l3i2s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l3i2c4:checked ~ .world-grid .world-item[for="l3i2s0"]:after {
+    background: #607D8B;
+}
+#l3i2c4:checked ~ .world-grid .world-item[for="l3i2s0"]:before {
+    background: #546E7A;
+}
+
+#l3i2c5:checked ~ .world-grid .world-item[for="l3i2s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l3i2c5:checked ~ .world-grid .world-item[for="l3i2s0"]:after {
+    background: #607D8B;
+}
+#l3i2c5:checked ~ .world-grid .world-item[for="l3i2s0"]:before {
+    background: #546E7A;
+}
+
+#l3i2c6:checked ~ .world-grid .world-item[for="l3i2s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l3i2c6:checked ~ .world-grid .world-item[for="l3i2s0"]:after {
+    background: #F5F5F5;
+}
+#l3i2c6:checked ~ .world-grid .world-item[for="l3i2s0"]:before {
+    background: #EEEEEE;
+}
+
+#l3i2c7:checked ~ .world-grid .world-item[for="l3i2s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l3i2c7:checked ~ .world-grid .world-item[for="l3i2s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l3i2c7:checked ~ .world-grid .world-item[for="l3i2s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l3i2s0:checked ~ .world-grid .world-item[for="l3i2s0"] {
+    transform: translateZ(0rem);
+}
+#l3i2s0:checked ~ .world-grid .world-item[for="l3i2s0"]:before {
+    width: 100%;
+}
+#l3i2s0:checked ~ .world-grid .world-item[for="l3i2s0"]:after {
+    height: 100%;
+}
+
+#l3i2s1:checked ~ .world-grid .world-item[for="l3i2s0"] {
+    transform: translateZ(3rem);
+}
+#l3i2s1:checked ~ .world-grid .world-item[for="l3i2s0"]:before {
+    width: 200%;
+}
+#l3i2s1:checked ~ .world-grid .world-item[for="l3i2s0"]:after {
+    height: 200%;
+}
+
+#l3i2s2:checked ~ .world-grid .world-item[for="l3i2s0"] {
+    transform: translateZ(6rem);
+}
+#l3i2s2:checked ~ .world-grid .world-item[for="l3i2s0"]:before {
+    width: 300%;
+}
+#l3i2s2:checked ~ .world-grid .world-item[for="l3i2s0"]:after {
+    height: 300%;
+}
+
+#l3i2s3:checked ~ .world-grid .world-item[for="l3i2s0"] {
+    transform: translateZ(9rem);
+}
+#l3i2s3:checked ~ .world-grid .world-item[for="l3i2s0"]:before {
+    width: 400%;
+}
+#l3i2s3:checked ~ .world-grid .world-item[for="l3i2s0"]:after {
+    height: 400%;
+}
+
+#l3i2s4:checked ~ .world-grid .world-item[for="l3i2s0"] {
+    transform: translateZ(12rem);
+}
+#l3i2s4:checked ~ .world-grid .world-item[for="l3i2s0"]:before {
+    width: 500%;
+}
+#l3i2s4:checked ~ .world-grid .world-item[for="l3i2s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l3i2s0:checked ~ .world-grid .world-item[for="l3i2s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l3i2s0:checked ~ .world-grid .world-item[for="l3i2s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l3i2s1:checked ~ .world-grid .world-item[for="l3i2s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l3i2s1:checked ~ .world-grid .world-item[for="l3i2s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l3i2s2:checked ~ .world-grid .world-item[for="l3i2s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l3i2s2:checked ~ .world-grid .world-item[for="l3i2s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l3i2s3:checked ~ .world-grid .world-item[for="l3i2s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l3i2s3:checked ~ .world-grid .world-item[for="l3i2s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l3i2s4:checked ~ .world-grid .world-item[for="l3i2s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l3i2s4:checked ~ .world-grid .world-item[for="l3i2s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l3i2s0:checked ~ .world-grid .world-item[for="l3i2s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l3i2s0:checked ~ .world-grid .world-item[for="l3i2s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l3i2s1:checked ~ .world-grid .world-item[for="l3i2s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l3i2s1:checked ~ .world-grid .world-item[for="l3i2s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l3i2s2:checked ~ .world-grid .world-item[for="l3i2s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l3i2s2:checked ~ .world-grid .world-item[for="l3i2s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l3i2s3:checked ~ .world-grid .world-item[for="l3i2s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l3i2s3:checked ~ .world-grid .world-item[for="l3i2s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l3i2s4:checked ~ .world-grid .world-item[for="l3i2s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l3i2s4:checked ~ .world-grid .world-item[for="l3i2s0"] .size-3:after {
+    height: 500%;
+}
+
+#l3i3c1:checked ~ .world-grid .world-item[for="l3i3s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l3i3c1:checked ~ .world-grid .world-item[for="l3i3s0"]:after {
+    background: #795548;
+}
+#l3i3c1:checked ~ .world-grid .world-item[for="l3i3s0"]:before {
+    background: #6D4C41;
+}
+
+#l3i3c2:checked ~ .world-grid .world-item[for="l3i3s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l3i3c2:checked ~ .world-grid .world-item[for="l3i3s0"]:after {
+    background: #4CAF50;
+}
+#l3i3c2:checked ~ .world-grid .world-item[for="l3i3s0"]:before {
+    background: #43A047;
+}
+
+#l3i3c3:checked ~ .world-grid .world-item[for="l3i3s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l3i3c3:checked ~ .world-grid .world-item[for="l3i3s0"]:after {
+    background: #795548;
+}
+#l3i3c3:checked ~ .world-grid .world-item[for="l3i3s0"]:before {
+    background: #6D4C41;
+}
+
+#l3i3c4:checked ~ .world-grid .world-item[for="l3i3s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l3i3c4:checked ~ .world-grid .world-item[for="l3i3s0"]:after {
+    background: #607D8B;
+}
+#l3i3c4:checked ~ .world-grid .world-item[for="l3i3s0"]:before {
+    background: #546E7A;
+}
+
+#l3i3c5:checked ~ .world-grid .world-item[for="l3i3s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l3i3c5:checked ~ .world-grid .world-item[for="l3i3s0"]:after {
+    background: #607D8B;
+}
+#l3i3c5:checked ~ .world-grid .world-item[for="l3i3s0"]:before {
+    background: #546E7A;
+}
+
+#l3i3c6:checked ~ .world-grid .world-item[for="l3i3s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l3i3c6:checked ~ .world-grid .world-item[for="l3i3s0"]:after {
+    background: #F5F5F5;
+}
+#l3i3c6:checked ~ .world-grid .world-item[for="l3i3s0"]:before {
+    background: #EEEEEE;
+}
+
+#l3i3c7:checked ~ .world-grid .world-item[for="l3i3s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l3i3c7:checked ~ .world-grid .world-item[for="l3i3s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l3i3c7:checked ~ .world-grid .world-item[for="l3i3s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l3i3s0:checked ~ .world-grid .world-item[for="l3i3s0"] {
+    transform: translateZ(0rem);
+}
+#l3i3s0:checked ~ .world-grid .world-item[for="l3i3s0"]:before {
+    width: 100%;
+}
+#l3i3s0:checked ~ .world-grid .world-item[for="l3i3s0"]:after {
+    height: 100%;
+}
+
+#l3i3s1:checked ~ .world-grid .world-item[for="l3i3s0"] {
+    transform: translateZ(3rem);
+}
+#l3i3s1:checked ~ .world-grid .world-item[for="l3i3s0"]:before {
+    width: 200%;
+}
+#l3i3s1:checked ~ .world-grid .world-item[for="l3i3s0"]:after {
+    height: 200%;
+}
+
+#l3i3s2:checked ~ .world-grid .world-item[for="l3i3s0"] {
+    transform: translateZ(6rem);
+}
+#l3i3s2:checked ~ .world-grid .world-item[for="l3i3s0"]:before {
+    width: 300%;
+}
+#l3i3s2:checked ~ .world-grid .world-item[for="l3i3s0"]:after {
+    height: 300%;
+}
+
+#l3i3s3:checked ~ .world-grid .world-item[for="l3i3s0"] {
+    transform: translateZ(9rem);
+}
+#l3i3s3:checked ~ .world-grid .world-item[for="l3i3s0"]:before {
+    width: 400%;
+}
+#l3i3s3:checked ~ .world-grid .world-item[for="l3i3s0"]:after {
+    height: 400%;
+}
+
+#l3i3s4:checked ~ .world-grid .world-item[for="l3i3s0"] {
+    transform: translateZ(12rem);
+}
+#l3i3s4:checked ~ .world-grid .world-item[for="l3i3s0"]:before {
+    width: 500%;
+}
+#l3i3s4:checked ~ .world-grid .world-item[for="l3i3s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l3i3s0:checked ~ .world-grid .world-item[for="l3i3s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l3i3s0:checked ~ .world-grid .world-item[for="l3i3s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l3i3s1:checked ~ .world-grid .world-item[for="l3i3s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l3i3s1:checked ~ .world-grid .world-item[for="l3i3s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l3i3s2:checked ~ .world-grid .world-item[for="l3i3s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l3i3s2:checked ~ .world-grid .world-item[for="l3i3s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l3i3s3:checked ~ .world-grid .world-item[for="l3i3s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l3i3s3:checked ~ .world-grid .world-item[for="l3i3s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l3i3s4:checked ~ .world-grid .world-item[for="l3i3s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l3i3s4:checked ~ .world-grid .world-item[for="l3i3s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l3i3s0:checked ~ .world-grid .world-item[for="l3i3s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l3i3s0:checked ~ .world-grid .world-item[for="l3i3s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l3i3s1:checked ~ .world-grid .world-item[for="l3i3s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l3i3s1:checked ~ .world-grid .world-item[for="l3i3s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l3i3s2:checked ~ .world-grid .world-item[for="l3i3s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l3i3s2:checked ~ .world-grid .world-item[for="l3i3s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l3i3s3:checked ~ .world-grid .world-item[for="l3i3s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l3i3s3:checked ~ .world-grid .world-item[for="l3i3s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l3i3s4:checked ~ .world-grid .world-item[for="l3i3s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l3i3s4:checked ~ .world-grid .world-item[for="l3i3s0"] .size-3:after {
+    height: 500%;
+}
+
+#l3i4c1:checked ~ .world-grid .world-item[for="l3i4s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l3i4c1:checked ~ .world-grid .world-item[for="l3i4s0"]:after {
+    background: #795548;
+}
+#l3i4c1:checked ~ .world-grid .world-item[for="l3i4s0"]:before {
+    background: #6D4C41;
+}
+
+#l3i4c2:checked ~ .world-grid .world-item[for="l3i4s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l3i4c2:checked ~ .world-grid .world-item[for="l3i4s0"]:after {
+    background: #4CAF50;
+}
+#l3i4c2:checked ~ .world-grid .world-item[for="l3i4s0"]:before {
+    background: #43A047;
+}
+
+#l3i4c3:checked ~ .world-grid .world-item[for="l3i4s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l3i4c3:checked ~ .world-grid .world-item[for="l3i4s0"]:after {
+    background: #795548;
+}
+#l3i4c3:checked ~ .world-grid .world-item[for="l3i4s0"]:before {
+    background: #6D4C41;
+}
+
+#l3i4c4:checked ~ .world-grid .world-item[for="l3i4s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l3i4c4:checked ~ .world-grid .world-item[for="l3i4s0"]:after {
+    background: #607D8B;
+}
+#l3i4c4:checked ~ .world-grid .world-item[for="l3i4s0"]:before {
+    background: #546E7A;
+}
+
+#l3i4c5:checked ~ .world-grid .world-item[for="l3i4s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l3i4c5:checked ~ .world-grid .world-item[for="l3i4s0"]:after {
+    background: #607D8B;
+}
+#l3i4c5:checked ~ .world-grid .world-item[for="l3i4s0"]:before {
+    background: #546E7A;
+}
+
+#l3i4c6:checked ~ .world-grid .world-item[for="l3i4s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l3i4c6:checked ~ .world-grid .world-item[for="l3i4s0"]:after {
+    background: #F5F5F5;
+}
+#l3i4c6:checked ~ .world-grid .world-item[for="l3i4s0"]:before {
+    background: #EEEEEE;
+}
+
+#l3i4c7:checked ~ .world-grid .world-item[for="l3i4s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l3i4c7:checked ~ .world-grid .world-item[for="l3i4s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l3i4c7:checked ~ .world-grid .world-item[for="l3i4s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l3i4s0:checked ~ .world-grid .world-item[for="l3i4s0"] {
+    transform: translateZ(0rem);
+}
+#l3i4s0:checked ~ .world-grid .world-item[for="l3i4s0"]:before {
+    width: 100%;
+}
+#l3i4s0:checked ~ .world-grid .world-item[for="l3i4s0"]:after {
+    height: 100%;
+}
+
+#l3i4s1:checked ~ .world-grid .world-item[for="l3i4s0"] {
+    transform: translateZ(3rem);
+}
+#l3i4s1:checked ~ .world-grid .world-item[for="l3i4s0"]:before {
+    width: 200%;
+}
+#l3i4s1:checked ~ .world-grid .world-item[for="l3i4s0"]:after {
+    height: 200%;
+}
+
+#l3i4s2:checked ~ .world-grid .world-item[for="l3i4s0"] {
+    transform: translateZ(6rem);
+}
+#l3i4s2:checked ~ .world-grid .world-item[for="l3i4s0"]:before {
+    width: 300%;
+}
+#l3i4s2:checked ~ .world-grid .world-item[for="l3i4s0"]:after {
+    height: 300%;
+}
+
+#l3i4s3:checked ~ .world-grid .world-item[for="l3i4s0"] {
+    transform: translateZ(9rem);
+}
+#l3i4s3:checked ~ .world-grid .world-item[for="l3i4s0"]:before {
+    width: 400%;
+}
+#l3i4s3:checked ~ .world-grid .world-item[for="l3i4s0"]:after {
+    height: 400%;
+}
+
+#l3i4s4:checked ~ .world-grid .world-item[for="l3i4s0"] {
+    transform: translateZ(12rem);
+}
+#l3i4s4:checked ~ .world-grid .world-item[for="l3i4s0"]:before {
+    width: 500%;
+}
+#l3i4s4:checked ~ .world-grid .world-item[for="l3i4s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l3i4s0:checked ~ .world-grid .world-item[for="l3i4s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l3i4s0:checked ~ .world-grid .world-item[for="l3i4s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l3i4s1:checked ~ .world-grid .world-item[for="l3i4s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l3i4s1:checked ~ .world-grid .world-item[for="l3i4s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l3i4s2:checked ~ .world-grid .world-item[for="l3i4s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l3i4s2:checked ~ .world-grid .world-item[for="l3i4s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l3i4s3:checked ~ .world-grid .world-item[for="l3i4s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l3i4s3:checked ~ .world-grid .world-item[for="l3i4s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l3i4s4:checked ~ .world-grid .world-item[for="l3i4s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l3i4s4:checked ~ .world-grid .world-item[for="l3i4s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l3i4s0:checked ~ .world-grid .world-item[for="l3i4s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l3i4s0:checked ~ .world-grid .world-item[for="l3i4s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l3i4s1:checked ~ .world-grid .world-item[for="l3i4s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l3i4s1:checked ~ .world-grid .world-item[for="l3i4s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l3i4s2:checked ~ .world-grid .world-item[for="l3i4s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l3i4s2:checked ~ .world-grid .world-item[for="l3i4s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l3i4s3:checked ~ .world-grid .world-item[for="l3i4s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l3i4s3:checked ~ .world-grid .world-item[for="l3i4s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l3i4s4:checked ~ .world-grid .world-item[for="l3i4s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l3i4s4:checked ~ .world-grid .world-item[for="l3i4s0"] .size-3:after {
+    height: 500%;
+}
+
+#l3i5c1:checked ~ .world-grid .world-item[for="l3i5s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l3i5c1:checked ~ .world-grid .world-item[for="l3i5s0"]:after {
+    background: #795548;
+}
+#l3i5c1:checked ~ .world-grid .world-item[for="l3i5s0"]:before {
+    background: #6D4C41;
+}
+
+#l3i5c2:checked ~ .world-grid .world-item[for="l3i5s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l3i5c2:checked ~ .world-grid .world-item[for="l3i5s0"]:after {
+    background: #4CAF50;
+}
+#l3i5c2:checked ~ .world-grid .world-item[for="l3i5s0"]:before {
+    background: #43A047;
+}
+
+#l3i5c3:checked ~ .world-grid .world-item[for="l3i5s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l3i5c3:checked ~ .world-grid .world-item[for="l3i5s0"]:after {
+    background: #795548;
+}
+#l3i5c3:checked ~ .world-grid .world-item[for="l3i5s0"]:before {
+    background: #6D4C41;
+}
+
+#l3i5c4:checked ~ .world-grid .world-item[for="l3i5s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l3i5c4:checked ~ .world-grid .world-item[for="l3i5s0"]:after {
+    background: #607D8B;
+}
+#l3i5c4:checked ~ .world-grid .world-item[for="l3i5s0"]:before {
+    background: #546E7A;
+}
+
+#l3i5c5:checked ~ .world-grid .world-item[for="l3i5s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l3i5c5:checked ~ .world-grid .world-item[for="l3i5s0"]:after {
+    background: #607D8B;
+}
+#l3i5c5:checked ~ .world-grid .world-item[for="l3i5s0"]:before {
+    background: #546E7A;
+}
+
+#l3i5c6:checked ~ .world-grid .world-item[for="l3i5s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l3i5c6:checked ~ .world-grid .world-item[for="l3i5s0"]:after {
+    background: #F5F5F5;
+}
+#l3i5c6:checked ~ .world-grid .world-item[for="l3i5s0"]:before {
+    background: #EEEEEE;
+}
+
+#l3i5c7:checked ~ .world-grid .world-item[for="l3i5s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l3i5c7:checked ~ .world-grid .world-item[for="l3i5s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l3i5c7:checked ~ .world-grid .world-item[for="l3i5s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l3i5s0:checked ~ .world-grid .world-item[for="l3i5s0"] {
+    transform: translateZ(0rem);
+}
+#l3i5s0:checked ~ .world-grid .world-item[for="l3i5s0"]:before {
+    width: 100%;
+}
+#l3i5s0:checked ~ .world-grid .world-item[for="l3i5s0"]:after {
+    height: 100%;
+}
+
+#l3i5s1:checked ~ .world-grid .world-item[for="l3i5s0"] {
+    transform: translateZ(3rem);
+}
+#l3i5s1:checked ~ .world-grid .world-item[for="l3i5s0"]:before {
+    width: 200%;
+}
+#l3i5s1:checked ~ .world-grid .world-item[for="l3i5s0"]:after {
+    height: 200%;
+}
+
+#l3i5s2:checked ~ .world-grid .world-item[for="l3i5s0"] {
+    transform: translateZ(6rem);
+}
+#l3i5s2:checked ~ .world-grid .world-item[for="l3i5s0"]:before {
+    width: 300%;
+}
+#l3i5s2:checked ~ .world-grid .world-item[for="l3i5s0"]:after {
+    height: 300%;
+}
+
+#l3i5s3:checked ~ .world-grid .world-item[for="l3i5s0"] {
+    transform: translateZ(9rem);
+}
+#l3i5s3:checked ~ .world-grid .world-item[for="l3i5s0"]:before {
+    width: 400%;
+}
+#l3i5s3:checked ~ .world-grid .world-item[for="l3i5s0"]:after {
+    height: 400%;
+}
+
+#l3i5s4:checked ~ .world-grid .world-item[for="l3i5s0"] {
+    transform: translateZ(12rem);
+}
+#l3i5s4:checked ~ .world-grid .world-item[for="l3i5s0"]:before {
+    width: 500%;
+}
+#l3i5s4:checked ~ .world-grid .world-item[for="l3i5s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l3i5s0:checked ~ .world-grid .world-item[for="l3i5s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l3i5s0:checked ~ .world-grid .world-item[for="l3i5s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l3i5s1:checked ~ .world-grid .world-item[for="l3i5s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l3i5s1:checked ~ .world-grid .world-item[for="l3i5s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l3i5s2:checked ~ .world-grid .world-item[for="l3i5s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l3i5s2:checked ~ .world-grid .world-item[for="l3i5s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l3i5s3:checked ~ .world-grid .world-item[for="l3i5s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l3i5s3:checked ~ .world-grid .world-item[for="l3i5s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l3i5s4:checked ~ .world-grid .world-item[for="l3i5s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l3i5s4:checked ~ .world-grid .world-item[for="l3i5s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l3i5s0:checked ~ .world-grid .world-item[for="l3i5s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l3i5s0:checked ~ .world-grid .world-item[for="l3i5s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l3i5s1:checked ~ .world-grid .world-item[for="l3i5s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l3i5s1:checked ~ .world-grid .world-item[for="l3i5s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l3i5s2:checked ~ .world-grid .world-item[for="l3i5s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l3i5s2:checked ~ .world-grid .world-item[for="l3i5s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l3i5s3:checked ~ .world-grid .world-item[for="l3i5s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l3i5s3:checked ~ .world-grid .world-item[for="l3i5s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l3i5s4:checked ~ .world-grid .world-item[for="l3i5s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l3i5s4:checked ~ .world-grid .world-item[for="l3i5s0"] .size-3:after {
+    height: 500%;
+}
+
+#l4i1c1:checked ~ .world-grid .world-item[for="l4i1s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l4i1c1:checked ~ .world-grid .world-item[for="l4i1s0"]:after {
+    background: #795548;
+}
+#l4i1c1:checked ~ .world-grid .world-item[for="l4i1s0"]:before {
+    background: #6D4C41;
+}
+
+#l4i1c2:checked ~ .world-grid .world-item[for="l4i1s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l4i1c2:checked ~ .world-grid .world-item[for="l4i1s0"]:after {
+    background: #4CAF50;
+}
+#l4i1c2:checked ~ .world-grid .world-item[for="l4i1s0"]:before {
+    background: #43A047;
+}
+
+#l4i1c3:checked ~ .world-grid .world-item[for="l4i1s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l4i1c3:checked ~ .world-grid .world-item[for="l4i1s0"]:after {
+    background: #795548;
+}
+#l4i1c3:checked ~ .world-grid .world-item[for="l4i1s0"]:before {
+    background: #6D4C41;
+}
+
+#l4i1c4:checked ~ .world-grid .world-item[for="l4i1s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l4i1c4:checked ~ .world-grid .world-item[for="l4i1s0"]:after {
+    background: #607D8B;
+}
+#l4i1c4:checked ~ .world-grid .world-item[for="l4i1s0"]:before {
+    background: #546E7A;
+}
+
+#l4i1c5:checked ~ .world-grid .world-item[for="l4i1s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l4i1c5:checked ~ .world-grid .world-item[for="l4i1s0"]:after {
+    background: #607D8B;
+}
+#l4i1c5:checked ~ .world-grid .world-item[for="l4i1s0"]:before {
+    background: #546E7A;
+}
+
+#l4i1c6:checked ~ .world-grid .world-item[for="l4i1s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l4i1c6:checked ~ .world-grid .world-item[for="l4i1s0"]:after {
+    background: #F5F5F5;
+}
+#l4i1c6:checked ~ .world-grid .world-item[for="l4i1s0"]:before {
+    background: #EEEEEE;
+}
+
+#l4i1c7:checked ~ .world-grid .world-item[for="l4i1s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l4i1c7:checked ~ .world-grid .world-item[for="l4i1s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l4i1c7:checked ~ .world-grid .world-item[for="l4i1s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l4i1s0:checked ~ .world-grid .world-item[for="l4i1s0"] {
+    transform: translateZ(0rem);
+}
+#l4i1s0:checked ~ .world-grid .world-item[for="l4i1s0"]:before {
+    width: 100%;
+}
+#l4i1s0:checked ~ .world-grid .world-item[for="l4i1s0"]:after {
+    height: 100%;
+}
+
+#l4i1s1:checked ~ .world-grid .world-item[for="l4i1s0"] {
+    transform: translateZ(3rem);
+}
+#l4i1s1:checked ~ .world-grid .world-item[for="l4i1s0"]:before {
+    width: 200%;
+}
+#l4i1s1:checked ~ .world-grid .world-item[for="l4i1s0"]:after {
+    height: 200%;
+}
+
+#l4i1s2:checked ~ .world-grid .world-item[for="l4i1s0"] {
+    transform: translateZ(6rem);
+}
+#l4i1s2:checked ~ .world-grid .world-item[for="l4i1s0"]:before {
+    width: 300%;
+}
+#l4i1s2:checked ~ .world-grid .world-item[for="l4i1s0"]:after {
+    height: 300%;
+}
+
+#l4i1s3:checked ~ .world-grid .world-item[for="l4i1s0"] {
+    transform: translateZ(9rem);
+}
+#l4i1s3:checked ~ .world-grid .world-item[for="l4i1s0"]:before {
+    width: 400%;
+}
+#l4i1s3:checked ~ .world-grid .world-item[for="l4i1s0"]:after {
+    height: 400%;
+}
+
+#l4i1s4:checked ~ .world-grid .world-item[for="l4i1s0"] {
+    transform: translateZ(12rem);
+}
+#l4i1s4:checked ~ .world-grid .world-item[for="l4i1s0"]:before {
+    width: 500%;
+}
+#l4i1s4:checked ~ .world-grid .world-item[for="l4i1s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l4i1s0:checked ~ .world-grid .world-item[for="l4i1s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l4i1s0:checked ~ .world-grid .world-item[for="l4i1s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l4i1s1:checked ~ .world-grid .world-item[for="l4i1s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l4i1s1:checked ~ .world-grid .world-item[for="l4i1s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l4i1s2:checked ~ .world-grid .world-item[for="l4i1s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l4i1s2:checked ~ .world-grid .world-item[for="l4i1s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l4i1s3:checked ~ .world-grid .world-item[for="l4i1s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l4i1s3:checked ~ .world-grid .world-item[for="l4i1s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l4i1s4:checked ~ .world-grid .world-item[for="l4i1s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l4i1s4:checked ~ .world-grid .world-item[for="l4i1s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l4i1s0:checked ~ .world-grid .world-item[for="l4i1s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l4i1s0:checked ~ .world-grid .world-item[for="l4i1s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l4i1s1:checked ~ .world-grid .world-item[for="l4i1s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l4i1s1:checked ~ .world-grid .world-item[for="l4i1s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l4i1s2:checked ~ .world-grid .world-item[for="l4i1s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l4i1s2:checked ~ .world-grid .world-item[for="l4i1s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l4i1s3:checked ~ .world-grid .world-item[for="l4i1s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l4i1s3:checked ~ .world-grid .world-item[for="l4i1s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l4i1s4:checked ~ .world-grid .world-item[for="l4i1s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l4i1s4:checked ~ .world-grid .world-item[for="l4i1s0"] .size-3:after {
+    height: 500%;
+}
+
+#l4i2c1:checked ~ .world-grid .world-item[for="l4i2s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l4i2c1:checked ~ .world-grid .world-item[for="l4i2s0"]:after {
+    background: #795548;
+}
+#l4i2c1:checked ~ .world-grid .world-item[for="l4i2s0"]:before {
+    background: #6D4C41;
+}
+
+#l4i2c2:checked ~ .world-grid .world-item[for="l4i2s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l4i2c2:checked ~ .world-grid .world-item[for="l4i2s0"]:after {
+    background: #4CAF50;
+}
+#l4i2c2:checked ~ .world-grid .world-item[for="l4i2s0"]:before {
+    background: #43A047;
+}
+
+#l4i2c3:checked ~ .world-grid .world-item[for="l4i2s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l4i2c3:checked ~ .world-grid .world-item[for="l4i2s0"]:after {
+    background: #795548;
+}
+#l4i2c3:checked ~ .world-grid .world-item[for="l4i2s0"]:before {
+    background: #6D4C41;
+}
+
+#l4i2c4:checked ~ .world-grid .world-item[for="l4i2s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l4i2c4:checked ~ .world-grid .world-item[for="l4i2s0"]:after {
+    background: #607D8B;
+}
+#l4i2c4:checked ~ .world-grid .world-item[for="l4i2s0"]:before {
+    background: #546E7A;
+}
+
+#l4i2c5:checked ~ .world-grid .world-item[for="l4i2s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l4i2c5:checked ~ .world-grid .world-item[for="l4i2s0"]:after {
+    background: #607D8B;
+}
+#l4i2c5:checked ~ .world-grid .world-item[for="l4i2s0"]:before {
+    background: #546E7A;
+}
+
+#l4i2c6:checked ~ .world-grid .world-item[for="l4i2s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l4i2c6:checked ~ .world-grid .world-item[for="l4i2s0"]:after {
+    background: #F5F5F5;
+}
+#l4i2c6:checked ~ .world-grid .world-item[for="l4i2s0"]:before {
+    background: #EEEEEE;
+}
+
+#l4i2c7:checked ~ .world-grid .world-item[for="l4i2s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l4i2c7:checked ~ .world-grid .world-item[for="l4i2s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l4i2c7:checked ~ .world-grid .world-item[for="l4i2s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l4i2s0:checked ~ .world-grid .world-item[for="l4i2s0"] {
+    transform: translateZ(0rem);
+}
+#l4i2s0:checked ~ .world-grid .world-item[for="l4i2s0"]:before {
+    width: 100%;
+}
+#l4i2s0:checked ~ .world-grid .world-item[for="l4i2s0"]:after {
+    height: 100%;
+}
+
+#l4i2s1:checked ~ .world-grid .world-item[for="l4i2s0"] {
+    transform: translateZ(3rem);
+}
+#l4i2s1:checked ~ .world-grid .world-item[for="l4i2s0"]:before {
+    width: 200%;
+}
+#l4i2s1:checked ~ .world-grid .world-item[for="l4i2s0"]:after {
+    height: 200%;
+}
+
+#l4i2s2:checked ~ .world-grid .world-item[for="l4i2s0"] {
+    transform: translateZ(6rem);
+}
+#l4i2s2:checked ~ .world-grid .world-item[for="l4i2s0"]:before {
+    width: 300%;
+}
+#l4i2s2:checked ~ .world-grid .world-item[for="l4i2s0"]:after {
+    height: 300%;
+}
+
+#l4i2s3:checked ~ .world-grid .world-item[for="l4i2s0"] {
+    transform: translateZ(9rem);
+}
+#l4i2s3:checked ~ .world-grid .world-item[for="l4i2s0"]:before {
+    width: 400%;
+}
+#l4i2s3:checked ~ .world-grid .world-item[for="l4i2s0"]:after {
+    height: 400%;
+}
+
+#l4i2s4:checked ~ .world-grid .world-item[for="l4i2s0"] {
+    transform: translateZ(12rem);
+}
+#l4i2s4:checked ~ .world-grid .world-item[for="l4i2s0"]:before {
+    width: 500%;
+}
+#l4i2s4:checked ~ .world-grid .world-item[for="l4i2s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l4i2s0:checked ~ .world-grid .world-item[for="l4i2s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l4i2s0:checked ~ .world-grid .world-item[for="l4i2s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l4i2s1:checked ~ .world-grid .world-item[for="l4i2s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l4i2s1:checked ~ .world-grid .world-item[for="l4i2s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l4i2s2:checked ~ .world-grid .world-item[for="l4i2s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l4i2s2:checked ~ .world-grid .world-item[for="l4i2s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l4i2s3:checked ~ .world-grid .world-item[for="l4i2s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l4i2s3:checked ~ .world-grid .world-item[for="l4i2s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l4i2s4:checked ~ .world-grid .world-item[for="l4i2s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l4i2s4:checked ~ .world-grid .world-item[for="l4i2s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l4i2s0:checked ~ .world-grid .world-item[for="l4i2s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l4i2s0:checked ~ .world-grid .world-item[for="l4i2s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l4i2s1:checked ~ .world-grid .world-item[for="l4i2s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l4i2s1:checked ~ .world-grid .world-item[for="l4i2s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l4i2s2:checked ~ .world-grid .world-item[for="l4i2s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l4i2s2:checked ~ .world-grid .world-item[for="l4i2s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l4i2s3:checked ~ .world-grid .world-item[for="l4i2s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l4i2s3:checked ~ .world-grid .world-item[for="l4i2s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l4i2s4:checked ~ .world-grid .world-item[for="l4i2s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l4i2s4:checked ~ .world-grid .world-item[for="l4i2s0"] .size-3:after {
+    height: 500%;
+}
+
+#l4i3c1:checked ~ .world-grid .world-item[for="l4i3s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l4i3c1:checked ~ .world-grid .world-item[for="l4i3s0"]:after {
+    background: #795548;
+}
+#l4i3c1:checked ~ .world-grid .world-item[for="l4i3s0"]:before {
+    background: #6D4C41;
+}
+
+#l4i3c2:checked ~ .world-grid .world-item[for="l4i3s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l4i3c2:checked ~ .world-grid .world-item[for="l4i3s0"]:after {
+    background: #4CAF50;
+}
+#l4i3c2:checked ~ .world-grid .world-item[for="l4i3s0"]:before {
+    background: #43A047;
+}
+
+#l4i3c3:checked ~ .world-grid .world-item[for="l4i3s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l4i3c3:checked ~ .world-grid .world-item[for="l4i3s0"]:after {
+    background: #795548;
+}
+#l4i3c3:checked ~ .world-grid .world-item[for="l4i3s0"]:before {
+    background: #6D4C41;
+}
+
+#l4i3c4:checked ~ .world-grid .world-item[for="l4i3s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l4i3c4:checked ~ .world-grid .world-item[for="l4i3s0"]:after {
+    background: #607D8B;
+}
+#l4i3c4:checked ~ .world-grid .world-item[for="l4i3s0"]:before {
+    background: #546E7A;
+}
+
+#l4i3c5:checked ~ .world-grid .world-item[for="l4i3s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l4i3c5:checked ~ .world-grid .world-item[for="l4i3s0"]:after {
+    background: #607D8B;
+}
+#l4i3c5:checked ~ .world-grid .world-item[for="l4i3s0"]:before {
+    background: #546E7A;
+}
+
+#l4i3c6:checked ~ .world-grid .world-item[for="l4i3s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l4i3c6:checked ~ .world-grid .world-item[for="l4i3s0"]:after {
+    background: #F5F5F5;
+}
+#l4i3c6:checked ~ .world-grid .world-item[for="l4i3s0"]:before {
+    background: #EEEEEE;
+}
+
+#l4i3c7:checked ~ .world-grid .world-item[for="l4i3s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l4i3c7:checked ~ .world-grid .world-item[for="l4i3s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l4i3c7:checked ~ .world-grid .world-item[for="l4i3s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l4i3s0:checked ~ .world-grid .world-item[for="l4i3s0"] {
+    transform: translateZ(0rem);
+}
+#l4i3s0:checked ~ .world-grid .world-item[for="l4i3s0"]:before {
+    width: 100%;
+}
+#l4i3s0:checked ~ .world-grid .world-item[for="l4i3s0"]:after {
+    height: 100%;
+}
+
+#l4i3s1:checked ~ .world-grid .world-item[for="l4i3s0"] {
+    transform: translateZ(3rem);
+}
+#l4i3s1:checked ~ .world-grid .world-item[for="l4i3s0"]:before {
+    width: 200%;
+}
+#l4i3s1:checked ~ .world-grid .world-item[for="l4i3s0"]:after {
+    height: 200%;
+}
+
+#l4i3s2:checked ~ .world-grid .world-item[for="l4i3s0"] {
+    transform: translateZ(6rem);
+}
+#l4i3s2:checked ~ .world-grid .world-item[for="l4i3s0"]:before {
+    width: 300%;
+}
+#l4i3s2:checked ~ .world-grid .world-item[for="l4i3s0"]:after {
+    height: 300%;
+}
+
+#l4i3s3:checked ~ .world-grid .world-item[for="l4i3s0"] {
+    transform: translateZ(9rem);
+}
+#l4i3s3:checked ~ .world-grid .world-item[for="l4i3s0"]:before {
+    width: 400%;
+}
+#l4i3s3:checked ~ .world-grid .world-item[for="l4i3s0"]:after {
+    height: 400%;
+}
+
+#l4i3s4:checked ~ .world-grid .world-item[for="l4i3s0"] {
+    transform: translateZ(12rem);
+}
+#l4i3s4:checked ~ .world-grid .world-item[for="l4i3s0"]:before {
+    width: 500%;
+}
+#l4i3s4:checked ~ .world-grid .world-item[for="l4i3s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l4i3s0:checked ~ .world-grid .world-item[for="l4i3s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l4i3s0:checked ~ .world-grid .world-item[for="l4i3s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l4i3s1:checked ~ .world-grid .world-item[for="l4i3s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l4i3s1:checked ~ .world-grid .world-item[for="l4i3s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l4i3s2:checked ~ .world-grid .world-item[for="l4i3s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l4i3s2:checked ~ .world-grid .world-item[for="l4i3s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l4i3s3:checked ~ .world-grid .world-item[for="l4i3s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l4i3s3:checked ~ .world-grid .world-item[for="l4i3s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l4i3s4:checked ~ .world-grid .world-item[for="l4i3s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l4i3s4:checked ~ .world-grid .world-item[for="l4i3s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l4i3s0:checked ~ .world-grid .world-item[for="l4i3s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l4i3s0:checked ~ .world-grid .world-item[for="l4i3s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l4i3s1:checked ~ .world-grid .world-item[for="l4i3s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l4i3s1:checked ~ .world-grid .world-item[for="l4i3s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l4i3s2:checked ~ .world-grid .world-item[for="l4i3s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l4i3s2:checked ~ .world-grid .world-item[for="l4i3s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l4i3s3:checked ~ .world-grid .world-item[for="l4i3s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l4i3s3:checked ~ .world-grid .world-item[for="l4i3s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l4i3s4:checked ~ .world-grid .world-item[for="l4i3s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l4i3s4:checked ~ .world-grid .world-item[for="l4i3s0"] .size-3:after {
+    height: 500%;
+}
+
+#l4i4c1:checked ~ .world-grid .world-item[for="l4i4s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l4i4c1:checked ~ .world-grid .world-item[for="l4i4s0"]:after {
+    background: #795548;
+}
+#l4i4c1:checked ~ .world-grid .world-item[for="l4i4s0"]:before {
+    background: #6D4C41;
+}
+
+#l4i4c2:checked ~ .world-grid .world-item[for="l4i4s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l4i4c2:checked ~ .world-grid .world-item[for="l4i4s0"]:after {
+    background: #4CAF50;
+}
+#l4i4c2:checked ~ .world-grid .world-item[for="l4i4s0"]:before {
+    background: #43A047;
+}
+
+#l4i4c3:checked ~ .world-grid .world-item[for="l4i4s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l4i4c3:checked ~ .world-grid .world-item[for="l4i4s0"]:after {
+    background: #795548;
+}
+#l4i4c3:checked ~ .world-grid .world-item[for="l4i4s0"]:before {
+    background: #6D4C41;
+}
+
+#l4i4c4:checked ~ .world-grid .world-item[for="l4i4s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l4i4c4:checked ~ .world-grid .world-item[for="l4i4s0"]:after {
+    background: #607D8B;
+}
+#l4i4c4:checked ~ .world-grid .world-item[for="l4i4s0"]:before {
+    background: #546E7A;
+}
+
+#l4i4c5:checked ~ .world-grid .world-item[for="l4i4s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l4i4c5:checked ~ .world-grid .world-item[for="l4i4s0"]:after {
+    background: #607D8B;
+}
+#l4i4c5:checked ~ .world-grid .world-item[for="l4i4s0"]:before {
+    background: #546E7A;
+}
+
+#l4i4c6:checked ~ .world-grid .world-item[for="l4i4s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l4i4c6:checked ~ .world-grid .world-item[for="l4i4s0"]:after {
+    background: #F5F5F5;
+}
+#l4i4c6:checked ~ .world-grid .world-item[for="l4i4s0"]:before {
+    background: #EEEEEE;
+}
+
+#l4i4c7:checked ~ .world-grid .world-item[for="l4i4s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l4i4c7:checked ~ .world-grid .world-item[for="l4i4s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l4i4c7:checked ~ .world-grid .world-item[for="l4i4s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l4i4s0:checked ~ .world-grid .world-item[for="l4i4s0"] {
+    transform: translateZ(0rem);
+}
+#l4i4s0:checked ~ .world-grid .world-item[for="l4i4s0"]:before {
+    width: 100%;
+}
+#l4i4s0:checked ~ .world-grid .world-item[for="l4i4s0"]:after {
+    height: 100%;
+}
+
+#l4i4s1:checked ~ .world-grid .world-item[for="l4i4s0"] {
+    transform: translateZ(3rem);
+}
+#l4i4s1:checked ~ .world-grid .world-item[for="l4i4s0"]:before {
+    width: 200%;
+}
+#l4i4s1:checked ~ .world-grid .world-item[for="l4i4s0"]:after {
+    height: 200%;
+}
+
+#l4i4s2:checked ~ .world-grid .world-item[for="l4i4s0"] {
+    transform: translateZ(6rem);
+}
+#l4i4s2:checked ~ .world-grid .world-item[for="l4i4s0"]:before {
+    width: 300%;
+}
+#l4i4s2:checked ~ .world-grid .world-item[for="l4i4s0"]:after {
+    height: 300%;
+}
+
+#l4i4s3:checked ~ .world-grid .world-item[for="l4i4s0"] {
+    transform: translateZ(9rem);
+}
+#l4i4s3:checked ~ .world-grid .world-item[for="l4i4s0"]:before {
+    width: 400%;
+}
+#l4i4s3:checked ~ .world-grid .world-item[for="l4i4s0"]:after {
+    height: 400%;
+}
+
+#l4i4s4:checked ~ .world-grid .world-item[for="l4i4s0"] {
+    transform: translateZ(12rem);
+}
+#l4i4s4:checked ~ .world-grid .world-item[for="l4i4s0"]:before {
+    width: 500%;
+}
+#l4i4s4:checked ~ .world-grid .world-item[for="l4i4s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l4i4s0:checked ~ .world-grid .world-item[for="l4i4s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l4i4s0:checked ~ .world-grid .world-item[for="l4i4s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l4i4s1:checked ~ .world-grid .world-item[for="l4i4s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l4i4s1:checked ~ .world-grid .world-item[for="l4i4s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l4i4s2:checked ~ .world-grid .world-item[for="l4i4s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l4i4s2:checked ~ .world-grid .world-item[for="l4i4s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l4i4s3:checked ~ .world-grid .world-item[for="l4i4s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l4i4s3:checked ~ .world-grid .world-item[for="l4i4s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l4i4s4:checked ~ .world-grid .world-item[for="l4i4s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l4i4s4:checked ~ .world-grid .world-item[for="l4i4s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l4i4s0:checked ~ .world-grid .world-item[for="l4i4s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l4i4s0:checked ~ .world-grid .world-item[for="l4i4s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l4i4s1:checked ~ .world-grid .world-item[for="l4i4s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l4i4s1:checked ~ .world-grid .world-item[for="l4i4s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l4i4s2:checked ~ .world-grid .world-item[for="l4i4s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l4i4s2:checked ~ .world-grid .world-item[for="l4i4s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l4i4s3:checked ~ .world-grid .world-item[for="l4i4s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l4i4s3:checked ~ .world-grid .world-item[for="l4i4s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l4i4s4:checked ~ .world-grid .world-item[for="l4i4s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l4i4s4:checked ~ .world-grid .world-item[for="l4i4s0"] .size-3:after {
+    height: 500%;
+}
+
+#l4i5c1:checked ~ .world-grid .world-item[for="l4i5s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l4i5c1:checked ~ .world-grid .world-item[for="l4i5s0"]:after {
+    background: #795548;
+}
+#l4i5c1:checked ~ .world-grid .world-item[for="l4i5s0"]:before {
+    background: #6D4C41;
+}
+
+#l4i5c2:checked ~ .world-grid .world-item[for="l4i5s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l4i5c2:checked ~ .world-grid .world-item[for="l4i5s0"]:after {
+    background: #4CAF50;
+}
+#l4i5c2:checked ~ .world-grid .world-item[for="l4i5s0"]:before {
+    background: #43A047;
+}
+
+#l4i5c3:checked ~ .world-grid .world-item[for="l4i5s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l4i5c3:checked ~ .world-grid .world-item[for="l4i5s0"]:after {
+    background: #795548;
+}
+#l4i5c3:checked ~ .world-grid .world-item[for="l4i5s0"]:before {
+    background: #6D4C41;
+}
+
+#l4i5c4:checked ~ .world-grid .world-item[for="l4i5s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l4i5c4:checked ~ .world-grid .world-item[for="l4i5s0"]:after {
+    background: #607D8B;
+}
+#l4i5c4:checked ~ .world-grid .world-item[for="l4i5s0"]:before {
+    background: #546E7A;
+}
+
+#l4i5c5:checked ~ .world-grid .world-item[for="l4i5s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l4i5c5:checked ~ .world-grid .world-item[for="l4i5s0"]:after {
+    background: #607D8B;
+}
+#l4i5c5:checked ~ .world-grid .world-item[for="l4i5s0"]:before {
+    background: #546E7A;
+}
+
+#l4i5c6:checked ~ .world-grid .world-item[for="l4i5s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l4i5c6:checked ~ .world-grid .world-item[for="l4i5s0"]:after {
+    background: #F5F5F5;
+}
+#l4i5c6:checked ~ .world-grid .world-item[for="l4i5s0"]:before {
+    background: #EEEEEE;
+}
+
+#l4i5c7:checked ~ .world-grid .world-item[for="l4i5s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l4i5c7:checked ~ .world-grid .world-item[for="l4i5s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l4i5c7:checked ~ .world-grid .world-item[for="l4i5s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l4i5s0:checked ~ .world-grid .world-item[for="l4i5s0"] {
+    transform: translateZ(0rem);
+}
+#l4i5s0:checked ~ .world-grid .world-item[for="l4i5s0"]:before {
+    width: 100%;
+}
+#l4i5s0:checked ~ .world-grid .world-item[for="l4i5s0"]:after {
+    height: 100%;
+}
+
+#l4i5s1:checked ~ .world-grid .world-item[for="l4i5s0"] {
+    transform: translateZ(3rem);
+}
+#l4i5s1:checked ~ .world-grid .world-item[for="l4i5s0"]:before {
+    width: 200%;
+}
+#l4i5s1:checked ~ .world-grid .world-item[for="l4i5s0"]:after {
+    height: 200%;
+}
+
+#l4i5s2:checked ~ .world-grid .world-item[for="l4i5s0"] {
+    transform: translateZ(6rem);
+}
+#l4i5s2:checked ~ .world-grid .world-item[for="l4i5s0"]:before {
+    width: 300%;
+}
+#l4i5s2:checked ~ .world-grid .world-item[for="l4i5s0"]:after {
+    height: 300%;
+}
+
+#l4i5s3:checked ~ .world-grid .world-item[for="l4i5s0"] {
+    transform: translateZ(9rem);
+}
+#l4i5s3:checked ~ .world-grid .world-item[for="l4i5s0"]:before {
+    width: 400%;
+}
+#l4i5s3:checked ~ .world-grid .world-item[for="l4i5s0"]:after {
+    height: 400%;
+}
+
+#l4i5s4:checked ~ .world-grid .world-item[for="l4i5s0"] {
+    transform: translateZ(12rem);
+}
+#l4i5s4:checked ~ .world-grid .world-item[for="l4i5s0"]:before {
+    width: 500%;
+}
+#l4i5s4:checked ~ .world-grid .world-item[for="l4i5s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l4i5s0:checked ~ .world-grid .world-item[for="l4i5s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l4i5s0:checked ~ .world-grid .world-item[for="l4i5s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l4i5s1:checked ~ .world-grid .world-item[for="l4i5s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l4i5s1:checked ~ .world-grid .world-item[for="l4i5s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l4i5s2:checked ~ .world-grid .world-item[for="l4i5s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l4i5s2:checked ~ .world-grid .world-item[for="l4i5s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l4i5s3:checked ~ .world-grid .world-item[for="l4i5s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l4i5s3:checked ~ .world-grid .world-item[for="l4i5s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l4i5s4:checked ~ .world-grid .world-item[for="l4i5s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l4i5s4:checked ~ .world-grid .world-item[for="l4i5s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l4i5s0:checked ~ .world-grid .world-item[for="l4i5s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l4i5s0:checked ~ .world-grid .world-item[for="l4i5s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l4i5s1:checked ~ .world-grid .world-item[for="l4i5s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l4i5s1:checked ~ .world-grid .world-item[for="l4i5s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l4i5s2:checked ~ .world-grid .world-item[for="l4i5s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l4i5s2:checked ~ .world-grid .world-item[for="l4i5s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l4i5s3:checked ~ .world-grid .world-item[for="l4i5s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l4i5s3:checked ~ .world-grid .world-item[for="l4i5s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l4i5s4:checked ~ .world-grid .world-item[for="l4i5s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l4i5s4:checked ~ .world-grid .world-item[for="l4i5s0"] .size-3:after {
+    height: 500%;
+}
+
+#l5i1c1:checked ~ .world-grid .world-item[for="l5i1s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l5i1c1:checked ~ .world-grid .world-item[for="l5i1s0"]:after {
+    background: #795548;
+}
+#l5i1c1:checked ~ .world-grid .world-item[for="l5i1s0"]:before {
+    background: #6D4C41;
+}
+
+#l5i1c2:checked ~ .world-grid .world-item[for="l5i1s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l5i1c2:checked ~ .world-grid .world-item[for="l5i1s0"]:after {
+    background: #4CAF50;
+}
+#l5i1c2:checked ~ .world-grid .world-item[for="l5i1s0"]:before {
+    background: #43A047;
+}
+
+#l5i1c3:checked ~ .world-grid .world-item[for="l5i1s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l5i1c3:checked ~ .world-grid .world-item[for="l5i1s0"]:after {
+    background: #795548;
+}
+#l5i1c3:checked ~ .world-grid .world-item[for="l5i1s0"]:before {
+    background: #6D4C41;
+}
+
+#l5i1c4:checked ~ .world-grid .world-item[for="l5i1s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l5i1c4:checked ~ .world-grid .world-item[for="l5i1s0"]:after {
+    background: #607D8B;
+}
+#l5i1c4:checked ~ .world-grid .world-item[for="l5i1s0"]:before {
+    background: #546E7A;
+}
+
+#l5i1c5:checked ~ .world-grid .world-item[for="l5i1s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l5i1c5:checked ~ .world-grid .world-item[for="l5i1s0"]:after {
+    background: #607D8B;
+}
+#l5i1c5:checked ~ .world-grid .world-item[for="l5i1s0"]:before {
+    background: #546E7A;
+}
+
+#l5i1c6:checked ~ .world-grid .world-item[for="l5i1s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l5i1c6:checked ~ .world-grid .world-item[for="l5i1s0"]:after {
+    background: #F5F5F5;
+}
+#l5i1c6:checked ~ .world-grid .world-item[for="l5i1s0"]:before {
+    background: #EEEEEE;
+}
+
+#l5i1c7:checked ~ .world-grid .world-item[for="l5i1s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l5i1c7:checked ~ .world-grid .world-item[for="l5i1s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l5i1c7:checked ~ .world-grid .world-item[for="l5i1s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l5i1s0:checked ~ .world-grid .world-item[for="l5i1s0"] {
+    transform: translateZ(0rem);
+}
+#l5i1s0:checked ~ .world-grid .world-item[for="l5i1s0"]:before {
+    width: 100%;
+}
+#l5i1s0:checked ~ .world-grid .world-item[for="l5i1s0"]:after {
+    height: 100%;
+}
+
+#l5i1s1:checked ~ .world-grid .world-item[for="l5i1s0"] {
+    transform: translateZ(3rem);
+}
+#l5i1s1:checked ~ .world-grid .world-item[for="l5i1s0"]:before {
+    width: 200%;
+}
+#l5i1s1:checked ~ .world-grid .world-item[for="l5i1s0"]:after {
+    height: 200%;
+}
+
+#l5i1s2:checked ~ .world-grid .world-item[for="l5i1s0"] {
+    transform: translateZ(6rem);
+}
+#l5i1s2:checked ~ .world-grid .world-item[for="l5i1s0"]:before {
+    width: 300%;
+}
+#l5i1s2:checked ~ .world-grid .world-item[for="l5i1s0"]:after {
+    height: 300%;
+}
+
+#l5i1s3:checked ~ .world-grid .world-item[for="l5i1s0"] {
+    transform: translateZ(9rem);
+}
+#l5i1s3:checked ~ .world-grid .world-item[for="l5i1s0"]:before {
+    width: 400%;
+}
+#l5i1s3:checked ~ .world-grid .world-item[for="l5i1s0"]:after {
+    height: 400%;
+}
+
+#l5i1s4:checked ~ .world-grid .world-item[for="l5i1s0"] {
+    transform: translateZ(12rem);
+}
+#l5i1s4:checked ~ .world-grid .world-item[for="l5i1s0"]:before {
+    width: 500%;
+}
+#l5i1s4:checked ~ .world-grid .world-item[for="l5i1s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l5i1s0:checked ~ .world-grid .world-item[for="l5i1s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l5i1s0:checked ~ .world-grid .world-item[for="l5i1s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l5i1s1:checked ~ .world-grid .world-item[for="l5i1s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l5i1s1:checked ~ .world-grid .world-item[for="l5i1s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l5i1s2:checked ~ .world-grid .world-item[for="l5i1s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l5i1s2:checked ~ .world-grid .world-item[for="l5i1s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l5i1s3:checked ~ .world-grid .world-item[for="l5i1s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l5i1s3:checked ~ .world-grid .world-item[for="l5i1s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l5i1s4:checked ~ .world-grid .world-item[for="l5i1s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l5i1s4:checked ~ .world-grid .world-item[for="l5i1s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l5i1s0:checked ~ .world-grid .world-item[for="l5i1s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l5i1s0:checked ~ .world-grid .world-item[for="l5i1s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l5i1s1:checked ~ .world-grid .world-item[for="l5i1s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l5i1s1:checked ~ .world-grid .world-item[for="l5i1s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l5i1s2:checked ~ .world-grid .world-item[for="l5i1s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l5i1s2:checked ~ .world-grid .world-item[for="l5i1s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l5i1s3:checked ~ .world-grid .world-item[for="l5i1s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l5i1s3:checked ~ .world-grid .world-item[for="l5i1s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l5i1s4:checked ~ .world-grid .world-item[for="l5i1s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l5i1s4:checked ~ .world-grid .world-item[for="l5i1s0"] .size-3:after {
+    height: 500%;
+}
+
+#l5i2c1:checked ~ .world-grid .world-item[for="l5i2s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l5i2c1:checked ~ .world-grid .world-item[for="l5i2s0"]:after {
+    background: #795548;
+}
+#l5i2c1:checked ~ .world-grid .world-item[for="l5i2s0"]:before {
+    background: #6D4C41;
+}
+
+#l5i2c2:checked ~ .world-grid .world-item[for="l5i2s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l5i2c2:checked ~ .world-grid .world-item[for="l5i2s0"]:after {
+    background: #4CAF50;
+}
+#l5i2c2:checked ~ .world-grid .world-item[for="l5i2s0"]:before {
+    background: #43A047;
+}
+
+#l5i2c3:checked ~ .world-grid .world-item[for="l5i2s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l5i2c3:checked ~ .world-grid .world-item[for="l5i2s0"]:after {
+    background: #795548;
+}
+#l5i2c3:checked ~ .world-grid .world-item[for="l5i2s0"]:before {
+    background: #6D4C41;
+}
+
+#l5i2c4:checked ~ .world-grid .world-item[for="l5i2s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l5i2c4:checked ~ .world-grid .world-item[for="l5i2s0"]:after {
+    background: #607D8B;
+}
+#l5i2c4:checked ~ .world-grid .world-item[for="l5i2s0"]:before {
+    background: #546E7A;
+}
+
+#l5i2c5:checked ~ .world-grid .world-item[for="l5i2s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l5i2c5:checked ~ .world-grid .world-item[for="l5i2s0"]:after {
+    background: #607D8B;
+}
+#l5i2c5:checked ~ .world-grid .world-item[for="l5i2s0"]:before {
+    background: #546E7A;
+}
+
+#l5i2c6:checked ~ .world-grid .world-item[for="l5i2s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l5i2c6:checked ~ .world-grid .world-item[for="l5i2s0"]:after {
+    background: #F5F5F5;
+}
+#l5i2c6:checked ~ .world-grid .world-item[for="l5i2s0"]:before {
+    background: #EEEEEE;
+}
+
+#l5i2c7:checked ~ .world-grid .world-item[for="l5i2s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l5i2c7:checked ~ .world-grid .world-item[for="l5i2s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l5i2c7:checked ~ .world-grid .world-item[for="l5i2s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l5i2s0:checked ~ .world-grid .world-item[for="l5i2s0"] {
+    transform: translateZ(0rem);
+}
+#l5i2s0:checked ~ .world-grid .world-item[for="l5i2s0"]:before {
+    width: 100%;
+}
+#l5i2s0:checked ~ .world-grid .world-item[for="l5i2s0"]:after {
+    height: 100%;
+}
+
+#l5i2s1:checked ~ .world-grid .world-item[for="l5i2s0"] {
+    transform: translateZ(3rem);
+}
+#l5i2s1:checked ~ .world-grid .world-item[for="l5i2s0"]:before {
+    width: 200%;
+}
+#l5i2s1:checked ~ .world-grid .world-item[for="l5i2s0"]:after {
+    height: 200%;
+}
+
+#l5i2s2:checked ~ .world-grid .world-item[for="l5i2s0"] {
+    transform: translateZ(6rem);
+}
+#l5i2s2:checked ~ .world-grid .world-item[for="l5i2s0"]:before {
+    width: 300%;
+}
+#l5i2s2:checked ~ .world-grid .world-item[for="l5i2s0"]:after {
+    height: 300%;
+}
+
+#l5i2s3:checked ~ .world-grid .world-item[for="l5i2s0"] {
+    transform: translateZ(9rem);
+}
+#l5i2s3:checked ~ .world-grid .world-item[for="l5i2s0"]:before {
+    width: 400%;
+}
+#l5i2s3:checked ~ .world-grid .world-item[for="l5i2s0"]:after {
+    height: 400%;
+}
+
+#l5i2s4:checked ~ .world-grid .world-item[for="l5i2s0"] {
+    transform: translateZ(12rem);
+}
+#l5i2s4:checked ~ .world-grid .world-item[for="l5i2s0"]:before {
+    width: 500%;
+}
+#l5i2s4:checked ~ .world-grid .world-item[for="l5i2s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l5i2s0:checked ~ .world-grid .world-item[for="l5i2s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l5i2s0:checked ~ .world-grid .world-item[for="l5i2s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l5i2s1:checked ~ .world-grid .world-item[for="l5i2s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l5i2s1:checked ~ .world-grid .world-item[for="l5i2s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l5i2s2:checked ~ .world-grid .world-item[for="l5i2s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l5i2s2:checked ~ .world-grid .world-item[for="l5i2s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l5i2s3:checked ~ .world-grid .world-item[for="l5i2s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l5i2s3:checked ~ .world-grid .world-item[for="l5i2s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l5i2s4:checked ~ .world-grid .world-item[for="l5i2s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l5i2s4:checked ~ .world-grid .world-item[for="l5i2s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l5i2s0:checked ~ .world-grid .world-item[for="l5i2s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l5i2s0:checked ~ .world-grid .world-item[for="l5i2s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l5i2s1:checked ~ .world-grid .world-item[for="l5i2s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l5i2s1:checked ~ .world-grid .world-item[for="l5i2s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l5i2s2:checked ~ .world-grid .world-item[for="l5i2s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l5i2s2:checked ~ .world-grid .world-item[for="l5i2s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l5i2s3:checked ~ .world-grid .world-item[for="l5i2s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l5i2s3:checked ~ .world-grid .world-item[for="l5i2s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l5i2s4:checked ~ .world-grid .world-item[for="l5i2s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l5i2s4:checked ~ .world-grid .world-item[for="l5i2s0"] .size-3:after {
+    height: 500%;
+}
+
+#l5i3c1:checked ~ .world-grid .world-item[for="l5i3s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l5i3c1:checked ~ .world-grid .world-item[for="l5i3s0"]:after {
+    background: #795548;
+}
+#l5i3c1:checked ~ .world-grid .world-item[for="l5i3s0"]:before {
+    background: #6D4C41;
+}
+
+#l5i3c2:checked ~ .world-grid .world-item[for="l5i3s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l5i3c2:checked ~ .world-grid .world-item[for="l5i3s0"]:after {
+    background: #4CAF50;
+}
+#l5i3c2:checked ~ .world-grid .world-item[for="l5i3s0"]:before {
+    background: #43A047;
+}
+
+#l5i3c3:checked ~ .world-grid .world-item[for="l5i3s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l5i3c3:checked ~ .world-grid .world-item[for="l5i3s0"]:after {
+    background: #795548;
+}
+#l5i3c3:checked ~ .world-grid .world-item[for="l5i3s0"]:before {
+    background: #6D4C41;
+}
+
+#l5i3c4:checked ~ .world-grid .world-item[for="l5i3s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l5i3c4:checked ~ .world-grid .world-item[for="l5i3s0"]:after {
+    background: #607D8B;
+}
+#l5i3c4:checked ~ .world-grid .world-item[for="l5i3s0"]:before {
+    background: #546E7A;
+}
+
+#l5i3c5:checked ~ .world-grid .world-item[for="l5i3s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l5i3c5:checked ~ .world-grid .world-item[for="l5i3s0"]:after {
+    background: #607D8B;
+}
+#l5i3c5:checked ~ .world-grid .world-item[for="l5i3s0"]:before {
+    background: #546E7A;
+}
+
+#l5i3c6:checked ~ .world-grid .world-item[for="l5i3s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l5i3c6:checked ~ .world-grid .world-item[for="l5i3s0"]:after {
+    background: #F5F5F5;
+}
+#l5i3c6:checked ~ .world-grid .world-item[for="l5i3s0"]:before {
+    background: #EEEEEE;
+}
+
+#l5i3c7:checked ~ .world-grid .world-item[for="l5i3s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l5i3c7:checked ~ .world-grid .world-item[for="l5i3s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l5i3c7:checked ~ .world-grid .world-item[for="l5i3s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l5i3s0:checked ~ .world-grid .world-item[for="l5i3s0"] {
+    transform: translateZ(0rem);
+}
+#l5i3s0:checked ~ .world-grid .world-item[for="l5i3s0"]:before {
+    width: 100%;
+}
+#l5i3s0:checked ~ .world-grid .world-item[for="l5i3s0"]:after {
+    height: 100%;
+}
+
+#l5i3s1:checked ~ .world-grid .world-item[for="l5i3s0"] {
+    transform: translateZ(3rem);
+}
+#l5i3s1:checked ~ .world-grid .world-item[for="l5i3s0"]:before {
+    width: 200%;
+}
+#l5i3s1:checked ~ .world-grid .world-item[for="l5i3s0"]:after {
+    height: 200%;
+}
+
+#l5i3s2:checked ~ .world-grid .world-item[for="l5i3s0"] {
+    transform: translateZ(6rem);
+}
+#l5i3s2:checked ~ .world-grid .world-item[for="l5i3s0"]:before {
+    width: 300%;
+}
+#l5i3s2:checked ~ .world-grid .world-item[for="l5i3s0"]:after {
+    height: 300%;
+}
+
+#l5i3s3:checked ~ .world-grid .world-item[for="l5i3s0"] {
+    transform: translateZ(9rem);
+}
+#l5i3s3:checked ~ .world-grid .world-item[for="l5i3s0"]:before {
+    width: 400%;
+}
+#l5i3s3:checked ~ .world-grid .world-item[for="l5i3s0"]:after {
+    height: 400%;
+}
+
+#l5i3s4:checked ~ .world-grid .world-item[for="l5i3s0"] {
+    transform: translateZ(12rem);
+}
+#l5i3s4:checked ~ .world-grid .world-item[for="l5i3s0"]:before {
+    width: 500%;
+}
+#l5i3s4:checked ~ .world-grid .world-item[for="l5i3s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l5i3s0:checked ~ .world-grid .world-item[for="l5i3s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l5i3s0:checked ~ .world-grid .world-item[for="l5i3s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l5i3s1:checked ~ .world-grid .world-item[for="l5i3s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l5i3s1:checked ~ .world-grid .world-item[for="l5i3s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l5i3s2:checked ~ .world-grid .world-item[for="l5i3s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l5i3s2:checked ~ .world-grid .world-item[for="l5i3s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l5i3s3:checked ~ .world-grid .world-item[for="l5i3s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l5i3s3:checked ~ .world-grid .world-item[for="l5i3s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l5i3s4:checked ~ .world-grid .world-item[for="l5i3s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l5i3s4:checked ~ .world-grid .world-item[for="l5i3s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l5i3s0:checked ~ .world-grid .world-item[for="l5i3s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l5i3s0:checked ~ .world-grid .world-item[for="l5i3s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l5i3s1:checked ~ .world-grid .world-item[for="l5i3s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l5i3s1:checked ~ .world-grid .world-item[for="l5i3s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l5i3s2:checked ~ .world-grid .world-item[for="l5i3s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l5i3s2:checked ~ .world-grid .world-item[for="l5i3s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l5i3s3:checked ~ .world-grid .world-item[for="l5i3s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l5i3s3:checked ~ .world-grid .world-item[for="l5i3s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l5i3s4:checked ~ .world-grid .world-item[for="l5i3s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l5i3s4:checked ~ .world-grid .world-item[for="l5i3s0"] .size-3:after {
+    height: 500%;
+}
+
+#l5i4c1:checked ~ .world-grid .world-item[for="l5i4s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l5i4c1:checked ~ .world-grid .world-item[for="l5i4s0"]:after {
+    background: #795548;
+}
+#l5i4c1:checked ~ .world-grid .world-item[for="l5i4s0"]:before {
+    background: #6D4C41;
+}
+
+#l5i4c2:checked ~ .world-grid .world-item[for="l5i4s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l5i4c2:checked ~ .world-grid .world-item[for="l5i4s0"]:after {
+    background: #4CAF50;
+}
+#l5i4c2:checked ~ .world-grid .world-item[for="l5i4s0"]:before {
+    background: #43A047;
+}
+
+#l5i4c3:checked ~ .world-grid .world-item[for="l5i4s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l5i4c3:checked ~ .world-grid .world-item[for="l5i4s0"]:after {
+    background: #795548;
+}
+#l5i4c3:checked ~ .world-grid .world-item[for="l5i4s0"]:before {
+    background: #6D4C41;
+}
+
+#l5i4c4:checked ~ .world-grid .world-item[for="l5i4s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l5i4c4:checked ~ .world-grid .world-item[for="l5i4s0"]:after {
+    background: #607D8B;
+}
+#l5i4c4:checked ~ .world-grid .world-item[for="l5i4s0"]:before {
+    background: #546E7A;
+}
+
+#l5i4c5:checked ~ .world-grid .world-item[for="l5i4s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l5i4c5:checked ~ .world-grid .world-item[for="l5i4s0"]:after {
+    background: #607D8B;
+}
+#l5i4c5:checked ~ .world-grid .world-item[for="l5i4s0"]:before {
+    background: #546E7A;
+}
+
+#l5i4c6:checked ~ .world-grid .world-item[for="l5i4s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l5i4c6:checked ~ .world-grid .world-item[for="l5i4s0"]:after {
+    background: #F5F5F5;
+}
+#l5i4c6:checked ~ .world-grid .world-item[for="l5i4s0"]:before {
+    background: #EEEEEE;
+}
+
+#l5i4c7:checked ~ .world-grid .world-item[for="l5i4s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l5i4c7:checked ~ .world-grid .world-item[for="l5i4s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l5i4c7:checked ~ .world-grid .world-item[for="l5i4s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l5i4s0:checked ~ .world-grid .world-item[for="l5i4s0"] {
+    transform: translateZ(0rem);
+}
+#l5i4s0:checked ~ .world-grid .world-item[for="l5i4s0"]:before {
+    width: 100%;
+}
+#l5i4s0:checked ~ .world-grid .world-item[for="l5i4s0"]:after {
+    height: 100%;
+}
+
+#l5i4s1:checked ~ .world-grid .world-item[for="l5i4s0"] {
+    transform: translateZ(3rem);
+}
+#l5i4s1:checked ~ .world-grid .world-item[for="l5i4s0"]:before {
+    width: 200%;
+}
+#l5i4s1:checked ~ .world-grid .world-item[for="l5i4s0"]:after {
+    height: 200%;
+}
+
+#l5i4s2:checked ~ .world-grid .world-item[for="l5i4s0"] {
+    transform: translateZ(6rem);
+}
+#l5i4s2:checked ~ .world-grid .world-item[for="l5i4s0"]:before {
+    width: 300%;
+}
+#l5i4s2:checked ~ .world-grid .world-item[for="l5i4s0"]:after {
+    height: 300%;
+}
+
+#l5i4s3:checked ~ .world-grid .world-item[for="l5i4s0"] {
+    transform: translateZ(9rem);
+}
+#l5i4s3:checked ~ .world-grid .world-item[for="l5i4s0"]:before {
+    width: 400%;
+}
+#l5i4s3:checked ~ .world-grid .world-item[for="l5i4s0"]:after {
+    height: 400%;
+}
+
+#l5i4s4:checked ~ .world-grid .world-item[for="l5i4s0"] {
+    transform: translateZ(12rem);
+}
+#l5i4s4:checked ~ .world-grid .world-item[for="l5i4s0"]:before {
+    width: 500%;
+}
+#l5i4s4:checked ~ .world-grid .world-item[for="l5i4s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l5i4s0:checked ~ .world-grid .world-item[for="l5i4s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l5i4s0:checked ~ .world-grid .world-item[for="l5i4s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l5i4s1:checked ~ .world-grid .world-item[for="l5i4s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l5i4s1:checked ~ .world-grid .world-item[for="l5i4s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l5i4s2:checked ~ .world-grid .world-item[for="l5i4s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l5i4s2:checked ~ .world-grid .world-item[for="l5i4s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l5i4s3:checked ~ .world-grid .world-item[for="l5i4s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l5i4s3:checked ~ .world-grid .world-item[for="l5i4s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l5i4s4:checked ~ .world-grid .world-item[for="l5i4s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l5i4s4:checked ~ .world-grid .world-item[for="l5i4s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l5i4s0:checked ~ .world-grid .world-item[for="l5i4s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l5i4s0:checked ~ .world-grid .world-item[for="l5i4s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l5i4s1:checked ~ .world-grid .world-item[for="l5i4s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l5i4s1:checked ~ .world-grid .world-item[for="l5i4s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l5i4s2:checked ~ .world-grid .world-item[for="l5i4s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l5i4s2:checked ~ .world-grid .world-item[for="l5i4s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l5i4s3:checked ~ .world-grid .world-item[for="l5i4s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l5i4s3:checked ~ .world-grid .world-item[for="l5i4s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l5i4s4:checked ~ .world-grid .world-item[for="l5i4s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l5i4s4:checked ~ .world-grid .world-item[for="l5i4s0"] .size-3:after {
+    height: 500%;
+}
+
+#l5i5c1:checked ~ .world-grid .world-item[for="l5i5s0"] {
+    background: #8D6E63;
+    opacity: 1;
+}
+#l5i5c1:checked ~ .world-grid .world-item[for="l5i5s0"]:after {
+    background: #795548;
+}
+#l5i5c1:checked ~ .world-grid .world-item[for="l5i5s0"]:before {
+    background: #6D4C41;
+}
+
+#l5i5c2:checked ~ .world-grid .world-item[for="l5i5s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l5i5c2:checked ~ .world-grid .world-item[for="l5i5s0"]:after {
+    background: #4CAF50;
+}
+#l5i5c2:checked ~ .world-grid .world-item[for="l5i5s0"]:before {
+    background: #43A047;
+}
+
+#l5i5c3:checked ~ .world-grid .world-item[for="l5i5s0"] {
+    background: #66BB6A;
+    opacity: 1;
+}
+#l5i5c3:checked ~ .world-grid .world-item[for="l5i5s0"]:after {
+    background: #795548;
+}
+#l5i5c3:checked ~ .world-grid .world-item[for="l5i5s0"]:before {
+    background: #6D4C41;
+}
+
+#l5i5c4:checked ~ .world-grid .world-item[for="l5i5s0"] {
+    background: #78909C;
+    opacity: 1;
+}
+#l5i5c4:checked ~ .world-grid .world-item[for="l5i5s0"]:after {
+    background: #607D8B;
+}
+#l5i5c4:checked ~ .world-grid .world-item[for="l5i5s0"]:before {
+    background: #546E7A;
+}
+
+#l5i5c5:checked ~ .world-grid .world-item[for="l5i5s0"] {
+    background: #43A047;
+    opacity: 1;
+}
+#l5i5c5:checked ~ .world-grid .world-item[for="l5i5s0"]:after {
+    background: #607D8B;
+}
+#l5i5c5:checked ~ .world-grid .world-item[for="l5i5s0"]:before {
+    background: #546E7A;
+}
+
+#l5i5c6:checked ~ .world-grid .world-item[for="l5i5s0"] {
+    background: #FAFAFA;
+    opacity: 1;
+}
+#l5i5c6:checked ~ .world-grid .world-item[for="l5i5s0"]:after {
+    background: #F5F5F5;
+}
+#l5i5c6:checked ~ .world-grid .world-item[for="l5i5s0"]:before {
+    background: #EEEEEE;
+}
+
+#l5i5c7:checked ~ .world-grid .world-item[for="l5i5s0"] {
+    background: rgba(38, 198, 218, 0.8);
+    opacity: 1;
+}
+#l5i5c7:checked ~ .world-grid .world-item[for="l5i5s0"]:after {
+    background: rgba(0, 172, 193, 0.8);
+}
+#l5i5c7:checked ~ .world-grid .world-item[for="l5i5s0"]:before {
+    background: rgba(38, 198, 218, 0.8);
+}
+
+#l5i5s0:checked ~ .world-grid .world-item[for="l5i5s0"] {
+    transform: translateZ(0rem);
+}
+#l5i5s0:checked ~ .world-grid .world-item[for="l5i5s0"]:before {
+    width: 100%;
+}
+#l5i5s0:checked ~ .world-grid .world-item[for="l5i5s0"]:after {
+    height: 100%;
+}
+
+#l5i5s1:checked ~ .world-grid .world-item[for="l5i5s0"] {
+    transform: translateZ(3rem);
+}
+#l5i5s1:checked ~ .world-grid .world-item[for="l5i5s0"]:before {
+    width: 200%;
+}
+#l5i5s1:checked ~ .world-grid .world-item[for="l5i5s0"]:after {
+    height: 200%;
+}
+
+#l5i5s2:checked ~ .world-grid .world-item[for="l5i5s0"] {
+    transform: translateZ(6rem);
+}
+#l5i5s2:checked ~ .world-grid .world-item[for="l5i5s0"]:before {
+    width: 300%;
+}
+#l5i5s2:checked ~ .world-grid .world-item[for="l5i5s0"]:after {
+    height: 300%;
+}
+
+#l5i5s3:checked ~ .world-grid .world-item[for="l5i5s0"] {
+    transform: translateZ(9rem);
+}
+#l5i5s3:checked ~ .world-grid .world-item[for="l5i5s0"]:before {
+    width: 400%;
+}
+#l5i5s3:checked ~ .world-grid .world-item[for="l5i5s0"]:after {
+    height: 400%;
+}
+
+#l5i5s4:checked ~ .world-grid .world-item[for="l5i5s0"] {
+    transform: translateZ(12rem);
+}
+#l5i5s4:checked ~ .world-grid .world-item[for="l5i5s0"]:before {
+    width: 500%;
+}
+#l5i5s4:checked ~ .world-grid .world-item[for="l5i5s0"]:after {
+    height: 500%;
+}
+
+#size-tool-up:checked ~ #l5i5s0:checked ~ .world-grid .world-item[for="l5i5s0"] .size-1:before {
+    width: 100%;
+}
+#size-tool-up:checked ~ #l5i5s0:checked ~ .world-grid .world-item[for="l5i5s0"] .size-1:after {
+    height: 100%;
+}
+
+#size-tool-up:checked ~ #l5i5s1:checked ~ .world-grid .world-item[for="l5i5s0"] .size-2:before {
+    width: 200%;
+}
+#size-tool-up:checked ~ #l5i5s1:checked ~ .world-grid .world-item[for="l5i5s0"] .size-2:after {
+    height: 200%;
+}
+
+#size-tool-up:checked ~ #l5i5s2:checked ~ .world-grid .world-item[for="l5i5s0"] .size-3:before {
+    width: 300%;
+}
+#size-tool-up:checked ~ #l5i5s2:checked ~ .world-grid .world-item[for="l5i5s0"] .size-3:after {
+    height: 300%;
+}
+
+#size-tool-up:checked ~ #l5i5s3:checked ~ .world-grid .world-item[for="l5i5s0"] .size-4:before {
+    width: 400%;
+}
+#size-tool-up:checked ~ #l5i5s3:checked ~ .world-grid .world-item[for="l5i5s0"] .size-4:after {
+    height: 400%;
+}
+
+#size-tool-up:checked ~ #l5i5s4:checked ~ .world-grid .world-item[for="l5i5s0"] .size-5:before {
+    width: 500%;
+}
+#size-tool-up:checked ~ #l5i5s4:checked ~ .world-grid .world-item[for="l5i5s0"] .size-5:after {
+    height: 500%;
+}
+
+#size-tool-down:checked ~ #l5i5s0:checked ~ .world-grid .world-item[for="l5i5s0"] .size--1:before {
+    width: 100%;
+}
+#size-tool-down:checked ~ #l5i5s0:checked ~ .world-grid .world-item[for="l5i5s0"] .size--1:after {
+    height: 100%;
+}
+
+#size-tool-down:checked ~ #l5i5s1:checked ~ .world-grid .world-item[for="l5i5s0"] .size-0:before {
+    width: 200%;
+}
+#size-tool-down:checked ~ #l5i5s1:checked ~ .world-grid .world-item[for="l5i5s0"] .size-0:after {
+    height: 200%;
+}
+
+#size-tool-down:checked ~ #l5i5s2:checked ~ .world-grid .world-item[for="l5i5s0"] .size-1:before {
+    width: 300%;
+}
+#size-tool-down:checked ~ #l5i5s2:checked ~ .world-grid .world-item[for="l5i5s0"] .size-1:after {
+    height: 300%;
+}
+
+#size-tool-down:checked ~ #l5i5s3:checked ~ .world-grid .world-item[for="l5i5s0"] .size-2:before {
+    width: 400%;
+}
+#size-tool-down:checked ~ #l5i5s3:checked ~ .world-grid .world-item[for="l5i5s0"] .size-2:after {
+    height: 400%;
+}
+
+#size-tool-down:checked ~ #l5i5s4:checked ~ .world-grid .world-item[for="l5i5s0"] .size-3:before {
+    width: 500%;
+}
+#size-tool-down:checked ~ #l5i5s4:checked ~ .world-grid .world-item[for="l5i5s0"] .size-3:after {
+    height: 500%;
+}

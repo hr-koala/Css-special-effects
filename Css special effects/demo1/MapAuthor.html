@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="MapAuthor.css">
+</head>
+<body>
+<input checked='checked' id='size-tool-up' name='tool' type='radio' value='size-tool-up'>
+<input id='size-tool-down' name='tool' type='radio' value='size-tool-down'>
+<input id='c1-tool' name='tool' type='radio' value='1'>
+<input id='c2-tool' name='tool' type='radio' value='2'>
+<input id='c3-tool' name='tool' type='radio' value='3'>
+<input id='c4-tool' name='tool' type='radio' value='4'>
+<input id='c5-tool' name='tool' type='radio' value='5'>
+<input id='c6-tool' name='tool' type='radio' value='6'>
+<input id='c7-tool' name='tool' type='radio' value='7'>
+<input checked='checked' id='l1i1s0' name='l1i1' type='radio' value='0'>
+<input checked='checked' id='l1i1c1' name='l1i1color' type='radio' value='1'>
+<input id='l1i1s1' name='l1i1' type='radio' value='1'>
+<input id='l1i1s2' name='l1i1' type='radio' value='2'>
+<input id='l1i1s3' name='l1i1' type='radio' value='3'>
+<input id='l1i1s4' name='l1i1' type='radio' value='4'>
+<input id='l1i1c2' name='l1i1color' type='radio' value='2'>
+<input id='l1i1c3' name='l1i1color' type='radio' value='3'>
+<input id='l1i1c4' name='l1i1color' type='radio' value='4'>
+<input id='l1i1c5' name='l1i1color' type='radio' value='5'>
+<input id='l1i1c6' name='l1i1color' type='radio' value='6'>
+<input id='l1i1c7' name='l1i1color' type='radio' value='7'>
+<input checked='checked' id='l1i2s0' name='l1i2' type='radio' value='0'>
+<input checked='checked' id='l1i2c1' name='l1i2color' type='radio' value='1'>
+<input id='l1i2s1' name='l1i2' type='radio' value='1'>
+<input id='l1i2s2' name='l1i2' type='radio' value='2'>
+<input id='l1i2s3' name='l1i2' type='radio' value='3'>
+<input id='l1i2s4' name='l1i2' type='radio' value='4'>
+<input id='l1i2c2' name='l1i2color' type='radio' value='2'>
+<input id='l1i2c3' name='l1i2color' type='radio' value='3'>
+<input id='l1i2c4' name='l1i2color' type='radio' value='4'>
+<input id='l1i2c5' name='l1i2color' type='radio' value='5'>
+<input id='l1i2c6' name='l1i2color' type='radio' value='6'>
+<input id='l1i2c7' name='l1i2color' type='radio' value='7'>
+<input checked='checked' id='l1i3s0' name='l1i3' type='radio' value='0'>
+<input checked='checked' id='l1i3c1' name='l1i3color' type='radio' value='1'>
+<input id='l1i3s1' name='l1i3' type='radio' value='1'>
+<input id='l1i3s2' name='l1i3' type='radio' value='2'>
+<input id='l1i3s3' name='l1i3' type='radio' value='3'>
+<input id='l1i3s4' name='l1i3' type='radio' value='4'>
+<input id='l1i3c2' name='l1i3color' type='radio' value='2'>
+<input id='l1i3c3' name='l1i3color' type='radio' value='3'>
+<input id='l1i3c4' name='l1i3color' type='radio' value='4'>
+<input id='l1i3c5' name='l1i3color' type='radio' value='5'>
+<input id='l1i3c6' name='l1i3color' type='radio' value='6'>
+<input id='l1i3c7' name='l1i3color' type='radio' value='7'>
+<input checked='checked' id='l1i4s0' name='l1i4' type='radio' value='0'>
+<input checked='checked' id='l1i4c1' name='l1i4color' type='radio' value='1'>
+<input id='l1i4s1' name='l1i4' type='radio' value='1'>
+<input id='l1i4s2' name='l1i4' type='radio' value='2'>
+<input id='l1i4s3' name='l1i4' type='radio' value='3'>
+<input id='l1i4s4' name='l1i4' type='radio' value='4'>
+<input id='l1i4c2' name='l1i4color' type='radio' value='2'>
+<input id='l1i4c3' name='l1i4color' type='radio' value='3'>
+<input id='l1i4c4' name='l1i4color' type='radio' value='4'>
+<input id='l1i4c5' name='l1i4color' type='radio' value='5'>
+<input id='l1i4c6' name='l1i4color' type='radio' value='6'>
+<input id='l1i4c7' name='l1i4color' type='radio' value='7'>
+<input checked='checked' id='l1i5s0' name='l1i5' type='radio' value='0'>
+<input checked='checked' id='l1i5c1' name='l1i5color' type='radio' value='1'>
+<input id='l1i5s1' name='l1i5' type='radio' value='1'>
+<input id='l1i5s2' name='l1i5' type='radio' value='2'>
+<input id='l1i5s3' name='l1i5' type='radio' value='3'>
+<input id='l1i5s4' name='l1i5' type='radio' value='4'>
+<input id='l1i5c2' name='l1i5color' type='radio' value='2'>
+<input id='l1i5c3' name='l1i5color' type='radio' value='3'>
+<input id='l1i5c4' name='l1i5color' type='radio' value='4'>
+<input id='l1i5c5' name='l1i5color' type='radio' value='5'>
+<input id='l1i5c6' name='l1i5color' type='radio' value='6'>
+<input id='l1i5c7' name='l1i5color' type='radio' value='7'>
+<input checked='checked' id='l2i1s0' name='l2i1' type='radio' value='0'>
+<input checked='checked' id='l2i1c1' name='l2i1color' type='radio' value='1'>
+<input id='l2i1s1' name='l2i1' type='radio' value='1'>
+<input id='l2i1s2' name='l2i1' type='radio' value='2'>
+<input id='l2i1s3' name='l2i1' type='radio' value='3'>
+<input id='l2i1s4' name='l2i1' type='radio' value='4'>
+<input id='l2i1c2' name='l2i1color' type='radio' value='2'>
+<input id='l2i1c3' name='l2i1color' type='radio' value='3'>
+<input id='l2i1c4' name='l2i1color' type='radio' value='4'>
+<input id='l2i1c5' name='l2i1color' type='radio' value='5'>
+<input id='l2i1c6' name='l2i1color' type='radio' value='6'>
+<input id='l2i1c7' name='l2i1color' type='radio' value='7'>
+<input checked='checked' id='l2i2s0' name='l2i2' type='radio' value='0'>
+<input checked='checked' id='l2i2c1' name='l2i2color' type='radio' value='1'>
+<input id='l2i2s1' name='l2i2' type='radio' value='1'>
+<input id='l2i2s2' name='l2i2' type='radio' value='2'>
+<input id='l2i2s3' name='l2i2' type='radio' value='3'>
+<input id='l2i2s4' name='l2i2' type='radio' value='4'>
+<input id='l2i2c2' name='l2i2color' type='radio' value='2'>
+<input id='l2i2c3' name='l2i2color' type='radio' value='3'>
+<input id='l2i2c4' name='l2i2color' type='radio' value='4'>
+<input id='l2i2c5' name='l2i2color' type='radio' value='5'>
+<input id='l2i2c6' name='l2i2color' type='radio' value='6'>
+<input id='l2i2c7' name='l2i2color' type='radio' value='7'>
+<input checked='checked' id='l2i3s0' name='l2i3' type='radio' value='0'>
+<input checked='checked' id='l2i3c1' name='l2i3color' type='radio' value='1'>
+<input id='l2i3s1' name='l2i3' type='radio' value='1'>
+<input id='l2i3s2' name='l2i3' type='radio' value='2'>
+<input id='l2i3s3' name='l2i3' type='radio' value='3'>
+<input id='l2i3s4' name='l2i3' type='radio' value='4'>
+<input id='l2i3c2' name='l2i3color' type='radio' value='2'>
+<input id='l2i3c3' name='l2i3color' type='radio' value='3'>
+<input id='l2i3c4' name='l2i3color' type='radio' value='4'>
+<input id='l2i3c5' name='l2i3color' type='radio' value='5'>
+<input id='l2i3c6' name='l2i3color' type='radio' value='6'>
+<input id='l2i3c7' name='l2i3color' type='radio' value='7'>
+<input checked='checked' id='l2i4s0' name='l2i4' type='radio' value='0'>
+<input checked='checked' id='l2i4c1' name='l2i4color' type='radio' value='1'>
+<input id='l2i4s1' name='l2i4' type='radio' value='1'>
+<input id='l2i4s2' name='l2i4' type='radio' value='2'>
+<input id='l2i4s3' name='l2i4' type='radio' value='3'>
+<input id='l2i4s4' name='l2i4' type='radio' value='4'>
+<input id='l2i4c2' name='l2i4color' type='radio' value='2'>
+<input id='l2i4c3' name='l2i4color' type='radio' value='3'>
+<input id='l2i4c4' name='l2i4color' type='radio' value='4'>
+<input id='l2i4c5' name='l2i4color' type='radio' value='5'>
+<input id='l2i4c6' name='l2i4color' type='radio' value='6'>
+<input id='l2i4c7' name='l2i4color' type='radio' value='7'>
+<input checked='checked' id='l2i5s0' name='l2i5' type='radio' value='0'>
+<input checked='checked' id='l2i5c1' name='l2i5color' type='radio' value='1'>
+<input id='l2i5s1' name='l2i5' type='radio' value='1'>
+<input id='l2i5s2' name='l2i5' type='radio' value='2'>
+<input id='l2i5s3' name='l2i5' type='radio' value='3'>
+<input id='l2i5s4' name='l2i5' type='radio' value='4'>
+<input id='l2i5c2' name='l2i5color' type='radio' value='2'>
+<input id='l2i5c3' name='l2i5color' type='radio' value='3'>
+<input id='l2i5c4' name='l2i5color' type='radio' value='4'>
+<input id='l2i5c5' name='l2i5color' type='radio' value='5'>
+<input id='l2i5c6' name='l2i5color' type='radio' value='6'>
+<input id='l2i5c7' name='l2i5color' type='radio' value='7'>
+<input checked='checked' id='l3i1s0' name='l3i1' type='radio' value='0'>
+<input checked='checked' id='l3i1c1' name='l3i1color' type='radio' value='1'>
+<input id='l3i1s1' name='l3i1' type='radio' value='1'>
+<input id='l3i1s2' name='l3i1' type='radio' value='2'>
+<input id='l3i1s3' name='l3i1' type='radio' value='3'>
+<input id='l3i1s4' name='l3i1' type='radio' value='4'>
+<input id='l3i1c2' name='l3i1color' type='radio' value='2'>
+<input id='l3i1c3' name='l3i1color' type='radio' value='3'>
+<input id='l3i1c4' name='l3i1color' type='radio' value='4'>
+<input id='l3i1c5' name='l3i1color' type='radio' value='5'>
+<input id='l3i1c6' name='l3i1color' type='radio' value='6'>
+<input id='l3i1c7' name='l3i1color' type='radio' value='7'>
+<input checked='checked' id='l3i2s0' name='l3i2' type='radio' value='0'>
+<input checked='checked' id='l3i2c1' name='l3i2color' type='radio' value='1'>
+<input id='l3i2s1' name='l3i2' type='radio' value='1'>
+<input id='l3i2s2' name='l3i2' type='radio' value='2'>
+<input id='l3i2s3' name='l3i2' type='radio' value='3'>
+<input id='l3i2s4' name='l3i2' type='radio' value='4'>
+<input id='l3i2c2' name='l3i2color' type='radio' value='2'>
+<input id='l3i2c3' name='l3i2color' type='radio' value='3'>
+<input id='l3i2c4' name='l3i2color' type='radio' value='4'>
+<input id='l3i2c5' name='l3i2color' type='radio' value='5'>
+<input id='l3i2c6' name='l3i2color' type='radio' value='6'>
+<input id='l3i2c7' name='l3i2color' type='radio' value='7'>
+<input checked='checked' id='l3i3s0' name='l3i3' type='radio' value='0'>
+<input checked='checked' id='l3i3c1' name='l3i3color' type='radio' value='1'>
+<input id='l3i3s1' name='l3i3' type='radio' value='1'>
+<input id='l3i3s2' name='l3i3' type='radio' value='2'>
+<input id='l3i3s3' name='l3i3' type='radio' value='3'>
+<input id='l3i3s4' name='l3i3' type='radio' value='4'>
+<input id='l3i3c2' name='l3i3color' type='radio' value='2'>
+<input id='l3i3c3' name='l3i3color' type='radio' value='3'>
+<input id='l3i3c4' name='l3i3color' type='radio' value='4'>
+<input id='l3i3c5' name='l3i3color' type='radio' value='5'>
+<input id='l3i3c6' name='l3i3color' type='radio' value='6'>
+<input id='l3i3c7' name='l3i3color' type='radio' value='7'>
+<input checked='checked' id='l3i4s0' name='l3i4' type='radio' value='0'>
+<input checked='checked' id='l3i4c1' name='l3i4color' type='radio' value='1'>
+<input id='l3i4s1' name='l3i4' type='radio' value='1'>
+<input id='l3i4s2' name='l3i4' type='radio' value='2'>
+<input id='l3i4s3' name='l3i4' type='radio' value='3'>
+<input id='l3i4s4' name='l3i4' type='radio' value='4'>
+<input id='l3i4c2' name='l3i4color' type='radio' value='2'>
+<input id='l3i4c3' name='l3i4color' type='radio' value='3'>
+<input id='l3i4c4' name='l3i4color' type='radio' value='4'>
+<input id='l3i4c5' name='l3i4color' type='radio' value='5'>
+<input id='l3i4c6' name='l3i4color' type='radio' value='6'>
+<input id='l3i4c7' name='l3i4color' type='radio' value='7'>
+<input checked='checked' id='l3i5s0' name='l3i5' type='radio' value='0'>
+<input checked='checked' id='l3i5c1' name='l3i5color' type='radio' value='1'>
+<input id='l3i5s1' name='l3i5' type='radio' value='1'>
+<input id='l3i5s2' name='l3i5' type='radio' value='2'>
+<input id='l3i5s3' name='l3i5' type='radio' value='3'>
+<input id='l3i5s4' name='l3i5' type='radio' value='4'>
+<input id='l3i5c2' name='l3i5color' type='radio' value='2'>
+<input id='l3i5c3' name='l3i5color' type='radio' value='3'>
+<input id='l3i5c4' name='l3i5color' type='radio' value='4'>
+<input id='l3i5c5' name='l3i5color' type='radio' value='5'>
+<input id='l3i5c6' name='l3i5color' type='radio' value='6'>
+<input id='l3i5c7' name='l3i5color' type='radio' value='7'>
+<input checked='checked' id='l4i1s0' name='l4i1' type='radio' value='0'>
+<input checked='checked' id='l4i1c1' name='l4i1color' type='radio' value='1'>
+<input id='l4i1s1' name='l4i1' type='radio' value='1'>
+<input id='l4i1s2' name='l4i1' type='radio' value='2'>
+<input id='l4i1s3' name='l4i1' type='radio' value='3'>
+<input id='l4i1s4' name='l4i1' type='radio' value='4'>
+<input id='l4i1c2' name='l4i1color' type='radio' value='2'>
+<input id='l4i1c3' name='l4i1color' type='radio' value='3'>
+<input id='l4i1c4' name='l4i1color' type='radio' value='4'>
+<input id='l4i1c5' name='l4i1color' type='radio' value='5'>
+<input id='l4i1c6' name='l4i1color' type='radio' value='6'>
+<input id='l4i1c7' name='l4i1color' type='radio' value='7'>
+<input checked='checked' id='l4i2s0' name='l4i2' type='radio' value='0'>
+<input checked='checked' id='l4i2c1' name='l4i2color' type='radio' value='1'>
+<input id='l4i2s1' name='l4i2' type='radio' value='1'>
+<input id='l4i2s2' name='l4i2' type='radio' value='2'>
+<input id='l4i2s3' name='l4i2' type='radio' value='3'>
+<input id='l4i2s4' name='l4i2' type='radio' value='4'>
+<input id='l4i2c2' name='l4i2color' type='radio' value='2'>
+<input id='l4i2c3' name='l4i2color' type='radio' value='3'>
+<input id='l4i2c4' name='l4i2color' type='radio' value='4'>
+<input id='l4i2c5' name='l4i2color' type='radio' value='5'>
+<input id='l4i2c6' name='l4i2color' type='radio' value='6'>
+<input id='l4i2c7' name='l4i2color' type='radio' value='7'>
+<input checked='checked' id='l4i3s0' name='l4i3' type='radio' value='0'>
+<input checked='checked' id='l4i3c1' name='l4i3color' type='radio' value='1'>
+<input id='l4i3s1' name='l4i3' type='radio' value='1'>
+<input id='l4i3s2' name='l4i3' type='radio' value='2'>
+<input id='l4i3s3' name='l4i3' type='radio' value='3'>
+<input id='l4i3s4' name='l4i3' type='radio' value='4'>
+<input id='l4i3c2' name='l4i3color' type='radio' value='2'>
+<input id='l4i3c3' name='l4i3color' type='radio' value='3'>
+<input id='l4i3c4' name='l4i3color' type='radio' value='4'>
+<input id='l4i3c5' name='l4i3color' type='radio' value='5'>
+<input id='l4i3c6' name='l4i3color' type='radio' value='6'>
+<input id='l4i3c7' name='l4i3color' type='radio' value='7'>
+<input checked='checked' id='l4i4s0' name='l4i4' type='radio' value='0'>
+<input checked='checked' id='l4i4c1' name='l4i4color' type='radio' value='1'>
+<input id='l4i4s1' name='l4i4' type='radio' value='1'>
+<input id='l4i4s2' name='l4i4' type='radio' value='2'>
+<input id='l4i4s3' name='l4i4' type='radio' value='3'>
+<input id='l4i4s4' name='l4i4' type='radio' value='4'>
+<input id='l4i4c2' name='l4i4color' type='radio' value='2'>
+<input id='l4i4c3' name='l4i4color' type='radio' value='3'>
+<input id='l4i4c4' name='l4i4color' type='radio' value='4'>
+<input id='l4i4c5' name='l4i4color' type='radio' value='5'>
+<input id='l4i4c6' name='l4i4color' type='radio' value='6'>
+<input id='l4i4c7' name='l4i4color' type='radio' value='7'>
+<input checked='checked' id='l4i5s0' name='l4i5' type='radio' value='0'>
+<input checked='checked' id='l4i5c1' name='l4i5color' type='radio' value='1'>
+<input id='l4i5s1' name='l4i5' type='radio' value='1'>
+<input id='l4i5s2' name='l4i5' type='radio' value='2'>
+<input id='l4i5s3' name='l4i5' type='radio' value='3'>
+<input id='l4i5s4' name='l4i5' type='radio' value='4'>
+<input id='l4i5c2' name='l4i5color' type='radio' value='2'>
+<input id='l4i5c3' name='l4i5color' type='radio' value='3'>
+<input id='l4i5c4' name='l4i5color' type='radio' value='4'>
+<input id='l4i5c5' name='l4i5color' type='radio' value='5'>
+<input id='l4i5c6' name='l4i5color' type='radio' value='6'>
+<input id='l4i5c7' name='l4i5color' type='radio' value='7'>
+<input checked='checked' id='l5i1s0' name='l5i1' type='radio' value='0'>
+<input checked='checked' id='l5i1c1' name='l5i1color' type='radio' value='1'>
+<input id='l5i1s1' name='l5i1' type='radio' value='1'>
+<input id='l5i1s2' name='l5i1' type='radio' value='2'>
+<input id='l5i1s3' name='l5i1' type='radio' value='3'>
+<input id='l5i1s4' name='l5i1' type='radio' value='4'>
+<input id='l5i1c2' name='l5i1color' type='radio' value='2'>
+<input id='l5i1c3' name='l5i1color' type='radio' value='3'>
+<input id='l5i1c4' name='l5i1color' type='radio' value='4'>
+<input id='l5i1c5' name='l5i1color' type='radio' value='5'>
+<input id='l5i1c6' name='l5i1color' type='radio' value='6'>
+<input id='l5i1c7' name='l5i1color' type='radio' value='7'>
+<input checked='checked' id='l5i2s0' name='l5i2' type='radio' value='0'>
+<input checked='checked' id='l5i2c1' name='l5i2color' type='radio' value='1'>
+<input id='l5i2s1' name='l5i2' type='radio' value='1'>
+<input id='l5i2s2' name='l5i2' type='radio' value='2'>
+<input id='l5i2s3' name='l5i2' type='radio' value='3'>
+<input id='l5i2s4' name='l5i2' type='radio' value='4'>
+<input id='l5i2c2' name='l5i2color' type='radio' value='2'>
+<input id='l5i2c3' name='l5i2color' type='radio' value='3'>
+<input id='l5i2c4' name='l5i2color' type='radio' value='4'>
+<input id='l5i2c5' name='l5i2color' type='radio' value='5'>
+<input id='l5i2c6' name='l5i2color' type='radio' value='6'>
+<input id='l5i2c7' name='l5i2color' type='radio' value='7'>
+<input checked='checked' id='l5i3s0' name='l5i3' type='radio' value='0'>
+<input checked='checked' id='l5i3c1' name='l5i3color' type='radio' value='1'>
+<input id='l5i3s1' name='l5i3' type='radio' value='1'>
+<input id='l5i3s2' name='l5i3' type='radio' value='2'>
+<input id='l5i3s3' name='l5i3' type='radio' value='3'>
+<input id='l5i3s4' name='l5i3' type='radio' value='4'>
+<input id='l5i3c2' name='l5i3color' type='radio' value='2'>
+<input id='l5i3c3' name='l5i3color' type='radio' value='3'>
+<input id='l5i3c4' name='l5i3color' type='radio' value='4'>
+<input id='l5i3c5' name='l5i3color' type='radio' value='5'>
+<input id='l5i3c6' name='l5i3color' type='radio' value='6'>
+<input id='l5i3c7' name='l5i3color' type='radio' value='7'>
+<input checked='checked' id='l5i4s0' name='l5i4' type='radio' value='0'>
+<input checked='checked' id='l5i4c1' name='l5i4color' type='radio' value='1'>
+<input id='l5i4s1' name='l5i4' type='radio' value='1'>
+<input id='l5i4s2' name='l5i4' type='radio' value='2'>
+<input id='l5i4s3' name='l5i4' type='radio' value='3'>
+<input id='l5i4s4' name='l5i4' type='radio' value='4'>
+<input id='l5i4c2' name='l5i4color' type='radio' value='2'>
+<input id='l5i4c3' name='l5i4color' type='radio' value='3'>
+<input id='l5i4c4' name='l5i4color' type='radio' value='4'>
+<input id='l5i4c5' name='l5i4color' type='radio' value='5'>
+<input id='l5i4c6' name='l5i4color' type='radio' value='6'>
+<input id='l5i4c7' name='l5i4color' type='radio' value='7'>
+<input checked='checked' id='l5i5s0' name='l5i5' type='radio' value='0'>
+<input checked='checked' id='l5i5c1' name='l5i5color' type='radio' value='1'>
+<input id='l5i5s1' name='l5i5' type='radio' value='1'>
+<input id='l5i5s2' name='l5i5' type='radio' value='2'>
+<input id='l5i5s3' name='l5i5' type='radio' value='3'>
+<input id='l5i5s4' name='l5i5' type='radio' value='4'>
+<input id='l5i5c2' name='l5i5color' type='radio' value='2'>
+<input id='l5i5c3' name='l5i5color' type='radio' value='3'>
+<input id='l5i5c4' name='l5i5color' type='radio' value='4'>
+<input id='l5i5c5' name='l5i5color' type='radio' value='5'>
+<input id='l5i5c6' name='l5i5color' type='radio' value='6'>
+<input id='l5i5c7' name='l5i5color' type='radio' value='7'>
+<div class='toolbar'>
+    <label class='tool' for='size-tool-up'></label>
+    <label class='tool' for='size-tool-down'></label>
+    <label class='tool color-tool c1-tool' for='c1-tool'></label>
+    <label class='tool color-tool c2-tool' for='c2-tool'></label>
+    <label class='tool color-tool c3-tool' for='c3-tool'></label>
+    <label class='tool color-tool c4-tool' for='c4-tool'></label>
+    <label class='tool color-tool c5-tool' for='c5-tool'></label>
+    <label class='tool color-tool c6-tool' for='c6-tool'></label>
+    <label class='tool color-tool c7-tool' for='c7-tool'></label>
+</div>
+<div class='turn-grid turn-left'></div>
+<div class='turn-grid turn-right'></div>
+<div class='world-grid'>
+    <div class='world-line'>
+        <label class='world-item size-0' for='l1i1s0'>
+            <label class='world-item size-1' for='l1i1s1'></label>
+            <label class='world-item size-2' for='l1i1s2'></label>
+            <label class='world-item size-3' for='l1i1s3'></label>
+            <label class='world-item size-4' for='l1i1s4'></label>
+            <label class='world-item color-1' for='l1i1c1'></label>
+            <label class='world-item color-2' for='l1i1c2'></label>
+            <label class='world-item color-3' for='l1i1c3'></label>
+            <label class='world-item color-4' for='l1i1c4'></label>
+            <label class='world-item color-5' for='l1i1c5'></label>
+            <label class='world-item color-6' for='l1i1c6'></label>
+            <label class='world-item color-7' for='l1i1c7'></label>
+        </label>
+        <label class='world-item size-0' for='l1i2s0'>
+            <label class='world-item size-1' for='l1i2s1'></label>
+            <label class='world-item size-2' for='l1i2s2'></label>
+            <label class='world-item size-3' for='l1i2s3'></label>
+            <label class='world-item size-4' for='l1i2s4'></label>
+            <label class='world-item color-1' for='l1i2c1'></label>
+            <label class='world-item color-2' for='l1i2c2'></label>
+            <label class='world-item color-3' for='l1i2c3'></label>
+            <label class='world-item color-4' for='l1i2c4'></label>
+            <label class='world-item color-5' for='l1i2c5'></label>
+            <label class='world-item color-6' for='l1i2c6'></label>
+            <label class='world-item color-7' for='l1i2c7'></label>
+        </label>
+        <label class='world-item size-0' for='l1i3s0'>
+            <label class='world-item size-1' for='l1i3s1'></label>
+            <label class='world-item size-2' for='l1i3s2'></label>
+            <label class='world-item size-3' for='l1i3s3'></label>
+            <label class='world-item size-4' for='l1i3s4'></label>
+            <label class='world-item color-1' for='l1i3c1'></label>
+            <label class='world-item color-2' for='l1i3c2'></label>
+            <label class='world-item color-3' for='l1i3c3'></label>
+            <label class='world-item color-4' for='l1i3c4'></label>
+            <label class='world-item color-5' for='l1i3c5'></label>
+            <label class='world-item color-6' for='l1i3c6'></label>
+            <label class='world-item color-7' for='l1i3c7'></label>
+        </label>
+        <label class='world-item size-0' for='l1i4s0'>
+            <label class='world-item size-1' for='l1i4s1'></label>
+            <label class='world-item size-2' for='l1i4s2'></label>
+            <label class='world-item size-3' for='l1i4s3'></label>
+            <label class='world-item size-4' for='l1i4s4'></label>
+            <label class='world-item color-1' for='l1i4c1'></label>
+            <label class='world-item color-2' for='l1i4c2'></label>
+            <label class='world-item color-3' for='l1i4c3'></label>
+            <label class='world-item color-4' for='l1i4c4'></label>
+            <label class='world-item color-5' for='l1i4c5'></label>
+            <label class='world-item color-6' for='l1i4c6'></label>
+            <label class='world-item color-7' for='l1i4c7'></label>
+        </label>
+        <label class='world-item size-0' for='l1i5s0'>
+            <label class='world-item size-1' for='l1i5s1'></label>
+            <label class='world-item size-2' for='l1i5s2'></label>
+            <label class='world-item size-3' for='l1i5s3'></label>
+            <label class='world-item size-4' for='l1i5s4'></label>
+            <label class='world-item color-1' for='l1i5c1'></label>
+            <label class='world-item color-2' for='l1i5c2'></label>
+            <label class='world-item color-3' for='l1i5c3'></label>
+            <label class='world-item color-4' for='l1i5c4'></label>
+            <label class='world-item color-5' for='l1i5c5'></label>
+            <label class='world-item color-6' for='l1i5c6'></label>
+            <label class='world-item color-7' for='l1i5c7'></label>
+        </label>
+    </div>
+    <div class='world-line'>
+        <label class='world-item size-0' for='l2i1s0'>
+            <label class='world-item size-1' for='l2i1s1'></label>
+            <label class='world-item size-2' for='l2i1s2'></label>
+            <label class='world-item size-3' for='l2i1s3'></label>
+            <label class='world-item size-4' for='l2i1s4'></label>
+            <label class='world-item color-1' for='l2i1c1'></label>
+            <label class='world-item color-2' for='l2i1c2'></label>
+            <label class='world-item color-3' for='l2i1c3'></label>
+            <label class='world-item color-4' for='l2i1c4'></label>
+            <label class='world-item color-5' for='l2i1c5'></label>
+            <label class='world-item color-6' for='l2i1c6'></label>
+            <label class='world-item color-7' for='l2i1c7'></label>
+        </label>
+        <label class='world-item size-0' for='l2i2s0'>
+            <label class='world-item size-1' for='l2i2s1'></label>
+            <label class='world-item size-2' for='l2i2s2'></label>
+            <label class='world-item size-3' for='l2i2s3'></label>
+            <label class='world-item size-4' for='l2i2s4'></label>
+            <label class='world-item color-1' for='l2i2c1'></label>
+            <label class='world-item color-2' for='l2i2c2'></label>
+            <label class='world-item color-3' for='l2i2c3'></label>
+            <label class='world-item color-4' for='l2i2c4'></label>
+            <label class='world-item color-5' for='l2i2c5'></label>
+            <label class='world-item color-6' for='l2i2c6'></label>
+            <label class='world-item color-7' for='l2i2c7'></label>
+        </label>
+        <label class='world-item size-0' for='l2i3s0'>
+            <label class='world-item size-1' for='l2i3s1'></label>
+            <label class='world-item size-2' for='l2i3s2'></label>
+            <label class='world-item size-3' for='l2i3s3'></label>
+            <label class='world-item size-4' for='l2i3s4'></label>
+            <label class='world-item color-1' for='l2i3c1'></label>
+            <label class='world-item color-2' for='l2i3c2'></label>
+            <label class='world-item color-3' for='l2i3c3'></label>
+            <label class='world-item color-4' for='l2i3c4'></label>
+            <label class='world-item color-5' for='l2i3c5'></label>
+            <label class='world-item color-6' for='l2i3c6'></label>
+            <label class='world-item color-7' for='l2i3c7'></label>
+        </label>
+        <label class='world-item size-0' for='l2i4s0'>
+            <label class='world-item size-1' for='l2i4s1'></label>
+            <label class='world-item size-2' for='l2i4s2'></label>
+            <label class='world-item size-3' for='l2i4s3'></label>
+            <label class='world-item size-4' for='l2i4s4'></label>
+            <label class='world-item color-1' for='l2i4c1'></label>
+            <label class='world-item color-2' for='l2i4c2'></label>
+            <label class='world-item color-3' for='l2i4c3'></label>
+            <label class='world-item color-4' for='l2i4c4'></label>
+            <label class='world-item color-5' for='l2i4c5'></label>
+            <label class='world-item color-6' for='l2i4c6'></label>
+            <label class='world-item color-7' for='l2i4c7'></label>
+        </label>
+        <label class='world-item size-0' for='l2i5s0'>
+            <label class='world-item size-1' for='l2i5s1'></label>
+            <label class='world-item size-2' for='l2i5s2'></label>
+            <label class='world-item size-3' for='l2i5s3'></label>
+            <label class='world-item size-4' for='l2i5s4'></label>
+            <label class='world-item color-1' for='l2i5c1'></label>
+            <label class='world-item color-2' for='l2i5c2'></label>
+            <label class='world-item color-3' for='l2i5c3'></label>
+            <label class='world-item color-4' for='l2i5c4'></label>
+            <label class='world-item color-5' for='l2i5c5'></label>
+            <label class='world-item color-6' for='l2i5c6'></label>
+            <label class='world-item color-7' for='l2i5c7'></label>
+        </label>
+    </div>
+    <div class='world-line'>
+        <label class='world-item size-0' for='l3i1s0'>
+            <label class='world-item size-1' for='l3i1s1'></label>
+            <label class='world-item size-2' for='l3i1s2'></label>
+            <label class='world-item size-3' for='l3i1s3'></label>
+            <label class='world-item size-4' for='l3i1s4'></label>
+            <label class='world-item color-1' for='l3i1c1'></label>
+            <label class='world-item color-2' for='l3i1c2'></label>
+            <label class='world-item color-3' for='l3i1c3'></label>
+            <label class='world-item color-4' for='l3i1c4'></label>
+            <label class='world-item color-5' for='l3i1c5'></label>
+            <label class='world-item color-6' for='l3i1c6'></label>
+            <label class='world-item color-7' for='l3i1c7'></label>
+        </label>
+        <label class='world-item size-0' for='l3i2s0'>
+            <label class='world-item size-1' for='l3i2s1'></label>
+            <label class='world-item size-2' for='l3i2s2'></label>
+            <label class='world-item size-3' for='l3i2s3'></label>
+            <label class='world-item size-4' for='l3i2s4'></label>
+            <label class='world-item color-1' for='l3i2c1'></label>
+            <label class='world-item color-2' for='l3i2c2'></label>
+            <label class='world-item color-3' for='l3i2c3'></label>
+            <label class='world-item color-4' for='l3i2c4'></label>
+            <label class='world-item color-5' for='l3i2c5'></label>
+            <label class='world-item color-6' for='l3i2c6'></label>
+            <label class='world-item color-7' for='l3i2c7'></label>
+        </label>
+        <label class='world-item size-0' for='l3i3s0'>
+            <label class='world-item size-1' for='l3i3s1'></label>
+            <label class='world-item size-2' for='l3i3s2'></label>
+            <label class='world-item size-3' for='l3i3s3'></label>
+            <label class='world-item size-4' for='l3i3s4'></label>
+            <label class='world-item color-1' for='l3i3c1'></label>
+            <label class='world-item color-2' for='l3i3c2'></label>
+            <label class='world-item color-3' for='l3i3c3'></label>
+            <label class='world-item color-4' for='l3i3c4'></label>
+            <label class='world-item color-5' for='l3i3c5'></label>
+            <label class='world-item color-6' for='l3i3c6'></label>
+            <label class='world-item color-7' for='l3i3c7'></label>
+        </label>
+        <label class='world-item size-0' for='l3i4s0'>
+            <label class='world-item size-1' for='l3i4s1'></label>
+            <label class='world-item size-2' for='l3i4s2'></label>
+            <label class='world-item size-3' for='l3i4s3'></label>
+            <label class='world-item size-4' for='l3i4s4'></label>
+            <label class='world-item color-1' for='l3i4c1'></label>
+            <label class='world-item color-2' for='l3i4c2'></label>
+            <label class='world-item color-3' for='l3i4c3'></label>
+            <label class='world-item color-4' for='l3i4c4'></label>
+            <label class='world-item color-5' for='l3i4c5'></label>
+            <label class='world-item color-6' for='l3i4c6'></label>
+            <label class='world-item color-7' for='l3i4c7'></label>
+        </label>
+        <label class='world-item size-0' for='l3i5s0'>
+            <label class='world-item size-1' for='l3i5s1'></label>
+            <label class='world-item size-2' for='l3i5s2'></label>
+            <label class='world-item size-3' for='l3i5s3'></label>
+            <label class='world-item size-4' for='l3i5s4'></label>
+            <label class='world-item color-1' for='l3i5c1'></label>
+            <label class='world-item color-2' for='l3i5c2'></label>
+            <label class='world-item color-3' for='l3i5c3'></label>
+            <label class='world-item color-4' for='l3i5c4'></label>
+            <label class='world-item color-5' for='l3i5c5'></label>
+            <label class='world-item color-6' for='l3i5c6'></label>
+            <label class='world-item color-7' for='l3i5c7'></label>
+        </label>
+    </div>
+    <div class='world-line'>
+        <label class='world-item size-0' for='l4i1s0'>
+            <label class='world-item size-1' for='l4i1s1'></label>
+            <label class='world-item size-2' for='l4i1s2'></label>
+            <label class='world-item size-3' for='l4i1s3'></label>
+            <label class='world-item size-4' for='l4i1s4'></label>
+            <label class='world-item color-1' for='l4i1c1'></label>
+            <label class='world-item color-2' for='l4i1c2'></label>
+            <label class='world-item color-3' for='l4i1c3'></label>
+            <label class='world-item color-4' for='l4i1c4'></label>
+            <label class='world-item color-5' for='l4i1c5'></label>
+            <label class='world-item color-6' for='l4i1c6'></label>
+            <label class='world-item color-7' for='l4i1c7'></label>
+        </label>
+        <label class='world-item size-0' for='l4i2s0'>
+            <label class='world-item size-1' for='l4i2s1'></label>
+            <label class='world-item size-2' for='l4i2s2'></label>
+            <label class='world-item size-3' for='l4i2s3'></label>
+            <label class='world-item size-4' for='l4i2s4'></label>
+            <label class='world-item color-1' for='l4i2c1'></label>
+            <label class='world-item color-2' for='l4i2c2'></label>
+            <label class='world-item color-3' for='l4i2c3'></label>
+            <label class='world-item color-4' for='l4i2c4'></label>
+            <label class='world-item color-5' for='l4i2c5'></label>
+            <label class='world-item color-6' for='l4i2c6'></label>
+            <label class='world-item color-7' for='l4i2c7'></label>
+        </label>
+        <label class='world-item size-0' for='l4i3s0'>
+            <label class='world-item size-1' for='l4i3s1'></label>
+            <label class='world-item size-2' for='l4i3s2'></label>
+            <label class='world-item size-3' for='l4i3s3'></label>
+            <label class='world-item size-4' for='l4i3s4'></label>
+            <label class='world-item color-1' for='l4i3c1'></label>
+            <label class='world-item color-2' for='l4i3c2'></label>
+            <label class='world-item color-3' for='l4i3c3'></label>
+            <label class='world-item color-4' for='l4i3c4'></label>
+            <label class='world-item color-5' for='l4i3c5'></label>
+            <label class='world-item color-6' for='l4i3c6'></label>
+            <label class='world-item color-7' for='l4i3c7'></label>
+        </label>
+        <label class='world-item size-0' for='l4i4s0'>
+            <label class='world-item size-1' for='l4i4s1'></label>
+            <label class='world-item size-2' for='l4i4s2'></label>
+            <label class='world-item size-3' for='l4i4s3'></label>
+            <label class='world-item size-4' for='l4i4s4'></label>
+            <label class='world-item color-1' for='l4i4c1'></label>
+            <label class='world-item color-2' for='l4i4c2'></label>
+            <label class='world-item color-3' for='l4i4c3'></label>
+            <label class='world-item color-4' for='l4i4c4'></label>
+            <label class='world-item color-5' for='l4i4c5'></label>
+            <label class='world-item color-6' for='l4i4c6'></label>
+            <label class='world-item color-7' for='l4i4c7'></label>
+        </label>
+        <label class='world-item size-0' for='l4i5s0'>
+            <label class='world-item size-1' for='l4i5s1'></label>
+            <label class='world-item size-2' for='l4i5s2'></label>
+            <label class='world-item size-3' for='l4i5s3'></label>
+            <label class='world-item size-4' for='l4i5s4'></label>
+            <label class='world-item color-1' for='l4i5c1'></label>
+            <label class='world-item color-2' for='l4i5c2'></label>
+            <label class='world-item color-3' for='l4i5c3'></label>
+            <label class='world-item color-4' for='l4i5c4'></label>
+            <label class='world-item color-5' for='l4i5c5'></label>
+            <label class='world-item color-6' for='l4i5c6'></label>
+            <label class='world-item color-7' for='l4i5c7'></label>
+        </label>
+    </div>
+    <div class='world-line'>
+        <label class='world-item size-0' for='l5i1s0'>
+            <label class='world-item size-1' for='l5i1s1'></label>
+            <label class='world-item size-2' for='l5i1s2'></label>
+            <label class='world-item size-3' for='l5i1s3'></label>
+            <label class='world-item size-4' for='l5i1s4'></label>
+            <label class='world-item color-1' for='l5i1c1'></label>
+            <label class='world-item color-2' for='l5i1c2'></label>
+            <label class='world-item color-3' for='l5i1c3'></label>
+            <label class='world-item color-4' for='l5i1c4'></label>
+            <label class='world-item color-5' for='l5i1c5'></label>
+            <label class='world-item color-6' for='l5i1c6'></label>
+            <label class='world-item color-7' for='l5i1c7'></label>
+        </label>
+        <label class='world-item size-0' for='l5i2s0'>
+            <label class='world-item size-1' for='l5i2s1'></label>
+            <label class='world-item size-2' for='l5i2s2'></label>
+            <label class='world-item size-3' for='l5i2s3'></label>
+            <label class='world-item size-4' for='l5i2s4'></label>
+            <label class='world-item color-1' for='l5i2c1'></label>
+            <label class='world-item color-2' for='l5i2c2'></label>
+            <label class='world-item color-3' for='l5i2c3'></label>
+            <label class='world-item color-4' for='l5i2c4'></label>
+            <label class='world-item color-5' for='l5i2c5'></label>
+            <label class='world-item color-6' for='l5i2c6'></label>
+            <label class='world-item color-7' for='l5i2c7'></label>
+        </label>
+        <label class='world-item size-0' for='l5i3s0'>
+            <label class='world-item size-1' for='l5i3s1'></label>
+            <label class='world-item size-2' for='l5i3s2'></label>
+            <label class='world-item size-3' for='l5i3s3'></label>
+            <label class='world-item size-4' for='l5i3s4'></label>
+            <label class='world-item color-1' for='l5i3c1'></label>
+            <label class='world-item color-2' for='l5i3c2'></label>
+            <label class='world-item color-3' for='l5i3c3'></label>
+            <label class='world-item color-4' for='l5i3c4'></label>
+            <label class='world-item color-5' for='l5i3c5'></label>
+            <label class='world-item color-6' for='l5i3c6'></label>
+            <label class='world-item color-7' for='l5i3c7'></label>
+        </label>
+        <label class='world-item size-0' for='l5i4s0'>
+            <label class='world-item size-1' for='l5i4s1'></label>
+            <label class='world-item size-2' for='l5i4s2'></label>
+            <label class='world-item size-3' for='l5i4s3'></label>
+            <label class='world-item size-4' for='l5i4s4'></label>
+            <label class='world-item color-1' for='l5i4c1'></label>
+            <label class='world-item color-2' for='l5i4c2'></label>
+            <label class='world-item color-3' for='l5i4c3'></label>
+            <label class='world-item color-4' for='l5i4c4'></label>
+            <label class='world-item color-5' for='l5i4c5'></label>
+            <label class='world-item color-6' for='l5i4c6'></label>
+            <label class='world-item color-7' for='l5i4c7'></label>
+        </label>
+        <label class='world-item size-0' for='l5i5s0'>
+            <label class='world-item size-1' for='l5i5s1'></label>
+            <label class='world-item size-2' for='l5i5s2'></label>
+            <label class='world-item size-3' for='l5i5s3'></label>
+            <label class='world-item size-4' for='l5i5s4'></label>
+            <label class='world-item color-1' for='l5i5c1'></label>
+            <label class='world-item color-2' for='l5i5c2'></label>
+            <label class='world-item color-3' for='l5i5c3'></label>
+            <label class='world-item color-4' for='l5i5c4'></label>
+            <label class='world-item color-5' for='l5i5c5'></label>
+            <label class='world-item color-6' for='l5i5c6'></label>
+            <label class='world-item color-7' for='l5i5c7'></label>
+        </label>
+    </div>
+</div>
+</body>
+</html>
